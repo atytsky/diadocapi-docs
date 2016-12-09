@@ -1,0 +1,339 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>InvoiceCorrectionInfo &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа со счетами-фактурами" href="../API_Invoices.html"/>
+        <link rel="next" title="InvoiceCorrectionRequestInfo" href="InvoiceCorrectionRequestInfo.html"/>
+        <link rel="prev" title="ParseInvoiceXml" href="../http/ParseInvoiceXml.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../API_Invoices.html#http">HTTP-интерфейс</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../API_Invoices.html#id2">Структуры данных</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">InvoiceCorrectionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InvoiceCorrectionRequestInfo.html">InvoiceCorrectionRequestInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InvoiceDocumentMetadata.html">InvoiceDocumentMetadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InvoiceInfo.html">InvoiceInfo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Invoices.html">Работа со счетами-фактурами</a> &raquo;</li>
+      
+    <li>InvoiceCorrectionInfo</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/proto/InvoiceCorrectionInfo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="invoicecorrectioninfo">
+<h1>InvoiceCorrectionInfo<a class="headerlink" href="#invoicecorrectioninfo" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">InvoiceCorrectionInfo</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">InvoiceDate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                      <span class="c1">// дата СФ</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">InvoiceNumber</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>                    <span class="c1">// номер СФ</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">InvoiceRevisionDate</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>              <span class="c1">// дата ИСФ (заполняется, если КСФ/ИКСФ формируется на исправленный СФ)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">InvoiceRevisionNumber</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>            <span class="c1">// номер ИСФ (заполняется, если КСФ/ИКСФ формируется на исправленный СФ)</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">InvoiceCorrectionDate</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>            <span class="c1">// дата КСФ</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">InvoiceCorrectionNumber</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>          <span class="c1">// номер КСФ</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">InvoiceCorrectionRevisionDate</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>    <span class="c1">// дата ИКСФ (обязательно при формировании InvoiceCorrectionRevision)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">InvoiceCorrectionRevisionNumber</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>  <span class="c1">// номер ИКСФ (обязательно при формировании InvoiceCorrectionRevision)</span>
+    <span class="k">required</span> <span class="n">DiadocOrganizationInfo</span> <span class="na">Seller</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>           <span class="c1">// продавец</span>
+    <span class="k">required</span> <span class="n">DiadocOrganizationInfo</span> <span class="na">Buyer</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>           <span class="c1">// покупатель</span>
+    <span class="k">required</span> <span class="n">Signer</span> <span class="na">Signer</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>                          <span class="c1">// подписант</span>
+    <span class="k">repeated</span> <span class="n">InvoiceCorrectionItem</span> <span class="na">Items</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>            <span class="c1">// информация о товарах</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Currency</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>                        <span class="c1">// валюта (код)</span>
+    <span class="k">optional</span> <span class="n">InvoiceTotalsDiff</span> <span class="na">TotalsInc</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>            <span class="c1">// суммы к увеличению</span>
+    <span class="k">optional</span> <span class="n">InvoiceTotalsDiff</span> <span class="na">TotalsDec</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>            <span class="c1">// суммы к уменьшению</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">AdditionalInfo</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>                  <span class="c1">// информационное поле документа v5.01</span>
+    <span class="k">repeated</span> <span class="n">AdditionalInfo</span> <span class="na">AdditionalInfos</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>         <span class="c1">// информационное поле документа v5.02</span>
+    <span class="k">optional</span> <span class="n">InvoiceFormatVersion</span> <span class="na">Version</span> <span class="o">=</span> <span class="mi">18</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">DefaultInvoiceFormatVersion</span><span class="p">];</span> <span class="c1">// версия формата ФУФа (для тестирования систем в переходном периоде)</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AdditionalInfo</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>     <span class="c1">// Идентификатор</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// Значение</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">InvoiceFormatVersion</span> <span class="p">{</span>
+    <span class="na">DefaultInvoiceFormatVersion</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="na">v5_01</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="na">v5_02</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">InvoiceTotalsDiff</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TotalWithVatExcluded</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// сумма без учета налога</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>                   <span class="c1">// сумма налога</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Total</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>                 <span class="c1">// сумма всего</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">InvoiceCorrectionItem</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Product</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                                <span class="c1">// наименование товара</span>
+    <span class="k">required</span> <span class="n">CorrectableInvoiceItemFields</span> <span class="na">OriginalValues</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>   <span class="c1">// значения до изменения</span>
+    <span class="k">required</span> <span class="n">CorrectableInvoiceItemFields</span> <span class="na">CorrectedValues</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">// значения после изменения</span>
+    <span class="k">optional</span> <span class="n">InvoiceItemAmountsDiff</span> <span class="na">AmountsInc</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>             <span class="c1">// суммы к увеличению</span>
+    <span class="k">optional</span> <span class="n">InvoiceItemAmountsDiff</span> <span class="na">AmountsDec</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>             <span class="c1">// суммы к уменьшению</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">AdditionalInfo</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>                         <span class="c1">// информационное поле товара v5.01</span>
+    <span class="k">repeated</span> <span class="n">AdditionalInfo</span> <span class="na">AdditionalInfos</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>                <span class="c1">// информационное поле товара v5.02</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">CorrectableInvoiceItemFields</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Unit</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                     <span class="c1">// единицы измерения товара (код)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Quantity</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>                 <span class="c1">// количество единиц товара</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Price</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>                    <span class="c1">// цена за единицу товара</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Excise</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                   <span class="c1">// акциз</span>
+    <span class="k">required</span> <span class="n">TaxRate</span> <span class="na">TaxRate</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>                 <span class="c1">// ставка налога</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SubtotalWithVatExcluded</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>  <span class="c1">// сумма без учета налога</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>                      <span class="c1">// сумма налога</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Subtotal</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>                 <span class="c1">// сумма с учетом налога</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">InvoiceItemAmountsDiff</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Excise</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                   <span class="c1">// акциз</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SubtotalWithVatExcluded</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// сумма без учета налога</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>                      <span class="c1">// сумма налога</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Subtotal</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                 <span class="c1">// сумма с учетом налога</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура данных InvoiceCorrectionInfo представляет исходные данные для формирования корректировочного счета-фактуры в XML-формате при помощи метода <a class="reference internal" href="../http/GenerateInvoiceXml.html"><span class="doc">GenerateInvoiceXml</span></a>. При заполнении структуры InvoiceCorrectionInfo нужно иметь в виду:</p>
+<ul class="simple">
+<li>Реквизиты продавца (InvoiceCorrectionInfo.Seller) и покупателя (InvoiceCorrectionInfo.Buyer) заполняются в виде структуры данных <a class="reference internal" href="OrganizationInfo.html"><span class="doc">DiadocOrganizationInfo</span></a>.</li>
+<li>Реквизиты подписанта счета-фактуры InvoiceCorrectionInfo.Signer заполняются в виде структуры данных <a class="reference internal" href="Signer.html"><span class="doc">Signer</span></a>.</li>
+<li>Даты документов должны указываться в формате ДД.ММ.ГГГГ.</li>
+<li>Суммы должны указываться в формате XXX.XX (дробная часть должна отделяться точкой). То же самое касается формата представления количества товара CorrectableInvoiceItemFields.Quantity.</li>
+<li>Если не указан код валюты InvoiceCorrectionInfo.Currency, по умолчанию будет использоваться код 643 (Российский рубль). Код валюты можно указывать в буквенном формате (например, &#8220;USD&#8221; - Доллар США), тогда он будет автоматически сконвертирован в соответствующий числовой код.</li>
+<li>Коды единиц измерения CorrectableInvoiceItemFields.Unit, а также коды иностранных госудраств ForeignAddress.Country можно указывать в буквенном формате, тогда Диадок предпримет попытку сконвертироваить их в соответствующие числовые коды.</li>
+<li>Версия формата корректировочного счета-фактуры по умолчанию DefaultInvoiceFormatVersion до 14.04.2015 будет v5_01, после 14.04.2015 будет v5_02</li>
+<li>В зависимости от значения поля InvoiceFormatVersion, из сериализованной структуры <a class="reference internal" href="#"><span class="doc">InvoiceCorrectionInfo</span></a>  обрабатываются поля, соответствующие указанной версии (указаны в комментариях к полям).</li>
+<li>Правила заполнения структуры InvoiceCorrectionInfo повторяют требования формата ФНС, зафиксированные в следующей <a class="reference download internal" href="../_downloads/ON_KORSFAKT_1_911_01_05_02_01.xsd" download=""><code class="xref download docutils literal"><span class="pre">XML-схеме,</span> <span class="pre">v5.02</span></code></a>.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="InvoiceCorrectionRequestInfo.html" class="btn btn-neutral float-right" title="InvoiceCorrectionRequestInfo" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../http/ParseInvoiceXml.html" class="btn btn-neutral" title="ParseInvoiceXml" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>UnilateralDocumentMetadata &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с документами" href="../API_Documents.html"/>
+        <link rel="next" title="XmlDocumentAttachment" href="XmlDocumentAttachment.html"/>
+        <link rel="prev" title="TrustConnectionRequestAttachment" href="TrustConnectionRequestAttachment.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Documents.html">Работа с документами</a> &raquo;</li>
+      
+    <li>UnilateralDocumentMetadata</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/proto/UnilateralDocumentMetadata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="unilateraldocumentmetadata">
+<h1>UnilateralDocumentMetadata<a class="headerlink" href="#unilateraldocumentmetadata" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">ProformaInvoiceMetadata</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="n">UnilateralDocumentStatus</span> <span class="na">DocumentStatus</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownUnilateralDocumentStatus</span><span class="p">];</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Total</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Grounds</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">ServiceDetailsMetadata</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="n">UnilateralDocumentStatus</span> <span class="na">DocumentStatus</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownUnilateralDocumentStatus</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">UnilateralDocumentStatus</span> <span class="p">{</span>
+    <span class="na">UnknownUnilateralDocumentStatus</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="na">Outbound</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="na">OutboundWaitingForSenderSignature</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="na">OutboundInvalidSenderSignature</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="na">Inbound</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="na">Internal</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="na">InternalWaitingForSenderSignature</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="na">InternalInvalidSenderSignature</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура ProformaInvoiceMetadata содержит дополнительные атрибуты документа (в структуре <a class="reference internal" href="Document.html"><span class="doc">Document</span></a>) специфичные для счетов на оплату:</p>
+<ul class="simple">
+<li>DocumentStatus определяет состояние, в котором находится данный документ; принимает одно из значений перечисления UnilateralDocumentStatus.</li>
+<li>Total - сумма счета.</li>
+<li>Vat - сумма НДС счета; если поле не заполнено, это значит что счет был создан с отметкой &#8220;без НДС&#8221;.</li>
+<li>Grounds - основания для счета; представляются в виде неформализованной строки текста, например, &#8220;Договор №1234, Заказ №321&#8221;.</li>
+</ul>
+<p>Структура ServiceDetailsMetadata содержит дополнительные атрибуты документа (в структуре <a class="reference internal" href="Document.html"><span class="doc">Document</span></a>) специфичные для счетов на оплату:</p>
+<ul class="simple">
+<li>DocumentStatus определяет состояние, в котором находится данный документ; принимает одно из значений перечисления UnilateralDocumentStatus.</li>
+</ul>
+<p>Перечисление UnilateralDocumentStatus задает возможные варианты состояний, в которых может находиться односторонний документ (например, счет на оплату):</p>
+<ul class="simple">
+<li>UnknownUnilateralDocumentStatus (неизвестное состояние; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать состояние документа, переданное сервером),</li>
+<li>Outbound (документ исходящий),</li>
+<li>OutboundWaitingForSenderSignature (документ исходящий, документ не отправлен, поскольку не подписан отправителем),</li>
+<li>OutboundInvalidSenderSignature (документ исходящий, документ не отправлен, поскольку подпись отправителя не является корректной),</li>
+<li>Inbound (документ входящий).</li>
+<li>Internal (документ внутренний).</li>
+<li>InternalWaitingForSenderSignature (документ внутренний, документ не отправлен, поскольку не подписан отправителем),</li>
+<li>InternalInvalidSenderSignature (документ внутренний, документ не отправлен, поскольку подпись отправителя не является корректной),</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="XmlDocumentAttachment.html" class="btn btn-neutral float-right" title="XmlDocumentAttachment" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="TrustConnectionRequestAttachment.html" class="btn btn-neutral" title="TrustConnectionRequestAttachment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

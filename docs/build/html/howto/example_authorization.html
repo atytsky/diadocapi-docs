@@ -1,0 +1,371 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Как авторизоваться в системе &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="next" title="Как отправить счет-фактуру" href="example_send_invoice.html"/>
+        <link rel="prev" title="Дополнительные функции API" href="../MiscellaneousApiFeatures.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Как авторизоваться в системе</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sdk">SDK</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Как авторизоваться в системе</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/howto/example_authorization.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Как авторизоваться в системе<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Большинству команд интеграторского интерфейса требуется авторизация. Для этого команды требуют в качестве обязательного параметра авторизационный токен — массив байтов, однозначно идентифицирующий пользователя.</p>
+<p>Кроме того, во все методы интеграторского интерфейса требуется передавать &#8220;ключ разработчика&#8221; — уникальный строковый идентификатор интегратора, который можно получить, написав запрос по адресу <a class="reference external" href="mailto:diadoc-api&#37;&#52;&#48;skbkontur&#46;ru">diadoc-api<span>&#64;</span>skbkontur<span>&#46;</span>ru</a>. Интегратор не должен передавать свой &#8220;ключ разработчика&#8221; третьим лицам.</p>
+<p>Для передачи авторизационной информации с каждым запросом используется стандартный HTTP-заголовок <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2617.html"><strong>Authorization</strong></a>.</p>
+<p>Схема аутентификации, используемая Диадоком, называется <strong>DiadocAuth</strong>. Для нее определены следующие параметры:</p>
+<ul class="simple">
+<li><em>ddauth_api_client_id</em> — ключ разработчика;</li>
+<li><em>ddauth_token</em> — авторизационный токен.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Значения параметров отделяются от их имен символами &#8216;=&#8217;. Параметры разделяются символами &#8216;,&#8217; .</p>
+</div>
+<p>Например:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span>
+<span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">8</span><span class="n">ee1638deae84c86b8e2069955c2825a</span><span class="p">,</span>
+<span class="n">ddauth_token</span><span class="p">=</span><span class="m">3</span><span class="n">IU0iPhuhHPZ6lrlumGz4pICEedhQ1XmlMN1Pk8z0DJ51MXkcTi6Q3CODCC4xTMsjPFfhK6XM4kCJ4JJ42hlD499</span><span class="p">/</span><span class="n">Ui5WSq6lrPwcdp4IIKswVUwyE0ZiwhlpeOwRjNrvUX1yPrxr0dY8a0w8ePsc1DG8HAlZce8a0hZiWylMqu23d</span><span class="p">/</span><span class="n">vfzRFuA</span><span class="p">==</span>
+</pre></div>
+</div>
+<p>Рассмотрим последовательность действий, которые требуется совершить при обращении к функциям интеграторского интерфейса Диадока.</p>
+<p>Первым делом, клиент Диадока должен получить авторизационный токен, используя команду <a class="reference internal" href="../http/Authenticate.html"><span class="doc">Authenticate</span></a>.</p>
+<p>При этом в параметре <em>ddauth_api_client_id</em> HTTP-заголовка <code class="docutils literal"><span class="pre">Authorization</span></code> требуется передать полученный в процессе регистрации ключ разработчика.</p>
+<p>Соответствующий HTTP-запрос выглядит следующим образом:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="p">/</span><span class="n">Authenticate</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">8</span><span class="n">ee1638deae84c86b8e2069955c2825a</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Length</span><span class="p">:</span> <span class="m">1252</span>
+<span class="n">Connection</span><span class="p">:</span> <span class="n">Keep</span><span class="p">-</span><span class="n">Alive</span>
+
+<span class="p">&lt;</span><span class="n">Двоичное</span> <span class="n">DER</span><span class="p">-</span><span class="n">представление</span> <span class="n">X</span><span class="p">.</span><span class="m">509</span><span class="p">-</span><span class="n">сертификата</span> <span class="n">пользователя</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Также можно получить авторизационный токен с помощью логина и пароля, соответствующий запрос будет выглядеть следующим образом:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="p">/</span><span class="n">Authenticate</span><span class="p">?</span><span class="n">login</span><span class="p">=</span><span class="n">user@skbkontur</span><span class="p">.</span><span class="n">ru</span><span class="p">&amp;</span><span class="n">password</span><span class="p">=</span><span class="n">qwerty</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">8</span><span class="n">ee1638deae84c86b8e2069955c2825a</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Length</span><span class="p">:</span> <span class="m">1252</span>
+<span class="n">Connection</span><span class="p">:</span> <span class="n">Keep</span><span class="p">-</span><span class="n">Alive</span>
+</pre></div>
+</div>
+<p>В случае если вы пытаетесь получить токен с помощью сертификата, успешный ответ сервера будет выглядеть так:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Length</span><span class="p">:</span> <span class="m">598</span>
+
+<span class="p">&lt;</span><span class="n">Двоичное</span> <span class="n">DER</span><span class="p">-</span><span class="n">представление</span> <span class="n">зашифрованного</span> <span class="n">авторизационного</span> <span class="n">токена</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>В случае если вы пытаетесь получить токен по логину и паролю, успешный ответ сервера будет выглядеть так:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Length</span><span class="p">:</span> <span class="m">598</span>
+
+<span class="p">&lt;</span><span class="n">Авторизационный</span> <span class="n">токен</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Чтобы получить авторизационный токен по сертификату, клиент должен расшифровать тело ответа команды <a class="reference internal" href="../http/Authenticate.html"><span class="doc">Authenticate</span></a> при помощи закрытого ключа, соответствующего пользовательскому сертификату. Полученный массив байтов нужно закодировать в <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3548.html"><strong>Base64</strong></a> - строку.</p>
+<p>И далее к каждому HTTP-запросу к Диадоку требуется добавлять HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code> с параметрами <em>ddauth_api_client_id=</em> и <em>ddauth_token=</em>.</p>
+<p>Например, команда получения списка доступных пользователю ящиков транслируется в следующий HTTP-запрос:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="p">/</span><span class="n">GetMyOrganizations</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">8</span><span class="n">ee1638deae84c86b8e2069955c2825a</span><span class="p">,</span><span class="n">ddauth_token</span><span class="p">=</span><span class="m">3</span><span class="n">IU0iPhuhHPZ6lrlumGz4pICEedhQ1XmlMN1Pk8z0DJ51MXkcTi6Q3CODCC4xTMsjPFfhK6XM4kCJ4JJ42hlD499</span><span class="p">/</span><span class="n">Ui5WSq6lrPwcdp4IIKswVUwyE0ZiwhlpeOwRjNrvUX1yPrxr0dY8a0w8ePsc1DG8HAlZce8a0hZiWylMqu23d</span><span class="p">/</span><span class="n">vfzRFuA</span><span class="p">==</span>
+</pre></div>
+</div>
+<p>Для команд, предусматривающих работу с определенным ящиком (таких как получение и отправка сообщений), контроль доступа к ящику работает по следующему алгоритму:</p>
+<ol class="arabic simple">
+<li>Из HTTP-заголовка Authorization текущего запроса извлекается значение параметра <em>ddauth_token</em>. Это значение декодируется и из него извлекается идентификатор пользователя.</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Если какое-то из вышеперечисленных действий не удалось выполнить (например, в запросе отсутствует HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code>, или в этом заголовке отсутствует параметр <em>ddauth_token</em>, или значение этого параметра представляет собой поврежденный или просроченный токен и т.д.), то возврщается код ошибки 401 (Unauthorized).</li>
+<li>Если в запросе был указан некорректный <em>ddauth_api_client_id</em>, то также возвращается код ошибки 401 (Unauthorized).</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>По идентификатору пользователя находится множество ящиков, к которым данный пользователь имеет доступ. Это тот же самый список, которое возвращает метод <a class="reference internal" href="../http/GetMyOrganizations.html"><span class="doc">GetMyOrganizations</span></a>.</li>
+<li>Из параметров текущего запроса извлекается идентификатор ящика. Если идентификатор ящика не принадлежит списку, полученному на предыдущем шаге, то возвращается код ошибки 403 (Forbidden).</li>
+<li>Иначе доступ разрешается.</li>
+</ol>
+<p>Авторизационные токены можно на некоторое время кэшировать. То есть вовсе не обязательно вызывать метод <a class="reference internal" href="../http/Authenticate.html"><span class="doc">Authenticate</span></a> перед каждым обращением к методам API Диадока. Рекомендуемая стратегия заключается в получении токена на сеанс работы пользователя/программы и повторном использовании его в течение одного сеанса.</p>
+<div class="section" id="sdk">
+<h2>SDK<a class="headerlink" href="#sdk" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Пример кода на C# для получения авторизационного токена:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="c1">//URL веб-сервиса Диадок</span>
+<span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">DefaultApiUrl</span> <span class="p">=</span> <span class="s">&quot;https://diadoc-api.kontur.ru&quot;</span><span class="p">;</span>
+
+<span class="c1">//Идентификатор клиента</span>
+<span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">DefaultClientId</span> <span class="p">=</span> <span class="s">&quot;test-8ee1638deae84c86b8e2069955c2825a&quot;</span><span class="p">;</span>
+
+<span class="c1">//Для использования Диадок требуются:</span>
+<span class="c1">//1. Крипто-API, предоставляемое операционной системой (доступно через класс WinApiCrypt)</span>
+<span class="c1">//2. Экземпляр класса DiadocApi, проксирующий работу с веб-сервисом Диадок</span>
+<span class="k">private</span> <span class="k">static</span> <span class="n">WinApiCrypt</span> <span class="n">Crypt</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WinApiCrypt</span><span class="p">();</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">DiadocApi</span> <span class="n">Api</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DiadocApi</span><span class="p">(</span>
+        <span class="n">DefaultClientId</span><span class="p">,</span>
+        <span class="n">DefaultApiUrl</span><span class="p">,</span>
+        <span class="n">Crypt</span><span class="p">);</span>
+
+<span class="c1">//Логин для авторизации на сервере Диадок</span>
+
+<span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">DefaultLogin</span> <span class="p">=</span> <span class="s">&quot;логин&quot;</span><span class="p">;</span>
+
+<span class="c1">//Пароль для авторизации на сервере Диадок</span>
+<span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">DefaultPassword</span> <span class="p">=</span> <span class="s">&quot;пароль&quot;</span><span class="p">;</span>
+
+<span class="c1">//Путь к сертификату для авторизации на сервере Диадок</span>
+<span class="k">public</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">DefaultPathToCert</span> <span class="p">=</span> <span class="s">&quot;C:\\folder\\subfolder\\cert.cer&quot;</span><span class="p">;</span>
+
+<span class="c1">//Для авторизации по сертификату необходимо сертификат преобразовать в массив байтов</span>
+<span class="k">public</span> <span class="k">static</span> <span class="kt">byte</span><span class="p">[]</span> <span class="nf">ReadCertContent</span><span class="p">(</span><span class="kt">string</span> <span class="n">pathToCert</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">cert</span> <span class="p">=</span> <span class="k">new</span> <span class="n">X509Certificate</span><span class="p">(</span><span class="n">pathToCert</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">cert</span><span class="p">.</span><span class="n">Export</span><span class="p">(</span><span class="n">X509ContentType</span><span class="p">.</span><span class="n">Cert</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">//Можно использовать либо аутентификацию по логину/паролю, либо по сертификату</span>
+        <span class="kt">var</span> <span class="n">authTokenLogin</span> <span class="p">=</span> <span class="n">Api</span><span class="p">.</span><span class="n">Authenticate</span><span class="p">(</span><span class="n">DefaultLogin</span><span class="p">,</span> <span class="n">DefaultPassword</span><span class="p">);</span> <span class="c1">//по паре логин/пароль</span>
+        <span class="kt">var</span> <span class="n">authTokenCert</span> <span class="p">=</span> <span class="n">Api</span><span class="p">.</span><span class="n">Authenticate</span><span class="p">(</span><span class="n">ReadCertContent</span><span class="p">(</span><span class="n">DefaultPathToCert</span><span class="p">));</span> <span class="c1">//по сертификату</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="example_send_invoice.html" class="btn btn-neutral float-right" title="Как отправить счет-фактуру" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../MiscellaneousApiFeatures.html" class="btn btn-neutral" title="Дополнительные функции API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,674 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Как получить счет-фактуру &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="next" title="Как отправить и получить товарную накладную ТОРГ-12 в рекомендованном ФНС формате" href="example_torg12.html"/>
+        <link rel="prev" title="Как отправить счет-фактуру" href="example_send_invoice.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Как получить счет-фактуру</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Поиск счета-фактуры</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receive-confirmation">Получение счета-фактуры и подтверждения оператора</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-invoice-receipt">Формирование извещения о получении подтверждения оператора</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#send-receipt">Отправка извещения о получении подтверждения оператора</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Формирование извещения о получении счета-фактуры</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">Отправка извещения о получении счета-фактуры</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">Подтверждения оператора о дате отправки извещения о получении счета-фактуры</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">Запрос уточнения/корректировки по счету-фактуре</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sdk">SDK</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Как получить счет-фактуру</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/howto/example_receive_invoice.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Как получить счет-фактуру<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Рассмотрим последовательность действий к функциям интеграторского интерфейса Диадока, которые требуется совершить покупателю при получении счета-фактуры (СФ), корректировочного счета-фактуры (КСФ), исправления счета-фактуры (ИСФ).</p>
+<ol class="arabic simple">
+<li>Продавец отправляет счет-фактуру Покупателю.</li>
+<li>Диадок должен сформировать подтверждение оператора о дате отправки счета-фактуры, подписать его и направить Покупателю.</li>
+<li>Покупатель получает счет-фактуру и подтверждение оператора и отправляет в ответ подписанные извещение о получении счета-фактуры и извещение о получении подтверждения.</li>
+<li>Диадок формирует подтверждение оператора о дате отправки извещения о получении счета-фактуры, подписывает его и направляет Покупателю.</li>
+<li>Покупатель получает подтверждение оператора и отправляет в ответ подписанное извещение о получении подтверждения.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Более подробно о порядке обмена электронными счетами-фактурами между компаниями можно почитать в <a class="reference internal" href="../InvoiceDocflow.html"><span class="doc">соответствующем разделе</span></a> или на <a class="reference external" href="http://www.diadoc.ru/docs/e-invoice/interchange">сайте</a></p>
+</div>
+<div class="section" id="id2">
+<h2>Поиск счета-фактуры<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Сначала необходимо найти входящие счета-фактуры, которые требуется обработать, для этого нужно воспользоваться методом <a class="reference internal" href="../http/GetDocuments.html"><span class="doc">GetDocuments</span></a>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>в значение параметра <em>boxId</em> указываем идентификатор ящика, в котором следует выполнить поиск входящих документов,</li>
+<li>параметр <em>filterCategory</em> задается в виде строки, в данном примере <code class="docutils literal"><span class="pre">AnyInvoiceDocumentType.InboundNotFinished</span></code></li>
+</ul>
+</div></blockquote>
+<p>Пример запроса на получение счета-фактуры выглядит следующим образом:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="p">/</span><span class="n">V3</span><span class="p">/</span><span class="n">GetDocuments</span><span class="p">?</span><span class="n">filterCategory</span><span class="p">=</span><span class="n">AnyInvoiceDocumentType</span><span class="p">.</span><span class="n">InboundNotFinished</span><span class="p">&amp;</span><span class="n">boxId</span><span class="p">=</span><span class="n">db32772b</span><span class="p">-</span><span class="m">9256</span><span class="p">-</span><span class="m">49</span><span class="n">a8</span><span class="p">-</span><span class="n">a133</span><span class="p">-</span><span class="n">fda593fda38a</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Accept</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span> <span class="n">charset</span><span class="p">=</span><span class="n">utf</span><span class="p">-</span><span class="m">8</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">87</span><span class="n">e1638deae84c86b8e2069955c2825a0987</span>
+</pre></div>
+</div>
+<p>В теле ответа вернется список документов в виде структуры <em>DocumentList</em> с вложенной структурой <em>Document</em>. Для каждого из этих документов запоминаем: <em>MessageId</em>, <em>EntityId</em>.</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;TotalCount&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="nt">&quot;Documents&quot;</span><span class="p">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+       <span class="nt">&quot;IndexKey&quot;</span><span class="p">:</span> <span class="s2">&quot;2B7732DB5692A849A133FDA593FDA38A9279A2CBA18EDF49B3D5CAE8D97C89B0ED4D67F0183510448F64919BE6B8F35B0000000000000000000000000000000000104608D2D2D8BA8731D80DDBCEBB34CE0D4EB3213F600C920935072CCF309772484DBC6FCA7A80E2CF95&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;MessageId&quot;</span><span class="p">:</span> <span class="s2">&quot;bbcedb0d-ce34-4e0d-b321-3f600c920935&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;EntityId&quot;</span><span class="p">:</span> <span class="s2">&quot;30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;CreationTimestampTicks&quot;</span><span class="p">:</span> <span class="mi">635802325536912186</span><span class="p">,</span>
+       <span class="nt">&quot;CounteragentBoxId&quot;</span><span class="p">:</span> <span class="s2">&quot;95f642cd1256426fb11c883c73d8440a@diadoc.ru&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;DocumentType&quot;</span><span class="p">:</span> <span class="s2">&quot;Invoice&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;InitialDocumentIds&quot;</span><span class="p">:</span> <span class="p">[],</span>
+       <span class="nt">&quot;SubordinateDocumentIds&quot;</span><span class="p">:</span> <span class="p">[],</span>
+       <span class="nt">&quot;Content&quot;</span><span class="p">:</span> <span class="s2">&quot;lores ipsum&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;FileName&quot;</span><span class="p">:</span> <span class="s2">&quot;ON_SFAKT_2BM-7770357771-2012082810454029703720000000000_2BM-7750370234-4012052808304878702630000000000_20150826_d37c6a05-e85c-4469-8c68-2d0303f61c2a.xml&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;DocumentDate&quot;</span><span class="p">:</span> <span class="s2">&quot;26.08.2015&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;DocumentNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;432634&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;InvoiceMetadata&quot;</span><span class="p">:</span>
+         <span class="p">{</span>
+           <span class="nt">&quot;InvoiceStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;InboundNotFinished&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;Total&quot;</span><span class="p">:</span> <span class="s2">&quot;17700.00&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;Vat&quot;</span><span class="p">:</span> <span class="s2">&quot;2700.00&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;Currency&quot;</span><span class="p">:</span> <span class="mi">643</span><span class="p">,</span>
+           <span class="nt">&quot;ConfirmationDateTimeTicks&quot;</span><span class="p">:</span> <span class="mi">635802433696852440</span><span class="p">,</span>
+           <span class="nt">&quot;InvoiceAmendmentFlags&quot;</span><span class="p">:</span> <span class="mi">0</span>
+         <span class="p">},</span>
+       <span class="nt">&quot;IsDeleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+       <span class="nt">&quot;DepartmentId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;IsTest&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+       <span class="nt">&quot;FromDepartmentId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;ToDepartmentId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;CustomDocumentId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;RevocationStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;RevocationStatusNone&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;SendTimestampTicks&quot;</span><span class="p">:</span> <span class="mi">635802325536912186</span><span class="p">,</span>
+       <span class="nt">&quot;DeliveryTimestampTicks&quot;</span><span class="p">:</span> <span class="mi">635802325696852440</span><span class="p">,</span>
+       <span class="nt">&quot;ForwardDocumentEvents&quot;</span><span class="p">:</span> <span class="p">[],</span>
+       <span class="nt">&quot;RoamingNotificationStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;RoamingNotificationStatusNone&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;HasCustomPrintForm&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+       <span class="nt">&quot;CustomData&quot;</span><span class="p">:</span> <span class="p">[],</span>
+       <span class="nt">&quot;DocumentDirection&quot;</span><span class="p">:</span> <span class="s2">&quot;Inbound&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;LastModificationTimestampTicks&quot;</span><span class="p">:</span> <span class="mi">635802325696852440</span><span class="p">,</span>
+       <span class="nt">&quot;IsEncryptedContent&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+       <span class="nt">&quot;SenderSignatureStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;SenderSignatureCheckedAndValid&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;MessageIdGuid&quot;</span><span class="p">:</span> <span class="s2">&quot;bbcedb0d-ce34-4e0d-b321-3f600c920935&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;EntityIdGuid&quot;</span><span class="p">:</span> <span class="s2">&quot;30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;CreationTimestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-10-12T07:42:33.6912186Z&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;CounteragentBoxIdGuid&quot;</span><span class="p">:</span> <span class="s2">&quot;95f642cd-1256-426f-b11c-883c73d8440a&quot;</span>
+     <span class="p">}]</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="receive-confirmation">
+<span id="id3"></span><h2>Получение счета-фактуры и подтверждения оператора<a class="headerlink" href="#receive-confirmation" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Затем необходимо получить найденный СФ <a class="reference internal" href="../proto/Entity message.html"><span class="doc">Invoice</span></a> и подтверждение оператора <a class="reference internal" href="../proto/Entity message.html"><span class="doc">InvoiceConfirmation</span></a>.</p>
+<p>Подтверждение оператора представляется структурой <a class="reference internal" href="../proto/Entity message.html"><span class="doc">Entity</span></a>, где значение полей <code class="docutils literal"><span class="pre">EntityType</span></code> и <code class="docutils literal"><span class="pre">AttachmentType</span></code> должно быть <em>Attachment/InvoiceConfirmation</em>, СФ представляется структурой <em>Attachment/Invoice</em>.</p>
+<p>Чтобы получить СФ и подтверждение оператора нужно вызвать метод <a class="reference internal" href="../http/GetMessage.html"><span class="doc">GetMessage</span></a> и указать нужные GET-параметры <code class="docutils literal"><span class="pre">boxId</span></code>, <code class="docutils literal"><span class="pre">messageId</span></code>, <code class="docutils literal"><span class="pre">entityId</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">BoxId</span></code> - это идентификатор ящика получателя, <code class="docutils literal"><span class="pre">messageId</span></code> - идентификатор полученного сообщения с СФ/ИСФ/КСФ/ИКСФ, <code class="docutils literal"><span class="pre">entityId</span></code> - идентификатор счета-фактуры. Их можно взять из структуры <a class="reference internal" href="../proto/Message.html"><span class="doc">Message</span></a></p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="p">/</span><span class="n">V3</span><span class="p">/</span><span class="n">GetMessage</span><span class="p">?</span><span class="n">messageId</span><span class="p">=</span><span class="n">bbcedb0d</span><span class="p">-</span><span class="n">ce34</span><span class="p">-</span><span class="m">4</span><span class="n">e0d</span><span class="p">-</span><span class="n">b321</span><span class="p">-</span><span class="m">3f600</span><span class="n">c920935</span><span class="p">&amp;</span><span class="n">entityId</span><span class="p">=</span><span class="m">30</span><span class="n">cf2c07</span><span class="p">-</span><span class="m">7297</span><span class="p">-</span><span class="m">4d48</span><span class="p">-</span><span class="n">bc6f</span><span class="p">-</span><span class="n">ca7a80e2cf95</span><span class="p">&amp;</span><span class="n">boxId</span><span class="p">=</span><span class="n">db32772b</span><span class="p">-</span><span class="m">9256</span><span class="p">-</span><span class="m">49</span><span class="n">a8</span><span class="p">-</span><span class="n">a133</span><span class="p">-</span><span class="n">fda593fda38a</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Accept</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span> <span class="n">charset</span><span class="p">=</span><span class="n">utf</span><span class="p">-</span><span class="m">8</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">87</span><span class="n">e1638deae84c86b8e2069955c2825a0987</span>
+</pre></div>
+</div>
+<p>Пример структуры подтверждения оператора <a class="reference internal" href="../proto/Entity message.html"><span class="doc">InvoiceConfirmation</span></a> в теле ответа:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;EntityType&quot;</span><span class="p">:</span> <span class="s2">&quot;Attachment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;EntityId&quot;</span><span class="p">:</span> <span class="s2">&quot;654ac483-0dd4-4085-b70f-565c8b754e10&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ParentEntityId&quot;</span><span class="p">:</span> <span class="s2">&quot;30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Content&quot;</span><span class="p">:</span> <span class="s2">&quot;lores ipsum&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;AttachmentType&quot;</span><span class="p">:</span> <span class="s2">&quot;InvoiceConfirmation&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;FileName&quot;</span><span class="p">:</span> <span class="s2">&quot;DP_PDPOL_2BM-7750370234-4012052808304878702630000000000_2BM_20150927_324c290e-f049-4906-baac-1ddcd7f3c2ff.xml&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;NeedRecipientSignature&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;SignerBoxId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;NotDeliveredEventId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;RawCreationDate&quot;</span><span class="p">:</span> <span class="mi">635789700936777240</span><span class="p">,</span>
+    <span class="nt">&quot;SignerDepartmentId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;NeedReceipt&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;IsApprovementSignature&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;IsEncryptedContent&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-invoice-receipt">
+<span id="id4"></span><h2>Формирование извещения о получении подтверждения оператора<a class="headerlink" href="#create-invoice-receipt" title="Ссылка на этот заголовок">¶</a></h2>
+<p>После того, как покупатель получил подтверждение оператора, он должен отправить в ответ подписанное извещение <a class="reference internal" href="../proto/Entity message.html"><span class="doc">InvoiceReceipt</span></a> о получении подтверждения.</p>
+<p>Извещение о получении подтверждения оператора представляется структурой <a class="reference internal" href="../proto/Entity message.html"><span class="doc">Entity</span></a>, где значение полей <code class="docutils literal"><span class="pre">EntityType</span></code> и <code class="docutils literal"><span class="pre">AttachmentType</span></code> должно быть <em>Attachment/InvoiceReceipt</em>.</p>
+<p>В API Диадока есть метод, который позволяет сформировать извещение о получении подтверждения оператора - <a class="reference internal" href="../http/GenerateInvoiceDocumentReceiptXml.html"><span class="doc">GenerateInvoiceDocumentReceiptXml</span></a>, при вызове этого метода нужно корректно указать GET-параметры <code class="docutils literal"><span class="pre">boxId</span></code>, <code class="docutils literal"><span class="pre">messageId</span></code>, <code class="docutils literal"><span class="pre">attachmentId</span></code> и передать в тело запроса данные о подписанте генерируемого извещения в виде сериализованной структуры <a class="reference internal" href="../proto/Signer.html"><span class="doc">Signer</span></a>.</p>
+<p><code class="docutils literal"><span class="pre">BoxId</span></code> - это идентификатор ящика отправителя, <code class="docutils literal"><span class="pre">messageId</span></code> - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, <code class="docutils literal"><span class="pre">attachmentId</span></code> - идентификатор подтверждение оператора. Их можно взять из структуры <a class="reference internal" href="../proto/Message.html"><span class="doc">Message</span></a>.</p>
+<p>Например HTTP-запрос для формирования извещение о получении подтверждения оператора выглядит следующим образом:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="p">/</span><span class="n">GenerateInvoiceDocumentReceiptXml</span><span class="p">?</span><span class="n">boxId</span><span class="p">=</span><span class="n">db32772b</span><span class="p">-</span><span class="m">9256</span><span class="p">-</span><span class="m">49</span><span class="n">a8</span><span class="p">-</span><span class="n">a133</span><span class="p">-</span><span class="n">fda593fda38a</span><span class="p">&amp;</span><span class="n">messageId</span><span class="p">=</span><span class="n">a9093c56</span><span class="p">-</span><span class="m">7</span><span class="n">c48</span><span class="p">-</span><span class="m">4</span><span class="n">ab1</span><span class="p">-</span><span class="n">bc87</span><span class="p">-</span><span class="n">efb04e7d4400</span><span class="p">&amp;</span><span class="n">attachmentId</span><span class="p">=</span><span class="n">f80738a3</span><span class="p">-</span><span class="n">b0bc</span><span class="p">-</span><span class="m">426</span><span class="n">a</span><span class="p">-</span><span class="n">aadf</span><span class="p">-</span><span class="m">6967</span><span class="n">ec1b53df</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span> <span class="n">charset</span><span class="p">=</span><span class="n">utf</span><span class="p">-</span><span class="m">8</span>
+<span class="n">Accept</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">87</span><span class="n">e1638deae84c86b8e2069955c2825a0987</span>
+</pre></div>
+</div>
+<p>Пример структуры в теле запроса, содержащей данные о подписанте генерируемого извещения <a class="reference internal" href="../proto/Signer.html"><span class="doc">Signer</span></a>:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;SignerCertificate&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SignerDetails &quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;Surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Иванов&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;FirstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Иван&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;Patronymic&quot;</span><span class="p">:</span> <span class="s2">&quot;Иванович&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;JobTitle&quot;</span><span class="p">:</span> <span class="s2">&quot;QA&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;Inn&quot;</span><span class="p">:</span> <span class="s2">&quot;1234567&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;SoleProprietorRegistrationCertificate&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>В теле ответа содержится XML-файл с извещением о получении документа <code class="docutils literal"><span class="pre">attachmentId</span></code> из сообщения <code class="docutils literal"><span class="pre">messageId</span></code> в ящике <code class="docutils literal"><span class="pre">boxId</span></code>.</p>
+</div>
+<div class="section" id="send-receipt">
+<span id="id5"></span><h2>Отправка извещения о получении подтверждения оператора<a class="headerlink" href="#send-receipt" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Полученное на предыдущем этапе извещение нужно подписать и отправить. Подписание извещения происходит на стороне клиента, после того как извещение подписано, его нужно отправить вместе с файлом подписи воспользовавшись методом <a class="reference internal" href="../http/PostMessagePatch.html"><span class="doc">PostMessagePatch</span></a>.</p>
+<p>Для этого нужно подготовить структуру <a class="reference internal" href="../proto/MessagePatchToPost.html"><span class="doc">MessagePatchToPost</span></a> следующим образом:</p>
+<ul class="simple">
+<li>в значение атрибута <em>BoxId</em> указываем идентификатор ящика получателя,</li>
+<li>в значение атрибута <em>MessageId</em> указываем идентификатор модифицируемого сообщения,</li>
+<li>для передачи XML-файла извещения нужно использовать атрибут <em>Receipts</em>, описываемый структурой <em>ReceiptAttachment</em></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>в поле <em>ParentEntityId</em> нужно указать идентификатор (<em>EntityId</em>) подтверждения оператора, полученный на предыдущем шаге,</li>
+<li>внутри структуры <em>ReceiptAttachment</em> находится вложенная структура <em>SignedContent</em>,</li>
+<li>сам XML-файл нужно передать в атрибут <em>Content</em>, подпись продавца в атрибут <em>Signature</em></li>
+</ul>
+</div></blockquote>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">MessagePatchToPost</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">BoxId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">MessageId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ReceiptAttachment</span> <span class="na">Receipts</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">ReceiptAttachment</span>  <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">ParentEntityId</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="n">SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">SignedContent</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">bytes</span> <span class="na">Content</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bytes</span> <span class="na">Signature</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Пример структуры в теле запроса, содержащей данные о передаваемом извщении <a class="reference internal" href="../proto/MessagePatchToPost.html"><span class="doc">MessagePatchToPost</span></a>:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;BoxId&quot;</span><span class="p">:</span> <span class="s2">&quot;db32772b-9256-49a8-a133-fda593fda38a&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;MessageId&quot;</span><span class="p">:</span> <span class="s2">&quot;a9093c56-7c48-4ab1-bc87-efb04e7d4400&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;Receipts&quot;</span><span class="p">:</span>
+  <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;ParentEntityId&quot;</span><span class="p">:</span><span class="s2">&quot;f80738a3-b0bc-426a-aadf-6967ec1b53df&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;SignedContent&quot;</span><span class="p">:</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;Content&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Signature&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="nt">&quot;Comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Подписание извщения о получении подтверждения оператора&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+ <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Формирование извещения о получении счета-фактуры<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Также покупатель должен отправить в ответ подписанное извещение <a class="reference internal" href="../proto/Entity message.html"><span class="doc">InvoiceReceipt</span></a> о получении СФ.</p>
+<p>Извещение о получении СФ представляется структурой <a class="reference internal" href="../proto/Entity message.html"><span class="doc">Entity</span></a> как и извещение о получении подтверждения оператора.</p>
+<p>Последовательность действий для формирования извещения о получении СФ аналогична последовательности действий для формирования извещения о получении подтверждения оператора (см. <a class="reference internal" href="example_acceptance_certificate.html#create-receipt"><span class="std std-ref">Формирование файла титула заказчика для акта о выполнении работ/оказании услуг</span></a>).</p>
+<p>За исключением того, что в <code class="docutils literal"><span class="pre">attachmentId</span></code> нужно указать идентификатор полученного счета-фактуры.</p>
+</div>
+<div class="section" id="id7">
+<h2>Отправка извещения о получении счета-фактуры<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Последовательность действий для отправки сформированного извещения о получении СФ аналогична последовательности действий для отправки сформированного извещения о получении подтверждения оператора.</p>
+<p>За исключением того, что в в поле <em>ParentEntityId</em> нужно указать идентификатор (<em>EntityId</em>) СФ, полученного на предыдущем шаге (см. <a class="reference internal" href="#send-receipt"><span class="std std-ref">Отправка извещения о получении подтверждения оператора</span></a>).</p>
+</div>
+<div class="section" id="id8">
+<h2>Подтверждения оператора о дате отправки извещения о получении счета-фактуры<a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h2>
+<p>После того, как покупатель сформировал и отправил извещение о дате получении СФ, оператор в ответ должен сформировать подтверждение оператора о дате отправки извещения о получении СФ.</p>
+<p>Это подтверждение покупатель должен получить, затем сформировать извещение о получении подтверждения оператора, подписать его и отправить.</p>
+<p>Получение подтверждения оператора описано в разделе <a class="reference internal" href="#receive-confirmation"><span class="std std-ref">Получение счета-фактуры и подтверждения оператора</span></a>.</p>
+<p>Формирование извещения о получении подтверждения оператора описано в разделе <a class="reference internal" href="example_acceptance_certificate.html#create-receipt"><span class="std std-ref">Формирование файла титула заказчика для акта о выполнении работ/оказании услуг</span></a>.</p>
+<p>Подписание и отправка извещения описаны разделе <a class="reference internal" href="#send-receipt"><span class="std std-ref">Отправка извещения о получении подтверждения оператора</span></a>.</p>
+<p>После того, как покупатель сформировал все необходимые извещения, счет-фактура перейдет в статус <em>InboundFinished</em></p>
+</div>
+<div class="section" id="id9">
+<h2>Запрос уточнения/корректировки по счету-фактуре<a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Для того чтобы создать запрос на уточнение или корректировку счета-фактуры, необходимо сформировать через API xml-уведомление об уточнении/корректировке с помощью метода <a class="reference internal" href="../http/GenerateInvoiceCorrectionRequestXml.html"><span class="doc">GenerateInvoiceCorrectionRequestXml</span></a>.</p>
+<p>После того, как будет получен XML-файл, его нужно отправить с помощью команды <a class="reference internal" href="../http/PostMessagePatch.html"><span class="doc">PostMessagePatch</span></a></p>
+<p>Для этого нужно подготовить структуру <a class="reference internal" href="../proto/MessageToPost.html"><span class="doc">MessageToPost</span></a> следующим образом:</p>
+<ul class="simple">
+<li>Структура данных <em>CorrectionRequestAttachment</em> представляет одно уведомление об уточнении СФ/ИСФ/КСФ/ИКСФ в отправляемом патче,</li>
+<li><em>ParentEntityId</em> - идентификатор СФ/ИСФ/КСФ/ИКСФ, к которому относится данное уведомление. Это идентификатор соответствующей сущности из родительского сообщения (поле <em>EntityId</em> в структуре <a class="reference internal" href="../proto/Entity message.html"><span class="doc">Entity</span></a>).</li>
+<li><em>SignedContent</em> - содержимое файла уведомления вместе с ЭЦП под ним в виде структуры SignedContent.</li>
+</ul>
+</div>
+<div class="section" id="sdk">
+<h2>SDK<a class="headerlink" href="#sdk" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Пример кода на C# для получения счета фактуры:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="c1">//Для работы с документами в Диадоке необходим авторизационный токен.</span>
+<span class="c1">//Подробнее о получении авторизационного токена можно узнать в разделе &quot;Как авторизоваться в системе&quot;.</span>
+<span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="n">AuthTokenCert</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="n">BoxId</span> <span class="p">=</span> <span class="s">&quot;идентификатор ящика получателя&quot;</span><span class="p">;</span>
+
+<span class="c1">//Для работы с документом необходимо знать его уникальный идентификатор.</span>
+<span class="c1">//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.</span>
+
+<span class="c1">//Получение списка всех счетов-фактур, по которым не завершен документооборот</span>
+<span class="k">public</span> <span class="k">static</span> <span class="n">DocumentList</span> <span class="nf">SearchInboundInvoicesDocumentsWithNotFinishedDocflow</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="c1">//Параметры, по которым осуществляется фильтрация</span>
+        <span class="kt">var</span> <span class="n">filterCategory</span> <span class="p">=</span> <span class="s">&quot;Invoice.InboundNotFinished&quot;</span><span class="p">;</span>
+        <span class="kt">var</span> <span class="n">counteragentBoxId</span> <span class="p">=</span> <span class="s">&quot;идентификатор ящика отправителя&quot;</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">Api</span><span class="p">.</span><span class="n">GetDocuments</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">BoxId</span><span class="p">,</span> <span class="n">filterCategory</span><span class="p">,</span> <span class="n">counteragentBoxId</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Получение сообщения, содержащего счет-фактуру</span>
+<span class="k">public</span> <span class="k">static</span> <span class="n">Message</span> <span class="nf">GetInvoice</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="c1">//Выбираем конкретный документ из полученного ранее списка.</span>
+        <span class="c1">//Например, самый первый.</span>
+        <span class="kt">var</span> <span class="n">document</span> <span class="p">=</span> <span class="n">SearchInboundInvoicesDocumentsWithNotFinishedDocflow</span><span class="p">().</span><span class="n">Documents</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+
+        <span class="c1">//Получение счета-фактуры</span>
+        <span class="k">return</span> <span class="n">Api</span><span class="p">.</span><span class="n">GetMessage</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">BoxId</span><span class="p">,</span> <span class="n">document</span><span class="p">.</span><span class="n">MessageId</span><span class="p">,</span> <span class="n">document</span><span class="p">.</span><span class="n">EntityId</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Получение подтверждения оператора, формирование и отправка извещения о получении подтверждения</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">GetInvoiceConfirmationAndSendInvoiceReceipt</span><span class="p">(</span><span class="n">Message</span> <span class="n">invoiceMessage</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">//Выбор первого вложения типа InvoiceConfirmation, к которому нет извещения о получении</span>
+        <span class="kt">var</span> <span class="n">confirmationEntities</span> <span class="p">=</span> <span class="n">invoiceMessage</span><span class="p">.</span><span class="n">Entities</span>
+                <span class="p">.</span><span class="n">FindAll</span><span class="p">(</span><span class="n">entity</span> <span class="p">=&gt;</span> <span class="n">entity</span><span class="p">.</span><span class="n">AttachmentType</span> <span class="p">==</span> <span class="n">AttachmentType</span><span class="p">.</span><span class="n">InvoiceConfirmation</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">receiptEntitiesParentIds</span> <span class="p">=</span> <span class="n">invoiceMessage</span><span class="p">.</span><span class="n">Entities</span>
+                <span class="p">.</span><span class="n">FindAll</span><span class="p">(</span><span class="n">entity</span> <span class="p">=&gt;</span> <span class="n">entity</span><span class="p">.</span><span class="n">AttachmentType</span> <span class="p">==</span> <span class="n">AttachmentType</span><span class="p">.</span><span class="n">InvoiceReceipt</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">receiptEntity</span> <span class="p">=&gt;</span> <span class="n">receiptEntity</span><span class="p">.</span><span class="n">ParentEntityId</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">confirmationEntityWithoutReceiptId</span> <span class="p">=</span> <span class="n">confirmationEntities</span>
+                <span class="p">.</span><span class="n">First</span><span class="p">(</span><span class="n">confirmationEntity</span> <span class="p">=&gt;</span> <span class="p">!</span><span class="n">receiptEntitiesParentIds</span>
+                        <span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">confirmationEntity</span><span class="p">.</span><span class="n">EntityId</span><span class="p">)).</span><span class="n">EntityId</span><span class="p">;</span>
+
+        <span class="kt">var</span> <span class="n">receipt</span> <span class="p">=</span> <span class="n">Api</span><span class="p">.</span><span class="n">GenerateInvoiceDocumentReceiptXml</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">BoxId</span><span class="p">,</span> <span class="n">invoiceMessage</span><span class="p">.</span><span class="n">MessageId</span><span class="p">,</span> <span class="n">confirmationEntityId</span><span class="p">,</span> <span class="k">new</span> <span class="n">Signer</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="c1">//Подпись получателя, см. &quot;Как авторизоваться в системе&quot;</span>
+                <span class="n">SignerCertificate</span> <span class="p">=</span> <span class="n">ReadCertContent</span><span class="p">(</span><span class="s">&quot;путь к сертификату&quot;</span><span class="p">),</span>
+                <span class="n">SignerDetails</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SignerDetails</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="c1">//Заполняется согласно структуре SignerDetails</span>
+                <span class="p">}</span>
+        <span class="p">});</span>
+
+        <span class="kt">var</span> <span class="n">receiptAttachment</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ReceiptAttachment</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="n">ParentEntityId</span> <span class="p">=</span> <span class="n">confirmationEntityId</span><span class="p">,</span>
+                <span class="n">SignedContent</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SignedContent</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="n">Content</span> <span class="p">=</span> <span class="n">receipt</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span>
+                        <span class="c1">//Подпись получателя, см. &quot;Как авторизоваться в системе&quot;</span>
+                        <span class="n">Signature</span> <span class="p">=</span> <span class="n">Crypt</span><span class="p">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">receipt</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span> <span class="n">ReadCertContent</span><span class="p">(</span><span class="s">&quot;путь к сертификату&quot;</span><span class="p">))</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="kt">var</span> <span class="n">receiptPatch</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MessagePatchToPost</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="n">BoxId</span> <span class="p">=</span> <span class="n">BoxId</span><span class="p">,</span>
+                <span class="n">MessageId</span> <span class="p">=</span> <span class="n">invoiceMessage</span><span class="p">.</span><span class="n">MessageId</span><span class="p">,</span>
+                <span class="n">Receipts</span> <span class="p">=</span>
+                <span class="p">{</span>
+                        <span class="n">receiptAttachment</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="n">Api</span><span class="p">.</span><span class="n">PostMessagePatch</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">receiptPatch</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Формирование и отправка извещения о получении счета-фактуры</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">SendinvoiceReceipt</span><span class="p">(</span><span class="n">Document</span> <span class="n">invoiceDocument</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">receipt</span> <span class="p">=</span> <span class="n">Api</span><span class="p">.</span><span class="n">GenerateInvoiceDocumentReceiptXml</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">BoxId</span><span class="p">,</span> <span class="n">invoiceDocument</span><span class="p">.</span><span class="n">MessageId</span><span class="p">,</span> <span class="n">invoiceDocument</span><span class="p">.</span><span class="n">EntityId</span><span class="p">,</span> <span class="k">new</span> <span class="n">Signer</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="c1">//Подпись получателя, см. &quot;Как авторизоваться в системе&quot;</span>
+                <span class="n">SignerCertificate</span> <span class="p">=</span> <span class="n">ReadCertContent</span><span class="p">(</span><span class="s">&quot;путь к сертификату&quot;</span><span class="p">),</span>
+                <span class="n">SignerDetails</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SignerDetails</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="c1">//Заполняется согласно структуре SignerDetails</span>
+                <span class="p">}</span>
+        <span class="p">});</span>
+
+        <span class="kt">var</span> <span class="n">receiptAttachment</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ReceiptAttachment</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="n">ParentEntityId</span> <span class="p">=</span> <span class="n">invoiceDocument</span><span class="p">.</span><span class="n">EntityId</span><span class="p">,</span>
+                <span class="n">SignedContent</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SignedContent</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="n">Content</span> <span class="p">=</span> <span class="n">receipt</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span>
+                        <span class="c1">//Подпись получателя, см. &quot;Как авторизоваться в системе&quot;</span>
+                        <span class="n">Signature</span> <span class="p">=</span> <span class="n">Crypt</span><span class="p">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">receipt</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span> <span class="n">ReadCertContent</span><span class="p">(</span><span class="s">&quot;путь к сертификату&quot;</span><span class="p">))</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="kt">var</span> <span class="n">receiptPatch</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MessagePatchToPost</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="n">BoxId</span> <span class="p">=</span> <span class="n">BoxId</span><span class="p">,</span>
+                <span class="n">MessageId</span> <span class="p">=</span> <span class="n">invoiceDocument</span><span class="p">.</span><span class="n">MessageId</span><span class="p">,</span>
+                <span class="n">Receipts</span> <span class="p">=</span>
+                <span class="p">{</span>
+                        <span class="n">receiptAttachment</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="n">Api</span><span class="p">.</span><span class="n">PostMessagePatch</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">receiptPatch</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">invoiceMessage</span> <span class="p">=</span> <span class="n">GetInvoice</span><span class="p">();</span>
+        <span class="kt">var</span> <span class="n">invoiceDocument</span> <span class="p">=</span> <span class="n">invoiceMessage</span><span class="p">.</span><span class="n">Entities</span><span class="p">.</span><span class="n">First</span><span class="p">(</span><span class="n">entity</span> <span class="p">=&gt;</span> <span class="n">entity</span><span class="p">.</span><span class="n">AttachmentType</span> <span class="p">==</span> <span class="n">AttachmentType</span><span class="p">.</span><span class="n">Invoice</span><span class="p">);</span>
+
+        <span class="c1">//Отправка извещения о получении подтверждения оператора для счета-фактуры</span>
+        <span class="n">GetInvoiceConfirmationAndSendInvoiceReceipt</span><span class="p">(</span><span class="n">invoiceMessage</span><span class="p">);</span>
+
+        <span class="c1">//Отправка извещения о получении счета-фактуры</span>
+        <span class="n">SendinvoiceReceipt</span><span class="p">(</span><span class="n">invoiceDocument</span><span class="p">);</span>
+
+        <span class="c1">//Отправка извещения о получении подтверждения оператора для извещения о получении счета-фактуры</span>
+        <span class="n">GetInvoiceConfirmationAndSendInvoiceReceipt</span><span class="p">(</span><span class="n">invoiceMessage</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Пример кода на C# для отправки уведомления об уточнении счета-фактуры:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="c1">//формирование уведомления об уточнении счета-фактуры</span>
+<span class="k">public</span> <span class="k">static</span> <span class="n">GeneratedFile</span> <span class="nf">GetInvoiceCorrectionRequest</span><span class="p">(</span><span class="n">Document</span> <span class="n">invoiceDocument</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">invoiceCorrectionRequestInfo</span> <span class="p">=</span> <span class="k">new</span> <span class="n">InvoiceCorrectionRequestInfo</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="n">ErrorMessage</span> <span class="p">=</span> <span class="s">&quot;Текст уведомления об уточнении&quot;</span><span class="p">,</span>
+                <span class="n">Signer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Signer</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="c1">//Подпись отправителя, см. &quot;Как авторизоваться в системе&quot;</span>
+                        <span class="n">SignerCertificate</span> <span class="p">=</span> <span class="n">ReadCertContent</span><span class="p">(</span><span class="s">&quot;путь к сертификату&quot;</span><span class="p">),</span>
+                        <span class="n">SignerDetails</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SignerDetails</span><span class="p">()</span>
+                        <span class="p">{</span>
+                                <span class="c1">//Заполняется согласно структуре SignerDetails</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="k">return</span> <span class="n">Api</span><span class="p">.</span><span class="n">GenerateInvoiceCorrectionRequestXml</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">BoxId</span><span class="p">,</span> <span class="n">invoiceDocument</span><span class="p">.</span><span class="n">MessageId</span><span class="p">,</span> <span class="n">invoiceDocument</span><span class="p">.</span><span class="n">EntityId</span><span class="p">,</span> <span class="n">invoiceCorrectionRequestInfo</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Отправка уведомления об уточнении счета-фактуры</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">SendInvoiceCorrectionRequest</span><span class="p">(</span><span class="n">Document</span> <span class="n">invoiceDocument</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">invoiceCorrectionRequest</span> <span class="p">=</span> <span class="n">GetInvoiceCorrectionRequest</span><span class="p">(</span><span class="n">invoiceDocument</span><span class="p">);</span>
+
+        <span class="kt">var</span> <span class="n">messagePatchToPost</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MessagePatchToPost</span>
+        <span class="p">{</span>
+                <span class="n">MessageId</span> <span class="p">=</span> <span class="n">invoiceDocument</span><span class="p">.</span><span class="n">MessageId</span><span class="p">,</span>
+                <span class="n">CorrectionRequests</span> <span class="p">=</span>
+                <span class="p">{</span>
+                        <span class="k">new</span> <span class="n">CorrectionRequestAttachment</span>
+                        <span class="p">{</span>
+                                <span class="n">ParentEntityId</span> <span class="p">=</span> <span class="n">invoiceDocument</span><span class="p">.</span><span class="n">EntityId</span><span class="p">,</span>
+                                <span class="n">SignedContent</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SignedContent</span> <span class="c1">//файл подписи</span>
+                                <span class="p">{</span>
+                                        <span class="n">Content</span> <span class="p">=</span> <span class="n">invoiceCorrectionRequest</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span>
+                                        <span class="c1">//Подпись получателя, см. &quot;Как авторизоваться в системе&quot;</span>
+                                        <span class="n">Signature</span> <span class="p">=</span> <span class="n">Crypt</span><span class="p">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">invoiceCorrectionRequest</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span> <span class="n">ReadCertContent</span><span class="p">(</span><span class="s">&quot;путь к сертификату&quot;</span><span class="p">))</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="n">Api</span><span class="p">.</span><span class="n">PostMessagePatch</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">messagePatchToPost</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">invoiceDocument</span> <span class="p">=</span> <span class="n">GetInvoice</span><span class="p">().</span><span class="n">Entities</span><span class="p">.</span><span class="n">First</span><span class="p">(</span><span class="n">entity</span> <span class="p">=&gt;</span> <span class="n">entity</span><span class="p">.</span><span class="n">AttachmentType</span> <span class="p">==</span> <span class="n">AttachmentType</span><span class="p">.</span><span class="n">Invoice</span><span class="p">);;</span>
+        <span class="n">SendInvoiceCorrectionRequest</span><span class="p">(</span><span class="n">invoiceDocument</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="example_torg12.html" class="btn btn-neutral float-right" title="Как отправить и получить товарную накладную ТОРГ-12 в рекомендованном ФНС формате" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="example_send_invoice.html" class="btn btn-neutral" title="Как отправить счет-фактуру" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

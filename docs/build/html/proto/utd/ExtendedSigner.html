@@ -1,0 +1,335 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ExtendedSigner &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../../genindex.html"/>
+        <link rel="search" title="Поиск" href="../../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../../index.html"/>
+        <link rel="up" title="Работа с УПД" href="../../API_UniversalTransferDocument.html"/>
+        <link rel="next" title="ExtendedSignerToPost" href="ExtendedSignerToPost.html"/>
+        <link rel="prev" title="ExtendedOrganizationInfo" href="ExtendedOrganizationInfo.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../API_UniversalTransferDocument.html">Работа с УПД</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API_UniversalTransferDocument.html#http">HTTP-интерфейс</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../API_UniversalTransferDocument.html#id2">Структуры данных</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ExtendedOrganizationInfo.html">ExtendedOrganizationInfo</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ExtendedSigner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExtendedSignerToPost.html">ExtendedSignerToPost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UniversalTransferDocumentBuyerTitleInfo.html">UniversalTransferDocumentBuyerTitleInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UniversalTransferDocumentSellerTitleInfo.html">UniversalTransferDocumentSellerTitleInfo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../API_UniversalTransferDocument.html">Работа с УПД</a> &raquo;</li>
+      
+    <li>ExtendedSigner</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/proto/utd/ExtendedSigner.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extendedsigner">
+<h1>ExtendedSigner<a class="headerlink" href="#extendedsigner" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">message</span> <span class="nc">ExtendedSigner</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="kt">string</span> <span class="na">BoxId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="kt">bytes</span> <span class="na">SignerCertificate</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SignerCertificateThumbprint</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="n">ExtendedSignerDetails</span> <span class="na">SignerDetails</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
+<span class="kd">message</span> <span class="nc">ExtendedSignerDetails</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Surname</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">FirstName</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Patronymic</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">JobTitle</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Inn</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">RegistrationCertificate</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+
+    <span class="k">required</span> <span class="n">SignerType</span> <span class="na">SignerType</span> <span class="o">=</span> <span class="mi">7</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">LegalEntity</span><span class="p">];</span> <span class="c1">// Физическое лицо-Индивидуальный предприниматель – представитель юридического лица (ФЛ-ИП-ЮЛ)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SignerOrganizationName</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// Наименование (НаимОрг)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SignerInfo</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>             <span class="c1">// Иные сведения, идентифицирующие физическое лицо (ИныеСвед)</span>
+    <span class="k">required</span> <span class="n">SignerPowers</span> <span class="na">SignerPowers</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>    <span class="c1">// Область полномочий (ОблПолн)</span>
+    <span class="k">required</span> <span class="n">SignerStatus</span> <span class="na">SignerStatus</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>    <span class="c1">// Статус (Статус)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SignerPowersBase</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>      <span class="c1">// Основание полномочий (доверия) (ОснПолн)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SignerOrgPowersBase</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>   <span class="c1">// Основание полномочий (доверия) организации (ОснПолнОрг)</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">ExtendedSignerDetailsToPost</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">JobTitle</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">RegistrationCertificate</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">required</span> <span class="n">SignerType</span> <span class="na">SignerType</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>        <span class="c1">// Физическое лицо-Индивидуальный предприниматель – представитель юридического лица (ФЛ-ИП-ЮЛ)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SignerInfo</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>            <span class="c1">// Иные сведения, идентифицирующие лицо (Юл.ИныеСвед или СвИП.ИныеСвед  или ФЛ.ИныеСвед)</span>
+    <span class="k">required</span> <span class="n">SignerPowers</span> <span class="na">SignerPowers</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>    <span class="c1">// Область полномочий (ОблПолн)</span>
+    <span class="k">required</span> <span class="n">SignerStatus</span> <span class="na">SignerStatus</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>    <span class="c1">// Статус (Статус)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SignerPowersBase</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>      <span class="c1">// Основание полномочий (доверия) (ОснПолн)</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SignerOrgPowersBase</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>   <span class="c1">// Основание полномочий (доверия) организации (ОснПолнОрг)</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">SignerType</span> <span class="p">{</span>
+    <span class="na">LegalEntity</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>      <span class="c1">// Представитель юридического лица</span>
+    <span class="na">IndividualEntity</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Индивидуальный предприниматель</span>
+    <span class="na">PhysicalPerson</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// Физическое лицо</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">SignerPowers</span> <span class="p">{</span>
+    <span class="na">InvoiceSigner</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                 <span class="c1">// лицо, ответственное за подписание счетов-фактур</span>
+    <span class="na">PersonMadeOperation</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>           <span class="c1">// лицо, совершившее сделку, операцию</span>
+    <span class="na">MadeAndSignOperation</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>          <span class="c1">// лицо, совершившее сделку, операцию и ответственное за её оформление;</span>
+    <span class="na">PersonDocumentedOperation</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>     <span class="c1">// лицо, ответственное за оформление свершившегося события;</span>
+    <span class="na">MadeOperationAndSignedInvoice</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// лицо, совершившее сделку, операцию и ответственное за подписание счетов-фактур;</span>
+    <span class="na">MadeAndResponsibleForOperationAndSignedInvoice</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// лицо, совершившее сделку, операцию и ответственное за её оформление и за подписание счетов-фактур;</span>
+    <span class="na">ResponsibleForOperationAndSignerForInvoice</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>     <span class="c1">// лицо, ответственное за оформление свершившегося события и за подписание счетов-фактур</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">SignerStatus</span> <span class="p">{</span>
+    <span class="na">SellerEmployee</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>             <span class="c1">// Работник организации продавца товаров (работ, услуг, имущественных прав);</span>
+    <span class="na">InformationCreatorEmployee</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Работник организации - составителя информации продавца;</span>
+    <span class="na">OtherOrganizationEmployee</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">// Работник иной уполномоченной организации;</span>
+    <span class="na">AuthorizedPerson</span><span class="o">=</span> <span class="mi">4</span><span class="p">;</span>            <span class="c1">// Уполномоченное физическое лицо (в том числе индивидуальный предприниматель)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура данных <em>ExtendedSigner</em> содержит следующие поля:</p>
+<ul class="simple">
+<li><em>Surname</em> - фамилия подписанта.</li>
+<li><em>FirstName</em> - имя подписанта.</li>
+<li><em>Patronymic</em> - отчество подписанта (необязательно).</li>
+<li><em>JobTitle</em> - должность подписанта.</li>
+<li><em>Inn</em> - ИНН юридического лица подписанта или индивидуального предпринимателя (необязательно).</li>
+<li><em>SoleProprietorRegistrationCertificate</em> - реквизиты свидетельства о регистрации индивидуального предпринимателя (необязательно).</li>
+<li><em>SignerType</em> - ТИП подписанта: индивидуальный предприниматель, юридическое или физическое лицо</li>
+<li><em>SignerInfo</em> - иные сведения, идентифицируеющие подписанта.</li>
+<li><em>SignerPowers</em> - область полномочий подписанта. Указывается из предложенного списка.</li>
+<li><em>SignerStatus</em> - статус подписанта. Указывается из предложенного списка.</li>
+<li><em>SignerPowersBase</em> - основания полномочий (доверия) подписанта. Обязателен, если SignerStatus = 4, &#8220;уполномоченное физическое лицо&#8221;</li>
+<li><em>SignerOrgPowersBase</em> - основания полномочий (доверия) организации. Обязателен, если SignerStatus = 3, &#8220;работник иной уполномоченной организации&#8221;</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ExtendedSignerToPost.html" class="btn btn-neutral float-right" title="ExtendedSignerToPost" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ExtendedOrganizationInfo.html" class="btn btn-neutral" title="ExtendedOrganizationInfo" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с документами" href="../API_Documents.html"/>
+        <link rel="next" title="DocumentList" href="DocumentList.html"/>
+        <link rel="prev" title="CustomDataPatch" href="CustomDataPatch.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Documents.html">Работа с документами</a> &raquo;</li>
+      
+    <li>Document</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/proto/Document.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="document">
+<h1>Document<a class="headerlink" href="#document" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">Document</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">IndexKey</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">MessageId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">EntityId</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">sfixed64</span> <span class="na">CreationTimestampTicks</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">CounteragentBoxId</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">DocumentType</span> <span class="na">DocumentType</span> <span class="o">=</span> <span class="mi">6</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownDocumentType</span><span class="p">];</span>
+    <span class="k">repeated</span> <span class="n">DocumentId</span> <span class="na">InitialDocumentIds</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">DocumentId</span> <span class="na">SubordinateDocumentIds</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">Content</span> <span class="na">Content</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">FileName</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">DocumentDate</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">DocumentNumber</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">NonformalizedDocument.NonformalizedDocumentMetadata</span> <span class="na">NonformalizedDocumentMetadata</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">InvoiceDocument.InvoiceMetadata</span> <span class="na">InvoiceMetadata</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.TrustConnectionRequestMetadata</span> <span class="na">TrustConnectionRequestMetadata</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.BasicDocumentMetadata</span> <span class="na">Torg12Metadata</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">InvoiceDocument.InvoiceRevisionMetadata</span> <span class="na">InvoiceRevisionMetadata</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">InvoiceDocument.InvoiceCorrectionMetadata</span> <span class="na">InvoiceCorrectionMetadata</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">InvoiceDocument.InvoiceCorrectionRevisionMetadata</span> <span class="na">InvoiceCorrectionRevisionMetadata</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">AcceptanceCertificateDocument.AcceptanceCertificateMetadata</span> <span class="na">AcceptanceCertificateMetadata</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">UnilateralDocument.ProformaInvoiceMetadata</span> <span class="na">ProformaInvoiceMetadata</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.BasicDocumentMetadata</span> <span class="na">XmlTorg12Metadata</span> <span class="o">=</span> <span class="mi">22</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.BasicDocumentMetadata</span> <span class="na">XmlAcceptanceCertificateMetadata</span> <span class="o">=</span> <span class="mi">23</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">IsDeleted</span> <span class="o">=</span> <span class="mi">24</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">DepartmentId</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">IsTest</span> <span class="o">=</span> <span class="mi">26</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">FromDepartmentId</span> <span class="o">=</span> <span class="mi">27</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ToDepartmentId</span> <span class="o">=</span> <span class="mi">28</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.PriceListMetadata</span> <span class="na">PriceListMetadata</span> <span class="o">=</span> <span class="mi">29</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">CustomDocumentId</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">ResolutionStatus</span> <span class="na">ResolutionStatus</span> <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">RevocationStatus</span> <span class="na">RevocationStatus</span> <span class="o">=</span> <span class="mi">32</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownRevocationStatus</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">sfixed64</span> <span class="na">SendTimestampTicks</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">sfixed64</span> <span class="na">DeliveryTimestampTicks</span> <span class="o">=</span> <span class="mi">34</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ForwardDocumentEvent</span> <span class="na">ForwardDocumentEvents</span> <span class="o">=</span> <span class="mi">35</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.NonformalizedDocumentMetadata</span> <span class="na">PriceListAgreementMetadata</span> <span class="o">=</span> <span class="mi">36</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.NonformalizedDocumentMetadata</span> <span class="na">CertificateRegistryMetadata</span> <span class="o">=</span> <span class="mi">37</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.BilateralDocumentMetadata</span> <span class="na">ReconciliationActMetadata</span> <span class="o">=</span> <span class="mi">38</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.ContractMetadata</span> <span class="na">ContractMetadata</span> <span class="o">=</span> <span class="mi">39</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.BasicDocumentMetadata</span> <span class="na">Torg13Metadata</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">UnilateralDocument.ServiceDetailsMetadata</span> <span class="na">ServiceDetailsMetadata</span> <span class="o">=</span> <span class="mi">41</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">RoamingNotificationStatus</span> <span class="na">RoamingNotificationStatus</span> <span class="o">=</span> <span class="mi">42</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownRoamingNotificationStatus</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">HasCustomPrintForm</span> <span class="o">=</span> <span class="mi">43</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">repeated</span> <span class="n">CustomDataItem</span> <span class="na">CustomData</span> <span class="o">=</span> <span class="mi">44</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">PacketId</span> <span class="o">=</span> <span class="mi">45</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">DocumentDirection</span> <span class="na">DocumentDirection</span> <span class="o">=</span> <span class="mi">46</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownDocumentDirection</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">sfixed64</span> <span class="na">LastModificationTimestampTicks</span> <span class="o">=</span> <span class="mi">47</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">IsEncryptedContent</span> <span class="o">=</span> <span class="mi">48</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">SenderSignatureStatus</span> <span class="na">SenderSignatureStatus</span> <span class="o">=</span> <span class="mi">49</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownSenderSignatureStatus</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.SupplementaryAgreementMetadata</span> <span class="na">SupplementaryAgreementMetadata</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">IsRead</span> <span class="o">=</span> <span class="mi">51</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">RoamingNotificationStatusDescription</span> <span class="o">=</span> <span class="mi">52</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">BilateralDocument.UniversalTransferDocumentMetadata</span> <span class="na">UniversalTransferDocumentMetadata</span> <span class="o">=</span> <span class="mi">53</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">RevocationStatus</span> <span class="p">{</span>
+    <span class="na">UnknownRevocationStatus</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Reserved status to report to legacy clients for newly introduced statuses</span>
+    <span class="na">RevocationStatusNone</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="na">RevocationIsRequestedByMe</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="na">RequestsMyRevocation</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="na">RevocationAccepted</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="na">RevocationRejected</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">RoamingNotificationStatus</span> <span class="p">{</span>
+    <span class="na">UnknownRoamingNotificationStatus</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Reserved status to report to legacy clients for newly introduced statuses</span>
+    <span class="na">NotificationStatusNone</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="na">NotificationStatusSuccess</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="na">NotificationStatusError</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">SenderSignatureStatus</span> <span class="p">{</span>
+    <span class="na">UnknownSenderSignatureStatus</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Reserved status to report to legacy clients for newly introduced statuses</span>
+    <span class="na">WaitingForSenderSignature</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="na">SenderSignatureUnchecked</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="na">SenderSignatureCheckedAndValid</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="na">SenderSignatureCheckedAndInvalid</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура данных <em>Document</em> содержит инфофрмацию об одном документе в Диадоке, которую можно получить, например, при помощи метода <a class="reference internal" href="../http/GetDocument.html"><span class="doc">GetDocument</span></a>:</p>
+<ul>
+<li><p class="first"><em>IndexKey</em> - уникальный ключ документа, который можно передавать в метод <a class="reference internal" href="../http/GetDocuments.html"><span class="doc">GetDocuments</span></a> в качестве параметра <em>afterIndexKey</em> для итерирования по всему отфильтрованному списку.</p>
+</li>
+<li><p class="first"><em>MessageId</em> - идентификатор сообщения, содержащего данный документ.</p>
+</li>
+<li><p class="first"><em>EntityId</em> - идентификатор соответствующей документу сущности типа <em>LetterAttachment</em> внутри сообщения.</p>
+</li>
+<li><p class="first"><em>CreationTimestampTicks</em> - <a class="reference internal" href="Timestamp.html"><span class="doc">метка времени</span></a> создания данного документа.</p>
+</li>
+<li><p class="first"><em>CounteragentBoxId</em> - идентификатор Диадок-ящика контрагента по данному документу.</p>
+<blockquote>
+<div><p>В случае исходящего документа - это идентификатор ящика получателя, в случае входящего документа - идентификатор ящика отправителя;</p>
+<p>Если документ находится в черновиках, то поле <em>CounteragentBoxId</em> может быть не заполнено.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><em>DocumentType</em> - тип документа, принимает одно из значений перечислимого типа <a class="reference internal" href="DocumentType.html"><span class="doc">DocumentType</span></a>. В зависимости от типа документа заполняется одно из полей <em>Document.XxxMetadata</em>.</p>
+</li>
+<li><p class="first"><em>InitialDocumentIds</em> - список идентификаторов документов, на которые ссылается данный;</p>
+<blockquote>
+<div><p>каждый такой идентификатор задается структурой <a class="reference internal" href="DocumentId.html"><span class="doc">DocumentId</span></a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><em>SubordinateDocumentIds</em> - список идентификаторов документов, которые ссылаются на данный;</p>
+<blockquote>
+<div><p>каждый такой идентификатор задается структурой <a class="reference internal" href="DocumentId.html"><span class="doc">DocumentId</span></a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><em>Content</em> - содержимое документа.</p>
+<blockquote>
+<div><p>Поле <em>Content.Size</em> определяет размер содержимого в байтах.</p>
+<p>Поле <em>Content.Data</em> содержит собственно данные.</p>
+<p>При получении документов списком (например, при помощи метода <a class="reference internal" href="../http/GetDocuments.html"><span class="doc">GetDocuments</span></a>) поле <em>Content.Data</em> не заполняется из соображений производительности.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><em>FileName</em> - имя файла документа, которое у него было при загрузке в Диадок.</p>
+</li>
+<li><p class="first"><em>DocumentDate</em> - дата формирования документа в формате ДД.ММ.ГГГГ; может отличаться от даты загрузки его в Диадок.</p>
+</li>
+<li><p class="first"><em>DocumentNumber</em> - номер документа.</p>
+</li>
+<li><p class="first"><em>IsDeleted</em> - флаг, показывающий, был ли удален данный документ.</p>
+</li>
+<li><p class="first"><em>DepartmentId</em> - идентификатор подразделения, в котором находится документ.</p>
+</li>
+<li><p class="first"><em>IsTest</em> - флаг, показывающий, что данный документ является тестовым и не имеет юридической силы, т.к. один из контрагентов не присоединился  к регламенту Диадока.</p>
+</li>
+<li><p class="first"><em>FromDepartmentId</em> - идентификатор подразделения, из которого отправляется документ.</p>
+</li>
+<li><p class="first"><em>ToDepartmentId</em> - идентификатор подразделения, в которое отправляется документ.</p>
+</li>
+<li><p class="first"><em>CustomDocumentId</em> - идентификатор документа, определяемый внешней системой.</p>
+</li>
+<li><p class="first"><em>IsEncryptedContent</em> - флаг, показывающий, что контент передаваемого документа зашифрован.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="NonformalizedDocumentMetadata.html"><span class="doc">NonformalizedDocumentMetadata</span></a> - дополнительные атрибуты специфичные для неформализованных документов.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="InvoiceDocumentMetadata.html"><span class="doc">InvoiceMetadata</span></a> - дополнительные атрибуты специфичные для счетов-фактур.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="InvoiceDocumentMetadata.html"><span class="doc">InvoiceRevisionMetadata</span></a> - дополнительные атрибуты специфичные для исправлений счетов-фактур.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="InvoiceDocumentMetadata.html"><span class="doc">InvoiceCorrectionMetadata</span></a> - дополнительные атрибуты специфичные для корректировочных счетов-фактур.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="InvoiceDocumentMetadata.html"><span class="doc">InvoiceCorrectionRevisionMetadata</span></a> - дополнительные атрибуты специфичные для исправлений корректировочных счетов-фактур.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">TrustConnectionRequestMetadata</span></a> - дополнительные атрибуты специфичные для документов типа TrustConnectionRequest.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">Torg12Metadata</span></a> - дополнительные атрибуты специфичные для товарных накладных ТОРГ-12.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">AcceptanceCertificateMetadata</span></a> - дополнительные атрибуты специфичные для актов о выполнении работ (оказании услуг).</p>
+</li>
+<li><p class="first"><a class="reference internal" href="UnilateralDocumentMetadata.html"><span class="doc">ProformaInvoiceMetadata</span></a> - дополнительные атрибуты специфичные для счетов на оплату.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">XmlTorg12Metadata</span></a> - дополнительные атрибуты специфичные для товарных накладных ТОРГ-12 в XML-формате.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">XmlAcceptanceCertificateMetadata</span></a> - дополнительные атрибуты специфичные для актов о выполнении работ (оказании услуг) в XML-формате.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">PriceListMetadata</span></a> - дополнительные атрибуты специфичные для ценовых листов.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="NonformalizedDocumentMetadata.html"><span class="doc">PriceListAgreementMetadata</span></a> - дополнительные атрибуты специфичные для протоколов согласования цены.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="NonformalizedDocumentMetadata.html"><span class="doc">CertificateRegistryMetadata</span></a> - дополнительные атрибуты специфичные для реестров сертификатов.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">ReconciliationActMetadata</span></a> - дополнительные атрибуты специфичные для актов сверки.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">ContractMetadata</span></a> - дополнительные атрибуты специфичные для договоров.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">Torg13Metadata</span></a> - дополнительные атрибуты специфичные для накладных ТОРГ-13.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">SupplementaryAgreementMetadata</span></a> - дополнительные атрибуты специфичные для типа документа дополнительное соглашение к договору.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="ResolutionStatus.html"><span class="doc">ResolutionStatus</span></a> - текущий статус согласования данного документа.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="UnilateralDocumentMetadata.html"><span class="doc">ServiceDetailsMetadata</span></a> - дополнительные атрибуты специфичные для детализаций.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="BilateralDocumentMetadata.html"><span class="doc">UniversalTransferDocumentMetadata</span></a> - Дополнительные атрибуты, специфичные для универсального передаточного документа</p>
+</li>
+<li><p class="first"><em>RevocationStatus</em> - статус аннулирования документа. Возможные значения:</p>
+<ul class="simple">
+<li><em>RevocationStatusNone</em> (документ не аннулирован, и не было предложений об аннулировании)</li>
+<li><em>RevocationIsRequestedByMe</em> (отправлено исходящее предложение об аннулировании документа)</li>
+<li><em>RequestsMyRevocation</em> (получено входящее предложение об аннулировании документа)</li>
+<li><em>RevocationAccepted</em> (документ аннулирован)</li>
+<li><em>RevocationRejected</em> (получен или отправлен отказ от предложения об аннулировании документа)</li>
+<li><em>UnknownRevocationStatus</em> (неизвестный статус аннулирования документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать статус аннулирования документа, переданный сервером)</li>
+</ul>
+</li>
+<li><p class="first"><em>SendTimestampTicks</em> - Необязательная <a class="reference internal" href="Timestamp.html"><span class="doc">метка времени</span></a> отправки данного документа.</p>
+</li>
+<li><p class="first"><em>DeliveryTimestampTicks</em> - Необязательная <a class="reference internal" href="Timestamp.html"><span class="doc">метка времени</span></a> доставки данного документа.</p>
+</li>
+<li><p class="first"><em>ForwardDocumentEvents</em> - Список <a class="reference internal" href="ForwardDocumentEvent.html"><span class="doc">событий пересылки</span></a> данного документа третьей стороне. Документ может быть переслан нескольким получателям, а также - несколько раз одному получаетлю.</p>
+</li>
+<li><p class="first"><em>RoamingNotificationStatus</em> - статус доставки в роуминг. Возможные значения:</p>
+<ul class="simple">
+<li><em>RoamingNotificationStatusNone</em> (документ не роуминговый, или документ без подтверждения доставки в роуминг)</li>
+<li><em>RoamingNotificationStatusSuccess</em> (документ с подтверждением успешной доставки в роуминг)</li>
+<li><em>RoamingNotificationStatusError</em> (документ с ошибкой доставки в роуминг)</li>
+<li><em>UnknownRoamingNotificationStatus</em> (неизвестный роуминговый статус документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать роуминговый статус документа, переданный сервером)</li>
+</ul>
+</li>
+<li><p class="first"><em>HasCustomPrintForm</em> - флаг, показывающий, что данный документ имеет нестандартную печатную форму. Скачать печатную форму документа можно при помощи метода <a class="reference internal" href="../http/GeneratePrintForm.html"><span class="doc">GeneratePrintForm</span></a>.</p>
+</li>
+<li><p class="first"><em>IsRead</em> - флаг, указывающий на то, что документ был прочитан сотрудником организации.</p>
+</li>
+<li><p class="first"><em>RoamingNotificationStatusDescription</em> - текстовое описание ошибки при доставке документов в роуминг. Обычно это поле заполняется, когда статус доставки в роуминг <em>RoamingNotificationStatus</em> имеет значение <em>RoamingNotificationStatusError</em>.</p>
+</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DocumentList.html" class="btn btn-neutral float-right" title="DocumentList" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CustomDataPatch.html" class="btn btn-neutral" title="CustomDataPatch" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

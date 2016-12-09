@@ -1,0 +1,381 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MessagePatchToPost &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с сообщениями" href="../API_Messages.html"/>
+        <link rel="next" title="MessageToPost" href="MessageToPost.html"/>
+        <link rel="prev" title="MessagePatch" href="MessagePatch.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Messages.html">Работа с сообщениями</a> &raquo;</li>
+      
+    <li>MessagePatchToPost</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/proto/MessagePatchToPost.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="messagepatchtopost">
+<h1>MessagePatchToPost<a class="headerlink" href="#messagepatchtopost" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">MessagePatchToPost</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">BoxId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">MessageId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ReceiptAttachment</span> <span class="na">Receipts</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">CorrectionRequestAttachment</span> <span class="na">CorrectionRequests</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">DocumentSignature</span> <span class="na">Signatures</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">RequestedSignatureRejection</span> <span class="na">RequestedSignatureRejections</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ReceiptAttachment</span> <span class="na">XmlTorg12BuyerTitles</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ReceiptAttachment</span> <span class="na">XmlAcceptanceCertificateBuyerTitles</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ResolutionAttachment</span> <span class="na">Resolutions</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ResolutionRequestAttachment</span> <span class="na">ResolutionRequests</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ResolutionRequestCancellationAttachment</span> <span class="na">ResolutionRequestCancellations</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ResolutionRequestDenialAttachment</span> <span class="na">ResolutionRequestDenials</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ResolutionRequestDenialCancellationAttachment</span> <span class="na">ResolutionRequestDenialCancellations</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">RevocationRequestAttachment</span> <span class="na">RevocationRequests</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">XmlSignatureRejectionAttachment</span> <span class="na">XmlSignatureRejections</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">CustomDataPatch</span> <span class="na">CustomDataPatches</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ResolutionChainAssignment</span> <span class="na">ResolutionChainAssignments</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">SignatureVerification</span> <span class="na">SignatureVerifications</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">EditDocumentPacketCommand</span> <span class="na">EditDocumentPacketCommands</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ReceiptAttachment</span> <span class="na">UniversalTransferDocumentBuyerTitles</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">ReceiptAttachment</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">ParentEntityId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="n">SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">ResolutionChainAssignment</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">InitialDocumentId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">ChainId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Comment</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">CorrectionRequestAttachment</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">ParentEntityId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="n">SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">RequestedSignatureRejection</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">ParentEntityId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="n">SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">RevocationRequestAttachment</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">ParentEntityId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="n">SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">XmlSignatureRejectionAttachment</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">ParentEntityId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="n">SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">SignatureVerification</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">InitialDocumentId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">bool</span> <span class="na">IsValid</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ErrorMessage</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">EditDocumentPacketCommand</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">DocumentId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">DocumentId</span> <span class="na">AddDocumentsToPacket</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">DocumentId</span> <span class="na">RemoveDocumentsFromPacket</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура данных <em>MessagePatchToPost</em> представляет дополнение к сообщению, подлежащее отправке через Диадок при помощи метода <a class="reference internal" href="../http/PostMessagePatch.html"><span class="doc">PostMessagePatch</span></a>:</p>
+<ul class="simple">
+<li><em>BoxId</em> - идентификатор ящика, в котором находится исходное сообщение.</li>
+<li><em>MessageId</em> - идентификатор сообщения, к которому относится отправляемый патч.</li>
+<li><em>Receipts</em> - список подлежащих отправке извещений о получении различных документов, предусмотренных порядком обмена электронными счетами-фактурами.</li>
+<li><em>CorrectionRequests</em> - список подлежащих отправке уведомлений об уточнении СФ/ИСФ/КСФ/ИКСФ, предусмотренных порядком обмена электронными счетами-фактурами.</li>
+<li><em>Signatures</em> - список подписей под документами (см. описание структуры <a class="reference internal" href="DocumentSignature.html"><span class="doc">DocumentSignature</span></a>). Подписи могут быть подписями отправителя (для отправки документов, сохраненных без отправки), подписями получателя (для двусторонних документов с запросом подписи), согласующими подписями под документом, а также ответными подписями под запросом на аннулирование документа.</li>
+<li><em>RequestedSignatureRejections</em> - список отказов от запрошенных подписей под двусторонними документами.</li>
+<li><em>XmlTorg12BuyerTitles</em> - список подлежащих отправке титулов покупателя для товарных накладных ТОРГ-12 в XML-формате.</li>
+<li><em>XmlAcceptanceCertificateBuyerTitles</em> - список подлежащих отправке титулов заказчика для актов о выполнении работ (оказании услуг) в XML-формате.</li>
+<li><em>Resolutions</em> - список действий по согласованию к документам сообщения, к которому относится патч. Каждое действие является структурой <a class="reference internal" href="Resolution.html"><span class="doc">ResolutionAttachment</span></a>.</li>
+<li><em>ResolutionRequests</em> - список запросов на согласование (или подпись) документа. Каждый запрос представляется структурой <a class="reference internal" href="ResolutionRequest.html"><span class="doc">ResolutionRequestAttachment</span></a></li>
+<li><em>ResolutionRequestCancellations</em> - список действий, отменяющих отправленные ранее запросы на согласование документа. Каждое действие представляется структурой <a class="reference internal" href="ResolutionRequest.html"><span class="doc">ResolutionRequestCancellationAttachment</span></a></li>
+<li><em>ResolutionRequestDenials</em> - список действий по отказу от запроса подписи. Отказ предназначен для аннулирования (со стороны получателя запроса) ошибочного запроса на подпись, отправленного в рамках процесса согласования. Каждый отказ от запроса представляется структурой <a class="reference internal" href="ResolutionRequestDenial.html"><span class="doc">ResolutionRequestDenialAttachment</span></a></li>
+<li><em>ResolutionRequestDenialCancellations</em> - список действий, отменяющих отказы от запросов подписей. При выполнении таких действий исходные запросы на подпись восстанавливаются. Каждое действие представляется структурой <a class="reference internal" href="ResolutionRequestDenial.html"><span class="doc">ResolutionRequestDenialCancellationAttachment</span></a></li>
+<li><em>RevocationRequests</em> - список предложении об аннулировании документов. Каждое предложение представляется структурой <em>RevocationRequestAttachment</em>.</li>
+<li><em>XmlSignatureRejections</em> - список действий по отказу от предложений об аннулировании, а также действий по отказу от подписи документов. Каждый элемент представляется структурой <em>XmlSignatureRejectionAttachment</em>.</li>
+<li><em>CustomDataPatches</em> - список операций по изменению пользовательских данных у документов в исходном сообщении. Каждый элемент представляется структурой <a class="reference internal" href="CustomDataPatch.html"><span class="doc">CustomDataPatch</span></a>.</li>
+<li><em>EditDocumentPacketCommands</em> - список операций по изменению состава пакета у документов в исходном сообщении. Каждый элемент представляется структурой <em>EditDocumentPacketCommand</em>.</li>
+</ul>
+<p>Структура данных <em>ReceiptAttachment</em> представляет одно извещение о получении документа в отправляемом патче:</p>
+<ul class="simple">
+<li><em>ParentEntityId</em> - идентификатор документа, к которому относится данное извещение. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре <a class="reference internal" href="Entity message.html"><span class="doc">Entity</span></a>).</li>
+<li><em>SignedContent</em> - содержимое файла извещения вместе с ЭЦП под ним в виде структуры <a class="reference internal" href="SignedContent.html"><span class="doc">SignedContent</span></a>. В случае <em>ReceiptAttachment</em> поле <em>SignedContent.SignByAttorney</em> не может быть равно true (подпись &#8220;по доверенности&#8221; под извещениями о получении документов запрашивать нельзя).</li>
+</ul>
+<p>Структура данных <em>CorrectionRequestAttachment</em> представляет одно уведомление об уточнении СФ/ИСФ/КСФ/ИКСФ в отправляемом патче:</p>
+<ul class="simple">
+<li><em>ParentEntityId</em> - идентификатор СФ/ИСФ/КСФ/ИКСФ, к которому относится данное уведомление. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре <a class="reference internal" href="Entity message.html"><span class="doc">Entity</span></a>).</li>
+<li><em>SignedContent</em> - содержимое файла уведомления вместе с ЭЦП под ним в виде структуры <a class="reference internal" href="SignedContent.html"><span class="doc">SignedContent</span></a>.</li>
+</ul>
+<p>Структура данных <em>RequestedSignatureRejection</em> представляет один отказ в формировании запрошенной подписи:</p>
+<ul class="simple">
+<li><em>ParentEntityId</em> - идентификатор документа, к которому относится данный отказ. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре <a class="reference internal" href="Entity message.html"><span class="doc">Entity</span></a>).</li>
+<li><em>SignedContent</em> - текст причины отказа вместе с ЭЦП под ним в виде структуры <a class="reference internal" href="SignedContent.html"><span class="doc">SignedContent</span></a>. Текст причины отказа должен быть записан в поле SignedContent.Content в кодировке UTF-8.</li>
+</ul>
+<p>Структура данных <em>RevocationRequestAttachment</em> представляет одно предложение об аннулировании документа в отправляемом патче:</p>
+<ul class="simple">
+<li><em>ParentEntityId</em> - идентификатор документа, к которому относится данное предложение. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре <a class="reference internal" href="Entity message.html"><span class="doc">Entity</span></a>).</li>
+<li><em>SignedContent</em> - содержимое файла предложения об аннулировании вместе с ЭЦП под ним в виде структуры <a class="reference internal" href="SignedContent.html"><span class="doc">SignedContent</span></a>.</li>
+</ul>
+<p>Структура данных <em>XmlSignatureRejectionAttachment</em> представляет одно действие по отказу от предложения об аннулировании документа, либо по отказу от подписи документа:</p>
+<ul class="simple">
+<li><em>ParentEntityId</em> - идентификатор предложения об аннулировании, либо документа, к которому относится данное действие. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре <a class="reference internal" href="Entity message.html"><span class="doc">Entity</span></a>).</li>
+<li><em>SignedContent</em> - содержимое файла отказа вместе с ЭЦП под ним в виде структуры <a class="reference internal" href="SignedContent.html"><span class="doc">SignedContent</span></a>.</li>
+</ul>
+<p>Структура <em>ResolutionChainAssignment</em> представляет одно действие на постановку документа на цепочку согласования:</p>
+<ul class="simple">
+<li><em>InitialDocumentId</em> - идентификатор документа, который нужно поставить на цепочку согласования;</li>
+<li><em>ChainId</em> - идентификатор цепочки согласования, на которую нужно поставить документ;</li>
+<li><em>Comment</em> - текстовый комментарий;</li>
+</ul>
+<p>Структура <em>SignatureVerification</em> представляет собой результат проверки подписи на стороне получателя зашифрованного документа. Нужна для того, чтобы сообщить результат проверки подписи для зашифрованных документов:</p>
+<ul class="simple">
+<li><em>InitialDocumentId</em> - идентификатор документа</li>
+<li><em>IsValid</em> - флаг, показывающий результат проверки подписи на валидность,</li>
+<li><em>ErrorMessage</em> - текст ошибки, в случае если подпись не валидна</li>
+</ul>
+<p>Структура данных <em>EditDocumentPacketCommand</em> представляет собой действие по редактированию состава пакета одного из документов в сообщении:</p>
+<ul class="simple">
+<li><em>DocumentId</em> - идентификатор документа, пакет которого редактируется,</li>
+<li><em>AddDocumentsToPacket</em> - список идентификаторов документов, которые нужно добавить в пакет к заданному документу. Каждый идентификатор представляется структурой <a class="reference internal" href="DocumentId.html"><span class="doc">DocumentId</span></a>. Каждый идентификатор должен соответствовать некоторому документу, уже существующему в том же ящике, что и редактируемый документ. Если добавляемый документ уже является частью другого пакета, то в редактируемый пакет вместе с добавляемым документом попадут и все остальные документы из его старого пакета, то есть пакеты объединяются целиком. Если такое поведение нежелательно, то необходимо предварительно удалить из второго пакета лишние документы при помощи RemoveDocumentsFromPacket (см. ниже).</li>
+<li><em>RemoveDocumentsFromPacket</em> - список идентификаторов документов, которые нужно удалить из пакета заданного документа. Если в пакете существует документ с таким идентификатором, то он удаляется из пакета и образует новый пакет, состоящий из одного документа. Если в пакете нет документа с таким идентификатором (например, он уже является частью другого пакета), то ничего не происходит.</li>
+<li><em>UniversalTransferDocumentBuyerTitles</em> - список титулов покупателя УПД.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="MessageToPost.html" class="btn btn-neutral float-right" title="MessageToPost" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="MessagePatch.html" class="btn btn-neutral" title="MessagePatch" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

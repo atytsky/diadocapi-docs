@@ -1,0 +1,399 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>UniversalTransferDocumentSellerTitleInfo &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../../genindex.html"/>
+        <link rel="search" title="Поиск" href="../../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../../index.html"/>
+        <link rel="up" title="Работа с УПД" href="../../API_UniversalTransferDocument.html"/>
+        <link rel="next" title="Работа со счетами-фактурами" href="../../API_Invoices.html"/>
+        <link rel="prev" title="UniversalTransferDocumentBuyerTitleInfo" href="UniversalTransferDocumentBuyerTitleInfo.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../API_UniversalTransferDocument.html">Работа с УПД</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../API_UniversalTransferDocument.html#http">HTTP-интерфейс</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../API_UniversalTransferDocument.html#id2">Структуры данных</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ExtendedOrganizationInfo.html">ExtendedOrganizationInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExtendedSigner.html">ExtendedSigner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExtendedSignerToPost.html">ExtendedSignerToPost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UniversalTransferDocumentBuyerTitleInfo.html">UniversalTransferDocumentBuyerTitleInfo</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">UniversalTransferDocumentSellerTitleInfo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../API_UniversalTransferDocument.html">Работа с УПД</a> &raquo;</li>
+      
+    <li>UniversalTransferDocumentSellerTitleInfo</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/proto/utd/UniversalTransferDocumentSellerTitleInfo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="universaltransferdocumentsellertitleinfo">
+<h1>UniversalTransferDocumentSellerTitleInfo<a class="headerlink" href="#universaltransferdocumentsellertitleinfo" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">message</span> <span class="nc">UniversalTransferDocumentSellerTitleInfo</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">required</span> <span class="n">FunctionType</span> <span class="na">Function</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// Функция документа // Функция</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="kt">string</span> <span class="na">DocumentName</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>    <span class="c1">// Наименование первичного документа, определенное организацией // НаимДокОпр</span>
+</span><span class="hll">    <span class="k">required</span> <span class="kt">string</span> <span class="na">DocumentDate</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// дата УПД // ДатаСчФ</span>
+</span><span class="hll">    <span class="k">required</span> <span class="kt">string</span> <span class="na">DocumentNumber</span>  <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// номер УПД // НомерСчФ</span>
+</span><span class="hll">    <span class="k">required</span> <span class="n">ExtendedOrganizationInfo</span> <span class="na">Seller</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>    <span class="c1">// продавец // СвПрод</span>
+</span><span class="hll">    <span class="k">required</span> <span class="n">ExtendedOrganizationInfo</span> <span class="na">Buyer</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>     <span class="c1">// покупатель //СвПокуп</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="n">Shipper</span> <span class="na">Shipper</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>                                  <span class="c1">// грузоотправитель //ГрузОт</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="n">ExtendedOrganizationInfo</span> <span class="na">Consignee</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// грузополучатель //ГрузПолуч</span>
+</span><span class="hll">    <span class="k">repeated</span> <span class="n">ExtendedSigner</span> <span class="na">Signers</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>        <span class="c1">// подписант // Подписант</span>
+</span><span class="hll">    <span class="k">repeated</span> <span class="n">PaymentDocumentInfo</span> <span class="na">PaymentDocuments</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// платежно-расчетные документы // СвПРД</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="n">InvoiceTable</span> <span class="na">InvoiceTable</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>            <span class="c1">// Сведения таблицы счет фактуры // ТаблСчФакт</span>
+</span><span class="hll">    <span class="k">required</span> <span class="kt">string</span> <span class="na">Currency</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>                      <span class="c1">// валюта (код) // КодОКВ</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="kt">string</span> <span class="na">CurrencyRate</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>                  <span class="c1">// Курс валюты // КурсВал</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="kt">string</span> <span class="na">RevisionDate</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>                  <span class="c1">// дата ИСФ (обязательно при формировании UniversalTransferDocumentSellerTitleRevision) // ДатаИспрСчФ</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="kt">string</span> <span class="na">RevisionNumber</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>                <span class="c1">// номер ИСФ (обязательно при формировании UniversalTransferDocumentSellerTitleRevision) // НомИспрСчФ</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="n">AdditionalInfoId</span> <span class="na">AdditionalInfoId</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>    <span class="c1">// информационное поле документа // ИнфПолФХЖ1</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="n">TransferInfo</span> <span class="na">TransferInfo</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>            <span class="c1">// Сведения о передаче (сдаче) // СвПер</span>
+</span><span class="hll">    <span class="k">required</span> <span class="kt">string</span> <span class="na">DocumentCreator</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>               <span class="c1">// Составитель файла обмена счета-фактуры (информации продавца) // НаимЭконСубСост</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="kt">string</span> <span class="na">DocumentCreatorBase</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>           <span class="c1">// Основание, по которому экономический субъект является составителем файла обмена счета-фактуры //ОснДоверОргСост</span>
+</span><span class="hll">    <span class="k">optional</span> <span class="kt">string</span> <span class="na">GovermentContractInfo</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>         <span class="c1">// ИдГосКон</span>
+</span><span class="hll"><span class="p">}</span>
+</span><span class="hll">
+</span><span class="kd">enum</span> <span class="n">FunctionType</span> <span class="p">{</span>
+    <span class="na">Invoice</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// СЧФ</span>
+    <span class="na">Basic</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>           <span class="c1">// ДОП</span>
+    <span class="na">InvoiceAndBasic</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// СЧФДОП</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Shipper</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">SameAsSeller</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// совпадает с продавцом // ОнЖе</span>
+    <span class="k">optional</span> <span class="n">ExtendedOrganizationInfo</span> <span class="na">OrgInfo</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// реквизиты организации // ГрузОтпр</span>
+<span class="p">}</span>
+
+
+<span class="kd">message</span> <span class="nc">InvoiceTable</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">ExtendedInvoiceItem</span> <span class="na">Items</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>   <span class="c1">// информация о товарах // СведТов</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TotalWithVatExcluded</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Сумма без учета налога // СтТовБезНДСВсего</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>                  <span class="c1">// Сумма налога // СумНалВсего</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Total</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                <span class="c1">// Сумма всего // СтТовУчНалВсего</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TotalNet</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>             <span class="c1">// Нетто всего // НеттоВс</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">ExtendedInvoiceItem</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Product</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// наименование товара // НаимТов</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Unit</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>     <span class="c1">// единицы измерения товара (код) // ОКЕИ_Тов</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">UnitName</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// наименование единицы измерения товара. Пользователь заполняет, если ОКЕИ_Тов=’0000’// НаимЕдИзм</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Quantity</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// количество единиц товара // КолТов</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Price</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>    <span class="c1">// цена за единицу товара // ЦенаТов</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Excise</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>   <span class="c1">// акциз // СумАкциз</span>
+    <span class="k">required</span> <span class="n">TaxRate</span> <span class="na">TaxRate</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// ставка налога // НалСт</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SubtotalWithVatExcluded</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// сумма без учета налога // СтТовБезНДС</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>       <span class="c1">// сумма налога // СумНал</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Subtotal</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// сумма всего // СтТовУчНал</span>
+    <span class="k">repeated</span> <span class="n">CustomsDeclaration</span> <span class="na">CustomsDeclarations</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span> <span class="c1">// номера таможенных деклараций // СвТД</span>
+    <span class="k">optional</span> <span class="n">ItemMark</span> <span class="na">ItemMark</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>             <span class="c1">// Признак товар-работа-услуга // ПрТовРаб</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">AdditionalProperty</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>     <span class="c1">// Дополнительная информация о признаке //ДопПризн</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ItemVendorCode</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>         <span class="c1">// Характеристика/код/артикул/сорт товара // КодТов</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ItemToRelease</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>          <span class="c1">// Количество надлежит отпустить // НадлОтп</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ItemAccountDebit</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>       <span class="c1">// Корреспондирующие счета: дебет // КорСчДебет</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ItemAccountCredit</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>      <span class="c1">// Корреспондирующие счета: кредит // КорСчКредит</span>
+    <span class="k">repeated</span> <span class="n">AdditionalInfo</span> <span class="na">AdditionalInfo</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span> <span class="c1">// информационное поле документа // ИнфПолФХЖ2</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">ItemMark</span> <span class="p">{</span>
+    <span class="na">NotSpecified</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// не указано</span>
+    <span class="na">Property</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>       <span class="c1">// имущество</span>
+    <span class="na">Job</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>            <span class="c1">// работа</span>
+    <span class="na">Service</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>        <span class="c1">// услуга</span>
+    <span class="na">PropertyRights</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// имущественные права</span>
+    <span class="na">Other</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>          <span class="c1">// иное</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TransferInfo</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">OperationInfo</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>               <span class="c1">// Содержание операции // СодОпер</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">OperationType</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>               <span class="c1">// Вид операции // ВидОпер</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TransferDate</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>                <span class="c1">// Дата отгрузки // ДатаПер</span>
+    <span class="k">repeated</span> <span class="n">TransferBase</span> <span class="na">TransferBase</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>          <span class="c1">// Основание отгрузки //ОснПер</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TransferTextInfo</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>            <span class="c1">// Сведения о транспортировке и грузе // СвТранГруз</span>
+    <span class="k">repeated</span> <span class="n">Waybill</span> <span class="na">Waybill</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>                    <span class="c1">// Транспортная накладная //ТранНакл</span>
+    <span class="k">optional</span>    <span class="n">ExtendedOrganizationInfo</span> <span class="na">Carrier</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// Перевозчик // Перевозчик</span>
+    <span class="k">optional</span> <span class="n">Employee</span> <span class="na">Employee</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>                  <span class="c1">// Работник организации продавца //РабОргПрод</span>
+    <span class="k">optional</span> <span class="n">OtherIssuer</span>  <span class="na">OtherIssuer</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>           <span class="c1">// Иное лицо //ИнЛицо</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">CreatedThingTransferDate</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>   <span class="c1">// Дата передачи вещи, изготовленной по договору //ДатаПерВещ</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">CreatedThingInfo</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>           <span class="c1">// Сведения о передаче, изготовленной по договору //СвПерВещ</span>
+    <span class="k">optional</span> <span class="n">AdditionalInfoId</span> <span class="na">AdditionalInfoId</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span> <span class="c1">// Информационное поле документа // ИнфПолФХЖ3</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TransferBase</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">BaseDocumentName</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>   <span class="c1">// Наименование документа-основания отгрузки //НаимОсн</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">BaseDocumentNumber</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Номер документа-основания отгрузки //НомОсн</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">BaseDocumentDate</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// Дата документа-основания отгрузки //ДатаОсн</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">BaseDocumentInfo</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>   <span class="c1">// Дополнительные сведения документа-основания отгрузки //ДопСвОсн</span>
+<span class="p">}</span>
+
+<span class="kd">message</span>  <span class="nc">Waybill</span> <span class="p">{</span>
+    <span class="k">required</span>  <span class="kt">string</span> <span class="na">TransferDocumentNumber</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Номер транспортной накладной // НомерТранНакл</span>
+    <span class="k">required</span>  <span class="kt">string</span> <span class="na">TransferDocumentDate</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>   <span class="c1">// Дата траспортной накладной // ДатаТранНакл</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Employee</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">EmployeePosition</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>   <span class="c1">// Должность // Должность</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">EmployeeInfo</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>       <span class="c1">// Иные сведения, идентифицирующие физическое лицо // ИныеСвед</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">EmployeeBase</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>       <span class="c1">// Основание полномочий предстваителя // ОснПолн</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">TransferSurname</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>    <span class="c1">// Фамилия //Фамилия</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">TransferFirstName</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// Имя //Имя</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TransferPatronymic</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="c1">// Отчество //Отчество</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OtherIssuer</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TransferEmployeePosition</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Должность предстваителя организации // Должность //если заполнено - формируется структура «ПредОргПер», если не заполнено – «ФЛПер»</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TransferEmployeeInfo</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>     <span class="c1">// Иные сведения, идентифицирующие физическое лицо // ИныеСвед</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TransferOrganizationName</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//Наименование организации, которой доверена передача // НаимОргПер</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TransferOrganizationBase</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// Основание, по которому организации доверена передача // ОснДоверОргПер</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TransferEmployeeBase</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>     <span class="c1">//Основание полномочий предстваителя // ОснПолнПредПер (ОснДоверФЛ)</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">TransferSurname</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>    <span class="c1">//Фамилия //Фамилия</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">TransferFirstName</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>  <span class="c1">//Имя //Имя</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TransferPatronymic</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">//Отчество //Отчество</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AdditionalInfoId</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">InfoFileId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>             <span class="c1">// Идентификатор файла информационного поля // ИдФайлИнфПол</span>
+    <span class="k">repeated</span> <span class="n">AdditionalInfo</span> <span class="na">AdditionalInfo</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//Текстовая информация // ТекстИнф</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура данных <em>UniversalTransferDocumentSellerTitleInfo</em> представляет исходные данные для формирования файлов в XML-формате при помощи метода <a class="reference internal" href="../../http/utd/GenerateUniversalTransferDocumentXmlForSeller.html"><span class="doc">GenerateUniversalTransferDocumentXmlForSeller</span></a>. При заполнении структуры UniversalTransferDocumentSellerTitleInfo нужно иметь в виду:</p>
+<ul class="simple">
+<li>Реквизиты продавца (<em>UniversalTransferDocumentSellerTitleInfo.Seller</em>) и покупателя (<em>UniversalTransferDocumentSellerTitleInfo.Buyer</em>) заполняются в виде структуры данных <a class="reference internal" href="ExtendedOrganizationInfo.html"><span class="doc">ExtendedOrganizationInfo</span></a>.</li>
+<li>Реквизиты грузоотправителя (<em>Shipper.OrgInfo</em>) заполняются в виде структуры данных <a class="reference internal" href="ExtendedOrganizationInfo.html"><span class="doc">ExtendedOrganizationInfo</span></a>. Если проставлен флаг <em>ShipperOrConsignee.SameAsSeller</em>, то реквизиты грузоотправителя заполнять не нужно - будут использоваться соответствующие реквизиты продавца.</li>
+<li>Реквизиты грузополучателя (<em>UniversalTransferDocumentSellerTitleInfo.Consignee</em>) заполняются в виде структуры данных <a class="reference internal" href="ExtendedOrganizationInfo.html"><span class="doc">ExtendedOrganizationInfo</span></a>.</li>
+<li>Реквизиты подписанта документа <em>UniversalTransferDocumentSellerTitleInfo.Signers</em> заполняются в виде структуры данных <a class="reference internal" href="ExtendedSigner.html"><span class="doc">ExtendedSigner</span></a>.</li>
+<li>Даты документов должны указываться в формате ДД.ММ.ГГГГ.</li>
+<li>Идентификатор файла информационного поля <em>AdditionalInfoId.InfoFileId</em> заполняется в формате GUID через дефис.</li>
+<li>Суммы должны указываться в формате XXX.XX (дробная часть должна отделяться точкой). То же самое касается формата представления количества товара <em>ExtendedInvoiceItem.Quantity</em>.</li>
+<li>Если не указан код валюты <em>UniversalTransferDocumentSellerTitleInfo.Currency</em>, по умолчанию будет использоваться код 643 (Российский рубль).</li>
+<li>Коды единиц измерения <em>ExtendedInvoiceItem.Unit</em>, коды стран происхождения товара <em>InvoiceItem.CountriesOfOrigin</em>, а также коды иностранных госудраств <em>ForeignAddress.Country</em> можно указывать в буквенном формате, тогда Диадок предпримет попытку сконвертироваить их в соответствующие числовые коды.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../API_Invoices.html" class="btn btn-neutral float-right" title="Работа со счетами-фактурами" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="UniversalTransferDocumentBuyerTitleInfo.html" class="btn btn-neutral" title="UniversalTransferDocumentBuyerTitleInfo" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Возможности для интеграции &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="genindex.html"/>
+        <link rel="search" title="Поиск" href="search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="index.html"/>
+        <link rel="next" title=".NET/COM-библиотека" href="DiadocApiDll.html"/>
+        <link rel="prev" title="Обзор возможностей API" href="Overview.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Возможности для интеграции</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DiadocApiDll.html">.NET/COM-библиотека</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Возможности для интеграции</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/IntegrationOptions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Возможности для интеграции<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>На схеме ниже представлен весь спектр возможностей для интеграции с Диадоком:</p>
+<p><img alt="image0" src="_images/diadoc-api-integration-options.png" /></p>
+<p>В зависимости от решаемых прикладных задач, а также в зависимости от требований к клиентской части и доступных средств разработки интегратор может выбрать наиболее подходящий ему уровень взаимодействия с API Диадока.</p>
+<p>Базовым уровнем интеграции с Диадоком является его HTTP-based API. Этот уровень являетсся наиболее общим, и на нем, в частности, обеспечивается платформо-независимость для интеграционных решений. Это значит, что с HTTP API могут работать как клиенты, написанные на языке C# под платформу .NET и запускающиеся на машинах с ОС Microsoft Windows, так и клиенты, написанные на Java или C++, запускающиеся на машинах под управлением ОС Linux.</p>
+<p>Для интеграторов, ведущих разработку в стеке технологий Microsoft, доступна клиентская <a class="reference internal" href="DiadocApiDll.html"><span class="doc">.NET/COM-библиотека DiadocApiDll</span></a>, которая берет на себя работу по преобразованию локальных обращений к свойствам и методам некоторых объектов в соответствующие HTTP-команды API Диадока.</p>
+<p>Кроме того, DiadocApi.dll инкапсулирует детали работы с криптографией, так что прикладному разработчику не нужно разбираться с тонкостями обращений к CryptoAPI. Актуальная версия библиотеки DiadocApi.dll вместе с исходниками входит в состав SDK, который доступен для скачиания по <a class="reference external" href="https://diadoc.kontur.ru/sdk/">ссылке</a>.</p>
+<p>На базе библиотеки DiadocApi.dll разработан &#8220;толстый клиент&#8221; Диадока, который позволяет реализовать интеграцию с Диадоком, используя обмен данными через файловую систему на клиентском рабочем месте.</p>
+<p>В общих чертах схема работы толстого клиента выглядит следующим образом.</p>
+<p>Клиент настраивается на мониторинг заданного ящика в Диадоке, и все появляющиеся в нем сообщения сохраняет в виде файлов в заданную локальную папку на рабочем месте пользователя. И обратно, толстый клиент мониторит некоторую другую локальную папку, и все файлы, которые в ней появляются, отправляет по определенным правилам в ящики контрагентов через Диадок. Данный толстый клиент работает только под Windows и требует установки Microsoft .NET Framework на рабочие места пользователей.</p>
+<p>Для разработчиков, занимающихся интеграцией Диадока с различными программными продкутами, построенными на платформе 1С, доступен специальный внешний компонент, который позволяет максимально быстро решать типовые задачи, возникающие при стыковке 1С-решений с Диадоком. Этот компонент написан на языке C++ и не содержит лишних зависимостей, что позволяет использовать его на любой Windows-системе, не требуя установки каких-либо дополнительных модулей.</p>
+<p>Кроме того, для EDI-провайдеров и организаций, имеющих системы, поддерживающие работу по <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4130.html"><strong>AS2-протоколу</strong></a>, Диадок предоставляет возможность интеграции через AS2-шлюз. AS2-шлюз позволяет, например, конвертировать EDI-сообщения типа INVOIC в Диадок-сообщения, содержащие XML счета-фактуры, передаваемые в соответствие с порядком Минфина.</p>
+<p>Наконец, программная реализация API Диадока доступна для следующих языков (входит в состав <a class="reference external" href="https://diadoc.kontur.ru/sdk/">SDK</a>): Java и C++, а из языков Visual Basic for Applications и JavaScript возможна работа с Диадоком посредством COM-сервисов (примеры также доступны в составе <a class="reference external" href="https://diadoc.kontur.ru/sdk/">SDK</a>).</p>
+<div class="toctree-wrapper compound" id="com">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DiadocApiDll.html">.NET/COM-библиотека</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DiadocApiDll.html" class="btn btn-neutral float-right" title=".NET/COM-библиотека" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Overview.html" class="btn btn-neutral" title="Обзор возможностей API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

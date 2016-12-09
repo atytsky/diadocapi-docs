@@ -1,0 +1,306 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Порядок работы с API &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="genindex.html"/>
+        <link rel="search" title="Поиск" href="search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="index.html"/>
+        <link rel="next" title="Управление списком активных контрагентов" href="Counteragents.html"/>
+        <link rel="prev" title="Модель данных" href="DataModel.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataModel.html">Модель данных</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Порядок работы с API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Аутентификация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Передача документа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Дополнение документа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Получение документа</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Порядок работы с API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ApiClientOperationPrinciple.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api">
+<h1>Порядок работы с API<a class="headerlink" href="#api" title="Ссылка на этот заголовок">¶</a></h1>
+<p>В данном разделе описаны только базовые функции, предоставляемые посредством программного интеграторского веб-интерфейса Диадока для организации документооборота. Дополнительные возможности описаны в соответствующих разделах. Полный список команд API всегда можно посмотреть в технической документации.</p>
+<div class="section" id="id1">
+<h2>Аутентификация<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Любой сеанс работы клиента API начинается с прохождения процедуры аутентификации, в ходе которой программный клиент от имени пользователя получает авторизационный токен, однозначно идентифицирующий этого пользователя и дающий клиенту право читать и писать в ящики Диадока, к которым данный пользователь имеет доступ.</p>
+<p>Пользователь может аутентифицироваться в системе либо по сертификату электронной подписи формата X.509, либо по паре логин/пароль.</p>
+<p>В результате аутентификации формируется специальный авторизационный токен, дающий право доступа к Диадоку посредством интеграционного API в течение некоторого интервала времени (порядка нескольких часов).</p>
+<p>Полученный авторизационный токен в дальнейшем должен передаваться в качестве параметра во все методы API, выполняющие какие-либо операции в контексте конкретного ящика, чтобы авторизовать доступ пользователя к этому ящику. Кроме того, во все методы API клиент должен передавать так называемый &#8220;ключ разработчика&#8221;, однозначно идентифицирующий автора данного интеграционного решения.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">См.также</p>
+<p class="last">Более подробно механизм аутентификации и авторизации в Диадоке описан <a class="reference internal" href="Authorization.html"><span class="doc">здесь</span></a>.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Передача документа<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Каждый передаваемый через Диадок документ представляется в виде структуры <a class="reference internal" href="proto/Entity message.html"><span class="doc">Entity</span></a>, которая может содержать как описание документа пользователя, так и описание служебного документа системы (комментарии к документу, подписи к документу и т.п.).</p>
+<p>Соответственно, набор взаимосвязанных пользовательских и служебных документов (т.е. вся цепочка документооборота, связанная с конкретным набором пользовательских документов, передаваемых через Диадок) образует сообщение (объект <a class="reference internal" href="proto/Message.html"><span class="doc">Message</span></a>).</p>
+<p>Каждый документооборот может охватывать либо две организации (в этом случае естественным образом по направлению передачи первого документа в цепочке выделяются организация-отправитель и организация-получатель), либо одну организацию (в случае внутреннего документооборота внутри конкретной организации).</p>
+<p>Соответственно, в рамках документооборота между двумя организациями формируются две цепочки: в ящике отправителя и в ящике получателя.</p>
+<p>Документы, которые были сформированы и отправлены, отображаются в обеих цепочках. Документы, которые были только сформированы, но не отправлены (см. возможности метода <a class="reference internal" href="http/PostMessage.html"><span class="doc">PostMessage</span></a> ниже), отображаются в соответствующей цепочке (либо только в ящике отправителя, либо только в ящике получателя).</p>
+<p>Подготовка и отправка исходящих сообщений осуществляется при помощи метода <a class="reference internal" href="http/PostMessage.html"><span class="doc">PostMessage</span></a>, которому на вход передается структура <a class="reference internal" href="proto/MessageToPost.html"><span class="doc">MessageToPost</span></a>. Эта структура содержит идентификаторы ящиков участников документооборота (ящики отправителя и получателя сообщения) и собственно набор отправляемых документов.</p>
+<p>В качестве ящика отправителя клиент может указывать только «свой» ящик, то есть ящик, к которому он может получить доступ при помощи имеющегося у него авторизационного токена.</p>
+<p>В результате вызова метода <a class="reference internal" href="http/PostMessage.html"><span class="doc">PostMessage</span></a> формируется новая цепочка документооборота, связывающая ящики отправителя и получателя.</p>
+<p>В ящике отправителя информация о сформированной цепочке появляется в момент вызова метода <a class="reference internal" href="http/PostMessage.html"><span class="doc">PostMessage</span></a> (соответственно, формируется событие о появлении документа -информацию о событиях см. ниже).</p>
+<p>Информация о новой цепочке документооборота и связанных с ней документах в ящике получателя, вообще говоря, появится с некоторой задержкой, связанной с асинхронной передачей информации из ящика отправителя в ящик получателя.</p>
+<p>То есть успешный вызов метода PostMessage гарантирует лишь появление исходящего сообщения в ящике отправителя; в ящике получателя сообщение и
+соответствующее событие могут появиться с некоторой задержкой.</p>
+<p>Метод <a class="reference internal" href="http/PostMessage.html"><span class="doc">PostMessage</span></a> можно также использовать для формирования на сервере сообщений, содержащих отправляемые документы без подписей к ним (см. флаг IsDraft структуры <a class="reference internal" href="proto/MessageToPost.html"><span class="doc">MessageToPost</span></a>; если он выставлен в true, то сообщение будет загружено на сервер, но задание на доставку сообщения его получателю формироваться не будет). В этом случае для формирования подписей к документам и отправки сообщения следует использовать метод <a class="reference internal" href="http/SendDraft.html"><span class="doc">SendDraft</span></a>.</p>
+</div>
+<div class="section" id="id3">
+<h2>Дополнение документа<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Уже сформированные цепочки документооборота можно дополнять служебными документами при помощи метода <a class="reference internal" href="http/PostMessagePatch.html"><span class="doc">PostMessagePatch</span></a>, которому на вход передается структура <a class="reference internal" href="proto/MessagePatchToPost.html"><span class="doc">MessagePatchToPost</span></a>.</p>
+<p>Эта структура содержит идентификатор цепочки документооборота, которую следует дополнить новым документом, и идентификатор ящика, с которым эта цепочка связана (если в документооборот вовлечено две организации, то в ящике второй стороны цепочка документооборота также будет обновлена; обновление производится асинхронно).</p>
+<p>Клиент должен дополнять цепочку документооборота через «свой» ящик, то есть через тот ящик, к которому у него есть доступ.</p>
+<p>Если загружаемый документ имеет большой размер (больше 100Кб), то для загрузки такого документа в Диадок следует пользоваться сервисом «полки документов».</p>
+<p>В этом случае документ сначала загружается на сервер Диадока с помощью серии вызовов <a class="reference internal" href="http/ShelfUpload.html"><span class="doc">ShelfUpload</span></a>, а затем в структурах <a class="reference internal" href="proto/MessageToPost.html"><span class="doc">MessageToPost</span></a> и <a class="reference internal" href="proto/MessagePatchToPost.html"><span class="doc">MessagePatchToPost</span></a> можно ссылаться на уже загруженный документ. Такой подход позволяет повысить скорость и надежность загрузки.</p>
+</div>
+<div class="section" id="id4">
+<h2>Получение документа<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Для получения текущего состояния конкретной цепочки документооборота можно использовать метод <a class="reference internal" href="http/GetMessage.html"><span class="doc">GetMessage</span></a>, который возвращает все документы, составляющие данную цепочку, агрегированные в одну структуру <a class="reference internal" href="proto/Message.html"><span class="doc">Message</span></a>.</p>
+<p>Отметим, что структура <a class="reference internal" href="proto/Message.html"><span class="doc">Message</span></a> может содержать документы, сформированные в разное время разными организациями (например, в одну такую структуру могут попасть исходящий документ одной организации и подпись к этому документу, поставленная представителем другой организации).</p>
+<p>Для того, чтобы получить содержимое конкретного документа в цепочке документооборота, следует взять идентификаторы из полей boxId и messageId структуры <a class="reference internal" href="proto/Message.html"><span class="doc">Message</span></a> и идентификатор документа entityId из соответствующей структуры <a class="reference internal" href="proto/Entity message.html"><span class="doc">Entity</span></a>, а затем воспользоваться методом <a class="reference internal" href="http/GetEntityContent.html"><span class="doc">GetEntityContent</span></a>.</p>
+<p>Таким образом, каждый ящик в Диадоке может изменяться лишь одним из двух способов:</p>
+<ul class="simple">
+<li>в ящике формируется новая цепочка документооборота;</li>
+<li>дополняется уже существующая в ящике цепочка документооборота.</li>
+</ul>
+<p>То есть вся уже существующая в ящике информация не может быть изменена, она может быть лишь дополнена. Соответственно, все модификации ящика естественным образом упорядочиваются хронологически, и можно говорить о «событиях», связанных с конкретным ящиком:</p>
+<ul class="simple">
+<li>событие о формировании новой цепочки документооборота;</li>
+<li>событие о добавлении документа к уже имеющейся цепочки документооборота.</li>
+</ul>
+<p>Чтобы получить информацию о новых событиях следует использовать метод <a class="reference internal" href="http/GetNewEvents.html"><span class="doc">GetNewEvents</span></a>. Этот метод предоставляет доступ к упорядоченному хронологически потоку всех Событий (<a class="reference internal" href="proto/BoxEvent.html"><span class="doc">BoxEvent</span></a>), «происходящих» в заданном ящике.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Counteragents.html" class="btn btn-neutral float-right" title="Управление списком активных контрагентов" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DataModel.html" class="btn btn-neutral" title="Модель данных" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

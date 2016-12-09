@@ -1,0 +1,361 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AcquireCounteragent &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с контрагентами" href="../API_Counteragents.html"/>
+        <link rel="next" title="AcquireCounteragentResult" href="AcquireCounteragentResult.html"/>
+        <link rel="prev" title="Работа с контрагентами" href="../API_Counteragents.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Counteragents.html">Работа с контрагентами</a> &raquo;</li>
+      
+    <li>AcquireCounteragent</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/http/AcquireCounteragent.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="acquirecounteragent">
+<h1>AcquireCounteragent<a class="headerlink" href="#acquirecounteragent" title="Ссылка на этот заголовок">¶</a></h1>
+<p>На текущий момент доступно 2 версии данного метода:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1"><span class="std std-ref">v1.21</span></a></li>
+<li><a class="reference internal" href="#id2"><span class="std std-ref">v1.20</span></a></li>
+</ul>
+<div class="section" id="v1-21">
+<span id="id1"></span><h2>v1.21<a class="headerlink" href="#v1-21" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Метод позволяет добавить организацию в список контрагентов организации <em>myOrgId</em>.</p>
+<div class="section" id="http">
+<h3>HTTP<a class="headerlink" href="#http" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>POST /V2/AcquireCounteragent</strong></p>
+<p><strong>Параметры запроса:</strong></p>
+<ul class="simple">
+<li><em>myOrgId</em> - идентификатор организации, от имени которой производится инициация отношения партнерства.</li>
+<li><em>myDepartmentId</em> - идентификатор подразделения, от имени которого производится инициация отношения партнерства. Данный параметр запроса может отсутствовать.</li>
+</ul>
+<p>В запросе должен присутствовать HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code> с необходимыми данными для <a class="reference internal" href="../Authorization.html"><span class="doc">авторизации</span></a>.
+Пользователь имеет право производить манипуляции со списком контрагентов организации <em>myOrgId</em>, если у него есть доступ хотя бы в один из ящиков этой организации.</p>
+<p>В теле запроса должно содержаться сообщение AcquireCounteragentRequest, в формате протобуфер:</p>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">AcquireCounteragentRequest</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">OrgId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Inn</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">MessageToCounteragent</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">InvitationDocument</span> <span class="na">InvitationDocument</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">InvitationDocument</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="n">Events.SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">FileName</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">SignatureRequested</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>AcquireCounteragentRequest:</p>
+<ul class="simple">
+<li><em>OrgId</em>: идентификатор организации-контрагента;</li>
+<li><em>Inn</em>: ИНН организации-контрагента;</li>
+<li><em>MessageToCounteragent</em>: текст комментария к операции</li>
+<li><em>InvitationDocument</em>: вложенный файл:<ul>
+<li><em>SignedContent</em>: содержимое файла документа вместе с ЭП под ним в виде структуры <a class="reference internal" href="../proto/SignedContent.html"><span class="doc">SignedContent</span></a>.</li>
+<li><em>FileName</em>: имя файла с приглашением</li>
+<li><em>SignatureRequested</em>: запрос подписи контрагента</li>
+</ul>
+</li>
+</ul>
+<p>В теле ответа содержится AsyncMethodResult, в формате протобуфер:</p>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">AsyncMethodResult</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">taskId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>AsyncMethodResult:</p>
+<ul class="simple">
+<li><em>taskId</em>: идентификатор задачи на отправки приглашения контрагенту. По этому идентификатору можно получить подтверждение успешной обработки запроса;</li>
+</ul>
+<p>Если организация уже зарегистрирована в Диадоке, лучше пользоваться параметром <em>OrgId</em> контрагента, поскольку он позволяет детализировать Контрагента с помощью КПП. Получить <em>OrgId</em> можно с помощью метода <a class="reference internal" href="GetOrganizationsByInnKpp.html"><span class="doc">GetOrganizationsByInnKpp</span></a>.</p>
+<p>Если организация еще не зарегистрирована в Диадоке и для нее отсутствует параметр <em>OrgId</em> ,то нужно пользоваться параметром <em>Inn</em>. Если организация с данным ИНН присутствует в ЕГРЮЛ, то для нее будет создан ящик. В ящик будет помещено приглашение к партнерству. Организация получит приглашение, когда сотрудник организации с сертификатом КЭП войдет в Диадок. Таким образом можно отправить запрос только в головную организацию, в филиал организации отправить запрос нельзя.</p>
+<p>Алгоритм выполнения запроса:</p>
+<ul class="simple">
+<li>Если между организациями <em>myOrgId</em> и <em>counteragentOrgId</em> нет действующего отношения партнерства, то от имени организации <em>myOrgId</em> отправляется запрос на установление отношения партнерства в адрес организации <em>counteragentOrgId</em>, Контрагент <em>counteragentOrgId</em> переходит в статус <em>IsInvitedByMe</em>.</li>
+<li>Если в индексе отношений есть входящий запрос на установление отношения партнерства от организации <em>counteragentOrgId</em> к организации <em>myOrgId</em> (то есть контрагент <em>counteragentOrgId</em> находится в статусе <em>InvitesMe</em>), то этот запрос подтверждается и между организациями <em>myOrgId</em> и <em>counteragentOrgId</em> устанавливается действующее отношение партнерства. Контрагент <em>counteragentOrgId</em> переходит в статус <em>IsMyCounteragent</em>.<ul>
+<li>Принять приглашение без вложенного документа, а также приглашение со вложенным документом, не требующим подписи, можно отправкой взаимного запроса без вложенного документа.</li>
+<li>Нельзя принять приглашение с помощью взаимного запроса со вложенным документом.</li>
+<li>Нельзя принять взаимным запросом приглашение со вложением, требующим подписи. Для принятия такого приглашения через API необходимо подписать вложенный документ с помощью метода <a class="reference internal" href="PostMessagePatch.html"><span class="doc">PostMessagePatch</span></a>. Сразу после подписания вложенного документа будет установлено отношение партнерства.</li>
+</ul>
+</li>
+<li>Если между организациями <em>myOrgId</em> и <em>counteragentOrgId</em> отношение партнерства уже установлено, или уже есть исходящий запрос от организации <em>myOrgId</em> к организации <em>counteragentOrgId</em>, то ничего не происходит.</li>
+</ul>
+<p><strong>Возможные HTTP-коды возврата:</strong></p>
+<ul class="simple">
+<li><em>200 (OK)</em> - операция успешно завершена.</li>
+<li><em>400 (Bad Request)</em> - данные в запросе имеют неверный формат или отсутствуют обязательные параметры.</li>
+<li><em>401 (Unauthorized)</em> - в запросе отсутствует HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code>, или в этом заголовке содержатся некорректные авторизационные данные.</li>
+<li><em>403 (Forbidden)</em> - доступ к ящику с предоставленным авторизационным токеном запрещен, либо у пользователя недостаточно прав для доступа ко всем документам организации.</li>
+<li><em>404 (Not Found)</em> - в указанном ящике нет документов с указанными идентификаторами.</li>
+<li><em>405 (Method not allowed)</em> - используется неподходящий HTTP-метод.</li>
+<li><em>500 (Internal server error)</em> - при обработке запроса возникла непредвиденная ошибка.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="v1-20">
+<span id="id2"></span><h2>v1.20<a class="headerlink" href="#v1-20" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Метод позволяет добавить организацию <em>counteragentOrgId</em> в список контрагентов организации <em>myOrgId</em>.</p>
+<div class="section" id="id3">
+<h3>HTTP<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>POST /AcquireCounteragent</strong></p>
+<p><strong>Параметры запроса:</strong></p>
+<ul class="simple">
+<li><em>myOrgId</em> - идентификатор организации, от имени которой производится инициация отношения партнерства</li>
+<li><em>counteragentOrgId</em>: идентификатор организации-контрагента;</li>
+<li><em>comment</em>: текст комментария к операции (может отсутствовать).</li>
+<li><em>myDepartmentId</em> - идентификатор подразделения, от имени которого производится инициация отношения партнерства. Данный параметр запроса может отсутствовать.</li>
+</ul>
+<p>В запросе должен присутствовать HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code> с необходимыми данными для <a class="reference internal" href="../Authorization.html"><span class="doc">авторизации</span></a>. Пользователь имеет право производить манипуляции со списком контрагентов организации <em>myOrgId</em>, если у него есть доступ хотя бы в один из ящиков этой организации.</p>
+<p>Алгоритм выполнения запроса:</p>
+<ul class="simple">
+<li>Если между организациями <em>myOrgId</em> и <em>counteragentOrgId</em> нет действующего отношения партнерства, то от имени организации <em>myOrgId*отправляется запрос на установление отношения партнерства в адрес организации *counteragentOrgId</em>. Контрагент <em>counteragentOrgId</em> переходит в статус <em>IsInvitedByMe</em>.</li>
+<li>Если в индексе отношений есть входящий запрос на установление отношения партнерства от организации <em>counteragentOrgId</em> к организации <em>myOrgId</em> (то есть контрагент <em>counteragentOrgId</em> находится в статусе <em>InvitesMe</em>), то этот запрос подтверждается и между организациями <em>myOrgId</em> и <em>counteragentOrgId</em> устанавливается действующее отношение партнерства. Контрагент <em>counteragentOrgId</em> переходит в статус <em>IsMyCounteragent</em>.</li>
+<li>Если между организациями <em>myOrgId</em> и <em>counteragentOrgId</em> отношение партнерства уже установлено, или уже есть исходящий запрос от организации <em>myOrgId</em> к организации <em>counteragentOrgId</em>, то ничего не происходит.</li>
+</ul>
+<p><strong>Возможные HTTP-коды возврата:</strong></p>
+<ul class="simple">
+<li><em>200 (OK)</em> - операция успешно завершена.</li>
+<li><em>400 (Bad Request)</em> - данные в запросе имеют неверный формат или отсутствуют обязательные параметры.</li>
+<li><em>401 (Unauthorized)</em> - в запросе отсутствует HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code>, или в этом заголовке содержатся некорректные авторизационные данные.</li>
+<li><em>403 (Forbidden)</em> - доступ к ящику с предоставленным авторизационным токеном запрещен, либо у пользователя недостаточно прав для доступа ко всем документам организации.</li>
+<li><em>404 (Not Found)</em> - в указанном ящике нет документов с указанными идентификаторами.</li>
+<li><em>405 (Method not allowed)</em> - используется неподходящий HTTP-метод.</li>
+<li><em>500 (Internal server error)</em> - при обработке запроса возникла непредвиденная ошибка.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="AcquireCounteragentResult.html" class="btn btn-neutral float-right" title="AcquireCounteragentResult" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../API_Counteragents.html" class="btn btn-neutral" title="Работа с контрагентами" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Дополнительные функции API &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="genindex.html"/>
+        <link rel="search" title="Поиск" href="search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="index.html"/>
+        <link rel="next" title="Как авторизоваться в системе" href="howto/example_authorization.html"/>
+        <link rel="prev" title="Неформализованный документооборот" href="NonformalizedDocflow.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Дополнительные функции API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Отправка заявления участника ЭДО</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Поиск контрагентов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Черновики</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Подготовка печатных форм</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Распознавание печатных форм счетов-фактур</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Фильтрация списка документов</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Дополнительные функции API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/MiscellaneousApiFeatures.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api">
+<h1>Дополнительные функции API<a class="headerlink" href="#api" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Ниже дан краткий обзор функций API, не упомянутых в предыдущих разделах. Более полную информацию по всем методам и структурам данных Diadoc API можно найти в технической документации.</p>
+<div class="section" id="id1">
+<h2>Отправка заявления участника ЭДО<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p>При помощи метода <a class="reference internal" href="http/SendFnsRegistrationMessage.html"><span class="doc">SendFnsRegistrationMessage</span></a> можно отправить заявление участника ЭДО.</p>
+</div>
+<div class="section" id="id2">
+<h2>Поиск контрагентов<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Метод <a class="reference internal" href="http/GetOrganizationsByInnKpp.html"><span class="doc">GetOrganizationsByInnKpp</span></a> позволяет искать в Диадоке ящики по ИНН и КПП организаций, которым они принадлежат.</p>
+<p>Метод <em>GetOrganizationsByInnKpp</em> возвращает список организаций и ящиков, удовлетворяющих критерию поиска, в виде структуры данных <a class="reference internal" href="proto/Organization.html"><span class="doc">OrganizationList</span></a>.</p>
+<p>При помощи метода <a class="reference internal" href="http/GetBox.html"><span class="doc">GetBox</span></a> можно по идентификатору ящика получить информацию об организации, которой он принадлежит.</p>
+<p>При помощи метода <a class="reference internal" href="http/GetOrganization.html"><span class="doc">GetOrganization</span></a> можно по идентификатору организациии узнать различные справочные данные, заведенные в Диадок, такие как ИНН, КПП, название, а также получить список ее ящиков.</p>
+</div>
+<div class="section" id="id3">
+<h2>Черновики<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Диадок позволяет клиенту API помещать в «свой» ящик еще не подписанные документы без их немедленной отправки контрагентам.</p>
+<p>Это может быть полезно, когда подготовкой документов занимается один человек, а правом подписи и отправки обладает другой. Такие документы называются черновиками. Для их создания через API используется метод <a class="reference internal" href="http/PostMessage.html"><span class="doc">PostMessage</span></a>.</p>
+</div>
+<div class="section" id="id4">
+<h2>Подготовка печатных форм<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Для документов, передаваемых через Диадок, в формализованном не человекочитаемом виде, предусмотрена возможность получения их печатных форм.</p>
+<p>В первую очередь, этот функционал предназначен для формирования печатных форм счетов фактур и всех служебных документов, предусмотренных порядком Минфина в ходе документооборота счетов-фактур. Печатные формы интересующих пользователя документов можно получить через API при помощи метода <a class="reference internal" href="http/GeneratePrintForm.html"><span class="doc">GeneratePrintForm</span></a>.</p>
+</div>
+<div class="section" id="id5">
+<h2>Распознавание печатных форм счетов-фактур<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Диадок умеет распознавать печатные формы счетов-фактур, подготовленные практически в любой бухгалтерской программе. Для этого печатная форма подается на вход метода <a class="reference internal" href="http/Recognize.html"><span class="doc">Recognize</span></a> в формате :<a class="reference external" href="https://msdn.microsoft.com/en-us/library/windows/hardware/dn641615(v=vs.85).aspx">XPS</a>.</p>
+<p>В случае успешного распознавания на выходе метода <a class="reference internal" href="http/GetRecognized.html"><span class="doc">GetRecognized</span></a> получается XML-файл счета-фактуры в формате, удовлетворяющем требованиям ФНС и пригодном для отправки в соответствии с порядком, утвержденным Минфином.</p>
+</div>
+<div class="section" id="id6">
+<h2>Фильтрация списка документов<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<p>При помощи метода <a class="reference internal" href="http/GetDocuments.html"><span class="doc">GetDocuments</span></a>, можно быстро получать информацию о документах (например, о счетах-фактурах) в своем ящике, задавая различные критерии фильтрации документов.</p>
+<p>Например, можно запросить список всех входящих счетов-фактур от заданного контрагента за определенный период. В ряде сценариев этот метод может оказаться более удобным по сравнению с механизмом получения новостей методами <a class="reference internal" href="http/GetNewEvents.html"><span class="doc">GetNewEvents</span></a>, <a class="reference internal" href="http/GetEvent.html"><span class="doc">GetEvent</span></a> и <a class="reference internal" href="http/GetMessage.html"><span class="doc">GetMessage</span></a>.</p>
+<p>Кроме того, есть возможность получить всю метаинформацию об отдельном документе, зная его идентификатор. Для этого предназначен метод <a class="reference internal" href="http/GetDocument.html"><span class="doc">GetDocument</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="howto/example_authorization.html" class="btn btn-neutral float-right" title="Как авторизоваться в системе" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NonformalizedDocflow.html" class="btn btn-neutral" title="Неформализованный документооборот" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,574 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Как отправить и получить акт о выполнении работ/оказании услуг в рекомендованном ФНС формате &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="next" title="Структуры данных" href="../DataStructures.html"/>
+        <link rel="prev" title="Как отправить и получить товарную накладную ТОРГ-12 в рекомендованном ФНС формате" href="example_torg12.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Как отправить и получить акт о выполнении работ/оказании услуг</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Формирование файла титула исполнителя для акта о выполнении работ/оказании услуг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Отправка файла титула исполнителя для акта о выполнении работ/оказании услуг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Поиск акта о выполнении работ/оказании услуг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Получение акта о выполнении работ/оказании услуг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-receipt">Формирование файла титула заказчика для акта о выполнении работ/оказании услуг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">Отправка файла титула заказчика для акта о выполнении работ/оказании услуг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sdk">SDK</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Как отправить и получить акт о выполнении работ/оказании услуг в рекомендованном ФНС формате</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/howto/example_acceptance_certificate.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Как отправить и получить акт о выполнении работ/оказании услуг в рекомендованном ФНС формате<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Рассмотрим последовательность действий к функциям интеграторского интерфейса Диадока, которые требуется совершить при отправке акта о выполнении работ/оказании услуг.</p>
+<ol class="arabic simple">
+<li>Исполнитель формирует файл титула исполнителя, подписывает и направляет заказчику.</li>
+<li>Заказчик получает товарную накладную, подписанную и отправленную исполнителем;</li>
+<li>Заказчик формирует файл титула заказчика, подписывает своей ЭП и отправляет в адрес исполнителя.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Более подробно о порядке обмена электронными актами о выполнении работ/оказании услуг между компаниями можно почитать на <a class="reference external" href="http://www.diadoc.ru/docs/others/acts">сайте</a></p>
+</div>
+<div class="section" id="id2">
+<h2>Формирование файла титула исполнителя для акта о выполнении работ/оказании услуг<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Если на стороне интеграционного решения не предусмотрено функциональности для формирования XML-документов, соответствущих утвержденным форматам, то исполнитель может сгенерировать файл титула, используя команду <a class="reference internal" href="../http/GenerateAcceptanceCertificateXmlForSeller.html"><span class="doc">GenerateAcceptanceCertificateXmlForSeller</span></a>.</p>
+<p>В теле запроса должны содержаться данные для изготовления титула исполнителя для акта о выполнении работ/оказании услуг в XML-формате в виде сериализованной структуры <a class="reference internal" href="../proto/AcceptanceCertificateInfo.html"><span class="doc">AcceptanceCertificateSellerTitleInfo</span></a>.</p>
+<p>HTTP-запрос для генерации файла титула исполнителя акта о выполнении работ/оказании услуг выглядит следующим образом:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="p">/</span><span class="n">GenerateAcceptanceCertificateXmlForSeller</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">8</span><span class="n">ee1638deae84c86b8e2069955c2825a</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Length</span><span class="p">:</span> <span class="m">1252</span>
+<span class="n">Connection</span><span class="p">:</span> <span class="n">Keep</span><span class="p">-</span><span class="n">Alive</span>
+
+<span class="p">&lt;</span><span class="n">Сериализованная</span> <span class="n">структура</span> <span class="n">AcceptanceCertificateSellerTitleInfo</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>В теле ответа содержится XML-файл титула исполнителя, построенный на основании данных из запроса.</p>
+<p>Успешный ответ сервера выглядит так:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Length</span><span class="p">:</span> <span class="m">598</span>
+
+<span class="p">&lt;</span><span class="n">XML</span><span class="p">-</span><span class="n">файл</span> <span class="n">титула</span> <span class="n">исполнителя</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Файл генерируется в соответствии с <a class="reference download internal" href="../_downloads/DP_ZAKTPRM_1_990_00_05_01_02.xsd" download=""><code class="xref download docutils literal"><span class="pre">XML-схемой</span></code></a>, которой должны удовлетворять XML-акты, согласно приказу ФНС.</p>
+<p>Имя файла титула исполнителя для акта о выполнении работ/оказании услуг возвращается в стандартном HTTP-заголовке <code class="docutils literal"><span class="pre">Content-Disposition</span></code>.</p>
+</div>
+<div class="section" id="id3">
+<h2>Отправка файла титула исполнителя для акта о выполнении работ/оказании услуг<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>После того, как у вас есть XML-файл титула исполнителя, его нужно отправить с помощью команды <a class="reference internal" href="../http/PostMessage.html"><span class="doc">PostMessage</span></a>.</p>
+<p>Для этого нужно подготовить структуру <a class="reference internal" href="../proto/MessageToPost.html"><span class="doc">MessageToPost</span></a> следующим образом:</p>
+<ul>
+<li><p class="first">в значение атрибута <em>FromBoxId</em> указываем идентификатор ящика отправителя;</p>
+</li>
+<li><p class="first">в значение атрибута <em>ToBoxId</em> указываем идентификатор ящика получателя;</p>
+</li>
+<li><p class="first">для передачи XML-файла титула исполнителя акта о выполнении работ/оказании услуг нужно использовать атрибут <em>XmlAcceptanceCertificateSellerTitles</em>, описываемый структурой <em>XmlDocumentAttachment</em>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>внутри структуры <em>XmlDocumentAttachment</em> находится вложенная структура <em>SignedContent</em>;</li>
+<li>сам XML-файл нужно передать в атрибут <em>Content</em>, подпись исполнителя в атрибут <em>Signature</em>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Описание структур, используемых при отправке акта о выполнении работ/оказании услуг:</p>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">MessageToPost</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">FromBoxId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ToBoxId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">XmlDocumentAttachment</span> <span class="na">XmlAcceptanceCertificateSellerTitles</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">XmlDocumentAttachment</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="n">SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">SignedContent</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">bytes</span> <span class="na">Content</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bytes</span> <span class="na">Signature</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>После отправки в теле ответа будет содержаться отправленное сообщение, сериализованное в протобуфер <a class="reference internal" href="../proto/Message.html"><span class="doc">Message</span></a>.</p>
+<p>Все дальнейшие действия происходят на стороне покупателя.</p>
+</div>
+<div class="section" id="id4">
+<h2>Поиск акта о выполнении работ/оказании услуг<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Сначала покупателю необходимо найти все входящие акты о выполнении работ/оказании услуг, которые требуется обработать. Для этого нужно воспользоваться методом <a class="reference internal" href="../http/GetDocuments.html"><span class="doc">GetDocuments</span></a>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>в значении параметра <em>boxId</em> указываем идентификатор ящика, в котором следует выполнить поиск входящих документов;</li>
+<li>в параметр <em>filterCategory</em> указываем статус и тип документа: <code class="docutils literal"><span class="pre">XmlAcceptanceCertificate.InboundNotFinished</span></code>.</li>
+</ul>
+</div></blockquote>
+<p>Пример запроса на получение акта о выполнении работ/оказании услуг выглядит следующим образом:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="p">/</span><span class="n">V3</span><span class="p">/</span><span class="n">GetDocuments</span><span class="p">?</span><span class="n">filterCategory</span><span class="p">=</span><span class="n">XmlAcceptanceCertificate</span><span class="p">.</span><span class="n">InboundNotFinished</span><span class="p">&amp;</span><span class="n">boxId</span><span class="p">=</span><span class="n">db32772b</span><span class="p">-</span><span class="m">9256</span><span class="p">-</span><span class="m">49</span><span class="n">a8</span><span class="p">-</span><span class="n">a133</span><span class="p">-</span><span class="n">fda593fda38a</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Accept</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span> <span class="n">charset</span><span class="p">=</span><span class="n">utf</span><span class="p">-</span><span class="m">8</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">87</span><span class="n">e1638deae84c86b8e2069955c2825a0987</span>
+</pre></div>
+</div>
+<p>В теле ответа вернется список документов в виде структуры <em>DocumentList</em> с вложенной структурой <em>Document</em>. Для каждого из этих документов запоминаем: <em>MessageId</em>, <em>EntityId</em>.</p>
+</div>
+<div class="section" id="id5">
+<h2>Получение акта о выполнении работ/оказании услуг<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Теперь необходимо получить найденный акт <a class="reference internal" href="../proto/Entity message.html"><span class="doc">XmlAcceptanceCertificate</span></a>.</p>
+<p>Чтобы получить акт о выполнении работ/оказании услуг нужно вызвать метод <a class="reference internal" href="../http/GetMessage.html"><span class="doc">GetMessage</span></a> и указать нужные GET-параметры <code class="docutils literal"><span class="pre">boxId</span></code>, <code class="docutils literal"><span class="pre">messageId</span></code>, <code class="docutils literal"><span class="pre">entityId</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">BoxId</span></code> - это идентификатор ящика получателя, <code class="docutils literal"><span class="pre">messageId</span></code> - идентификатор полученного сообщения с актом о выполнении работ/оказании услуг, <code class="docutils literal"><span class="pre">entityId</span></code> - идентификатор акта. Их можно взять из структуры <a class="reference internal" href="../proto/Message.html"><span class="doc">Message</span></a>.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="p">/</span><span class="n">V3</span><span class="p">/</span><span class="n">GetMessage</span><span class="p">?</span><span class="n">messageId</span><span class="p">=</span><span class="n">bbcedb0d</span><span class="p">-</span><span class="n">ce34</span><span class="p">-</span><span class="m">4</span><span class="n">e0d</span><span class="p">-</span><span class="n">b321</span><span class="p">-</span><span class="m">3f600</span><span class="n">c920935</span><span class="p">&amp;</span><span class="n">entityId</span><span class="p">=</span><span class="m">30</span><span class="n">cf2c07</span><span class="p">-</span><span class="m">7297</span><span class="p">-</span><span class="m">4d48</span><span class="p">-</span><span class="n">bc6f</span><span class="p">-</span><span class="n">ca7a80e2cf95</span><span class="p">&amp;</span><span class="n">boxId</span><span class="p">=</span><span class="n">db32772b</span><span class="p">-</span><span class="m">9256</span><span class="p">-</span><span class="m">49</span><span class="n">a8</span><span class="p">-</span><span class="n">a133</span><span class="p">-</span><span class="n">fda593fda38a</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Accept</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="p">/</span><span class="n">json</span> <span class="n">charset</span><span class="p">=</span><span class="n">utf</span><span class="p">-</span><span class="m">8</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">87</span><span class="n">e1638deae84c86b8e2069955c2825a0987</span>
+</pre></div>
+</div>
+<p>Пример структуры акта о выполнении работ/оказании услуг <a class="reference internal" href="../proto/Entity message.html"><span class="doc">XmlAcceptanceCertificate</span></a> в теле ответа:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;EntityType&quot;</span><span class="p">:</span> <span class="s2">&quot;Attachment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;EntityId&quot;</span><span class="p">:</span> <span class="s2">&quot;654ac483-0dd4-4085-b70f-565c8b754e10&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Content&quot;</span><span class="p">:</span> <span class="s2">&quot;lores ipsum&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;AttachmentType&quot;</span><span class="p">:</span> <span class="s2">&quot;XmlAcceptanceCertificate&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;FileName&quot;</span><span class="p">:</span> <span class="s2">&quot;DP_ZAKTPRM_2BM-7750370234-4012052808304878702630000000000_2BM_20150927_324c290e-f049-4906-baac-1ddcd7f3c2ff.xml&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;NeedRecipientSignature&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;SignerBoxId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;NotDeliveredEventId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;RawCreationDate&quot;</span><span class="p">:</span> <span class="mi">635789700936777240</span><span class="p">,</span>
+    <span class="nt">&quot;SignerDepartmentId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;NeedReceipt&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;IsApprovementSignature&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;IsEncryptedContent&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-receipt">
+<span id="id6"></span><h2>Формирование файла титула заказчика для акта о выполнении работ/оказании услуг<a class="headerlink" href="#create-receipt" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Файл титула заказчика можно сформировать как на стороне интеграционного решения, так и используя команду <a class="reference internal" href="../http/GenerateAcceptanceCertificateXmlForBuyer.html"><span class="doc">GenerateAcceptanceCertificateXmlForBuyer</span></a>. Для этого надо передать следующие параметры:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">boxId</span></code> - идентификатор ящика получателя;</li>
+<li><code class="docutils literal"><span class="pre">sellerTitleMessageId</span></code> - идентификатор сообщения, содержащего соответствующий титул исполнителя;</li>
+<li><code class="docutils literal"><span class="pre">sellerTitleAttachmentId</span></code> - идентификатор сущности, представляющей титул исполнителя, для которого требуется изготовить титул заказчика.</li>
+</ul>
+<p>Эти идентификаторы соответствуют идентификаторам из параметров <code class="docutils literal"><span class="pre">boxId</span></code>, <code class="docutils literal"><span class="pre">messageId</span></code>, <code class="docutils literal"><span class="pre">entityId</span></code> для метода <a class="reference internal" href="../http/GetMessage.html"><span class="doc">GetMessage</span></a>.</p>
+<p>В теле запроса должны содержаться данные для изготовления титула заказчика для акта о выполнении работ/оказании услуг в XML-формате в виде сериализованной структуры <a class="reference internal" href="../proto/Torg12Info.html"><span class="doc">AcceptanceCertificateBuyerTitleInfo</span></a>.</p>
+<p>HTTP-запрос для генерации файла титула заказчика акта о выполнении работ/оказании услуг выглядит следующим образом:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="p">/</span><span class="n">GenerateAcceptanceCertificateXmlForBuyer</span><span class="p">?</span><span class="n">sellerTitleMessageId</span><span class="p">=</span><span class="n">bbcedb0d</span><span class="p">-</span><span class="n">ce34</span><span class="p">-</span><span class="m">4</span><span class="n">e0d</span><span class="p">-</span><span class="n">b321</span><span class="p">-</span><span class="m">3f600</span><span class="n">c920935</span><span class="p">&amp;</span><span class="n">sellerTitleAttachmentId</span><span class="p">=</span><span class="m">30</span><span class="n">cf2c07</span><span class="p">-</span><span class="m">7297</span><span class="p">-</span><span class="m">4d48</span><span class="p">-</span><span class="n">bc6f</span><span class="p">-</span><span class="n">ca7a80e2cf95</span><span class="p">&amp;</span><span class="n">boxId</span><span class="p">=</span><span class="n">db32772b</span><span class="p">-</span><span class="m">9256</span><span class="p">-</span><span class="m">49</span><span class="n">a8</span><span class="p">-</span><span class="n">a133</span><span class="p">-</span><span class="n">fda593fda38a</span> <span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="p">:</span> <span class="n">diadoc</span><span class="p">-</span><span class="n">api</span><span class="p">.</span><span class="n">kontur</span><span class="p">.</span><span class="n">ru</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">DiadocAuth</span> <span class="n">ddauth_api_client_id</span><span class="p">=</span><span class="n">testClient</span><span class="p">-</span><span class="m">8</span><span class="n">ee1638deae84c86b8e2069955c2825a</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Length</span><span class="p">:</span> <span class="m">1252</span>
+<span class="n">Connection</span><span class="p">:</span> <span class="n">Keep</span><span class="p">-</span><span class="n">Alive</span>
+
+<span class="p">&lt;</span><span class="n">Сериализованная</span> <span class="n">структура</span> <span class="n">AcceptanceCertificateBuyerTitleInfo</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>В теле ответа содержится XML-файл титула заказчика, построенный на основании XML-файла титула исполнителя и данных из запроса.</p>
+<p>Успешный ответ сервера выглядит так:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="p">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="n">OK</span>
+<span class="n">Content</span><span class="p">-</span><span class="n">Length</span><span class="p">:</span> <span class="m">598</span>
+
+<span class="p">&lt;</span><span class="n">XML</span><span class="p">-</span><span class="n">файл</span> <span class="n">титула</span> <span class="n">заказчика</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Файл генерируется в соответствии с <a class="reference download internal" href="../_downloads/DP_ZAKTPRM_1_990_00_05_01_02.xsd" download=""><code class="xref download docutils literal"><span class="pre">XML-схемой</span></code></a>, которой должны удовлетворять XML-акты, согласно приказу ФНС.</p>
+<p>Имя файла титула заказчика для акта о выполнении работ/оказании услуг возвращается в стандартном HTTP-заголовке <code class="docutils literal"><span class="pre">Content-Disposition</span></code>.</p>
+</div>
+<div class="section" id="id7">
+<h2>Отправка файла титула заказчика для акта о выполнении работ/оказании услуг<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
+<p>После того, как у вас есть XML-файл титула заказчика, его нужно отправить с помощью команды <a class="reference internal" href="../http/PostMessagePatch.html"><span class="doc">PostMessagePatch</span></a>.</p>
+<p>Для этого нужно подготовить структуру <a class="reference internal" href="../proto/MessagePatchToPost.html"><span class="doc">MessagePatchToPost</span></a> следующим образом:</p>
+<ul>
+<li><p class="first">в значение атрибута <em>BoxId</em> указываем идентификатор ящика, в котором находится исходное сообщение;</p>
+</li>
+<li><p class="first">в значение атрибута <em>MessageId</em> указываем идентификатор сообщения, к которому относится отправляемый патч;</p>
+</li>
+<li><p class="first">для передачи XML-файла титула исполнителя акта о выполнении работ/оказании услуг нужно использовать атрибут <em>XmlAcceptanceCertificateBuyerTitles</em>, описываемый структурой <em>ReceiptAttachment</em>:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">ParentEntityId - идентификатор документа, к которому относится титул заказчика; это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре <a class="reference internal" href="../proto/Entity message.html"><span class="doc">Entity</span></a>.);</p>
+<blockquote>
+<div><ul class="simple">
+<li>внутри структуры <em>ReceiptAttachment</em> находится вложенная структура <em>SignedContent</em>;</li>
+<li>сам XML-файл нужно передать в атрибут <em>Content</em>, подпись исполнителя в атрибут <em>Signature</em>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Описание структур, используемых при отправке акта о выполнении работ/оказании услуг:</p>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">MessagePatchToPost</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">BoxId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">MessageId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ReceiptAttachment</span> <span class="na">XmlAcceptanceCertificateBuyerTitles</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">ReceiptAttachment</span> <span class="p">{</span>
+            <span class="k">required</span> <span class="kt">string</span> <span class="na">ParentEntityId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="n">SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">SignedContent</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">bytes</span> <span class="na">Content</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bytes</span> <span class="na">Signature</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>После отправки в теле ответа будет содержаться отправленное дополнение, сериализованное в протобуфер <a class="reference internal" href="../proto/MessagePatch.html"><span class="doc">MessagePatch</span></a>.</p>
+</div>
+<div class="section" id="sdk">
+<h2>SDK<a class="headerlink" href="#sdk" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Пример кода на C# для отправки файла титула исполнителя для акта о выполнении работ/оказании услуг:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="c1">//Для работы с документами в Диадоке необходим авторизационный токен.</span>
+<span class="c1">//Подробнее о получении авторизационного токена можно узнать в разделе &quot;Как авторизоваться в системе&quot;.</span>
+<span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="n">AuthTokenCert</span><span class="p">;</span>
+
+<span class="c1">//Формирование файла титула исполнителя</span>
+<span class="k">public</span> <span class="k">static</span> <span class="n">GeneratedFile</span> <span class="nf">GenerateAcceptanceCertificateSellerTitle</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">content</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AcceptanceCertificateSellerTitleInfo</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="c1">// Заполняется согласно структуре AcceptanceCertificateSellerTitleInfo</span>
+        <span class="p">};</span>
+        <span class="k">return</span> <span class="n">Api</span><span class="p">.</span><span class="n">GenerateAcceptanceCertificateXmlForSeller</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">content</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Отправка файла титула исполнителя</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">SendAcceptanceCertificateSellerTitle</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">sellerTitle</span> <span class="p">=</span> <span class="n">GenerateAcceptanceCertificateSellerTitle</span><span class="p">();</span>
+        <span class="kt">var</span> <span class="n">messageAttachment</span> <span class="p">=</span> <span class="k">new</span> <span class="n">XmlDocumentAttachment</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="n">SignedContent</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SignedContent</span>
+                <span class="p">{</span>
+                        <span class="n">Content</span> <span class="p">=</span> <span class="n">sellerTitle</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span>
+                        <span class="c1">//Подпись исполнителя, см. &quot;Как авторизоваться в системе&quot;</span>
+                        <span class="n">Signature</span> <span class="p">=</span> <span class="n">Crypt</span><span class="p">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">sellerTitle</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span> <span class="n">ReadCertContent</span><span class="p">(</span><span class="s">&quot;путь к сертификату&quot;</span><span class="p">))</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="kt">var</span> <span class="n">messageToPost</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MessageToPost</span>
+        <span class="p">{</span>
+                <span class="n">FromBoxId</span> <span class="p">=</span> <span class="s">&quot;идентификатор ящика исполнителя&quot;</span><span class="p">,</span>
+                <span class="n">ToBoxId</span> <span class="p">=</span> <span class="s">&quot;идентификатор ящика заказчика&quot;</span><span class="p">,</span>
+                <span class="n">XmlAcceptanceCertificateSellerTitles</span> <span class="p">=</span>
+                <span class="p">{</span>
+                        <span class="n">messageAttachment</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="n">Api</span><span class="p">.</span><span class="n">PostMessage</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">messageToPost</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">SendAcceptanceCertificateSellerTitle</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Пример кода на C# для получения файла титула исполнителя для акта о выполнении работ/оказании услуг и отправки файла титула заказчика:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="c1">//Для работы с документами в Диадоке необходим авторизационный токен.</span>
+<span class="c1">//Подробнее о получении авторизационного токена можно узнать в разделе &quot;Как авторизоваться в системе&quot;.</span>
+<span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="n">AuthTokenCert</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="n">BoxId</span> <span class="p">=</span> <span class="s">&quot;идентификатор ящика заказчика&quot;</span><span class="p">;</span>
+
+<span class="c1">//Для работы с документом необходимо знать его уникальный идентификатор.</span>
+<span class="c1">//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.</span>
+
+<span class="c1">//Получение списка всех актов о выполнении работ/оказании услуг, по которым не завершен документооборот</span>
+<span class="k">public</span> <span class="k">static</span> <span class="n">DocumentList</span> <span class="nf">SearchInboundAcceptanceCertificateDocumentsWithNotFinishedDocflow</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="c1">//Параметры, по которым осуществляется фильтрация</span>
+        <span class="kt">var</span> <span class="n">filterCategory</span> <span class="p">=</span> <span class="s">&quot;XmlAcceptanceCertificate.InboundNotFinished&quot;</span><span class="p">;</span>
+        <span class="kt">var</span> <span class="n">counteragentBoxId</span> <span class="p">=</span> <span class="s">&quot;идентификатор ящика исполнителя&quot;</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">Api</span><span class="p">.</span><span class="n">GetDocuments</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">BoxId</span><span class="p">,</span> <span class="n">filterCategory</span><span class="p">,</span> <span class="n">counteragentBoxId</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Получение документа</span>
+<span class="k">public</span> <span class="k">static</span> <span class="n">Document</span> <span class="nf">GetAcceptanceCertificate</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="c1">//Выбираем конкретный документ из полученного ранее списка.</span>
+        <span class="c1">//Например, самый первый.</span>
+        <span class="k">return</span> <span class="nf">SearchInboundAcceptanceCertificateDocumentsWithNotFinishedDocflow</span><span class="p">().</span><span class="n">Documents</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">//Генерация файла титула заказчика</span>
+<span class="k">public</span> <span class="k">static</span> <span class="n">GeneratedFile</span> <span class="nf">GenerateAcceptanceCertificateBuyerTitle</span><span class="p">(</span><span class="n">Document</span> <span class="n">document</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">content</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AcceptanceCertificateBuyerTitleInfo</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="c1">// Заполняется согласно структуре AcceptanceCertificateBuyerTitleInfo</span>
+        <span class="p">};</span>
+        <span class="k">return</span> <span class="n">Api</span><span class="p">.</span><span class="n">GenerateAcceptanceCertificateXmlForBuyer</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">BoxId</span><span class="p">,</span> <span class="n">document</span><span class="p">.</span><span class="n">MessageId</span><span class="p">,</span> <span class="n">document</span><span class="p">.</span><span class="n">EntityId</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Отправка файла титула заказчика</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">SendAcceptanceCertificateBuyerTitle</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">document</span> <span class="p">=</span> <span class="n">GetAcceptanceCertificate</span><span class="p">();</span>
+        <span class="kt">var</span> <span class="n">buyerTitle</span> <span class="p">=</span> <span class="n">GenerateAcceptanceCertificateBuyerTitle</span><span class="p">(</span><span class="n">document</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">receiptAttachment</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ReceiptAttachment</span> <span class="p">()</span>
+        <span class="p">{</span>
+                <span class="n">ParentEntityId</span> <span class="p">=</span> <span class="n">document</span><span class="p">.</span><span class="n">EntityId</span><span class="p">,</span>
+                <span class="n">SignedContent</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SignedContent</span>
+                <span class="p">{</span>
+                        <span class="n">Content</span> <span class="p">=</span> <span class="n">buyerTitle</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span>
+                        <span class="c1">//Подпись заказчика, см. &quot;Как авторизоваться в системе&quot;</span>
+                        <span class="n">Signature</span> <span class="p">=</span> <span class="n">Crypt</span><span class="p">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">buyerTitle</span><span class="p">.</span><span class="n">Content</span><span class="p">,</span> <span class="n">ReadCertContent</span><span class="p">(</span><span class="s">&quot;путь к сертификату&quot;</span><span class="p">))</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="kt">var</span> <span class="n">messagePatchToPost</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MessagePatchToPost</span>
+        <span class="p">{</span>
+                <span class="n">BoxId</span> <span class="p">=</span> <span class="n">BoxId</span><span class="p">,</span>
+                <span class="n">MessageId</span> <span class="p">=</span> <span class="n">document</span><span class="p">.</span><span class="n">MessageId</span><span class="p">,</span>
+                <span class="n">XmlAcceptanceCertificateBuyerTitles</span> <span class="p">=</span>
+                <span class="p">{</span>
+                        <span class="n">receiptAttachment</span>
+                <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="n">Api</span><span class="p">.</span><span class="n">PostMessagePatch</span><span class="p">(</span><span class="n">AuthTokenCert</span><span class="p">,</span> <span class="n">messagePatchToPost</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">SendAcceptanceCertificateBuyerTitle</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../DataStructures.html" class="btn btn-neutral float-right" title="Структуры данных" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="example_torg12.html" class="btn btn-neutral" title="Как отправить и получить товарную накладную ТОРГ-12 в рекомендованном ФНС формате" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

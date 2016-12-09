@@ -1,0 +1,331 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MessageToPost &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с сообщениями" href="../API_Messages.html"/>
+        <link rel="next" title="SignedContent" href="SignedContent.html"/>
+        <link rel="prev" title="MessagePatchToPost" href="MessagePatchToPost.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Messages.html">Работа с сообщениями</a> &raquo;</li>
+      
+    <li>MessageToPost</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/proto/MessageToPost.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="messagetopost">
+<h1>MessageToPost<a class="headerlink" href="#messagetopost" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">MessageToPost</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">FromBoxId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ToBoxId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">XmlDocumentAttachment</span> <span class="na">Invoices</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">NonformalizedAttachment</span> <span class="na">NonformalizedDocuments</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">BasicDocumentAttachment</span> <span class="na">Torg12Documents</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">TrustConnectionRequestAttachment</span> <span class="na">TrustConnectionRequest</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">BasicDocumentAttachment</span> <span class="na">AcceptanceCertificates</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">StructuredDataAttachment</span> <span class="na">StructuredDataAttachments</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">BasicDocumentAttachment</span> <span class="na">ProformaInvoices</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">XmlDocumentAttachment</span> <span class="na">XmlTorg12SellerTitles</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">XmlDocumentAttachment</span> <span class="na">XmlAcceptanceCertificateSellerTitles</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ToDepartmentId</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">IsDraft</span> <span class="o">=</span> <span class="mi">13</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">LockDraft</span> <span class="o">=</span> <span class="mi">14</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">StrictDraftValidation</span> <span class="o">=</span> <span class="mi">15</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">true</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">IsInternal</span> <span class="o">=</span> <span class="mi">16</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">FromDepartmentId</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">DelaySend</span> <span class="o">=</span> <span class="mi">18</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">repeated</span> <span class="n">PriceListAttachment</span> <span class="na">PriceLists</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">NonformalizedAttachment</span> <span class="na">PriceListAgreements</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">NonformalizedAttachment</span> <span class="na">CertificateRegistries</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ReconciliationActAttachment</span> <span class="na">ReconciliationActs</span> <span class="o">=</span> <span class="mi">22</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ContractAttachment</span> <span class="na">Contracts</span> <span class="o">=</span> <span class="mi">23</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">Torg13Attachment</span> <span class="na">Torg13Documents</span> <span class="o">=</span> <span class="mi">24</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">ServiceDetailsAttachment</span> <span class="na">ServiceDetailsDocuments</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ProxyBoxId</span> <span class="o">=</span> <span class="mi">26</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">ProxyDepartmentId</span> <span class="o">=</span> <span class="mi">27</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">EncryptedInvoiceAttachment</span> <span class="na">EncryptedInvoices</span> <span class="o">=</span> <span class="mi">28</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">EncryptedXmlDocumentAttachment</span> <span class="na">EncryptedXmlTorg12SellerTitles</span> <span class="o">=</span> <span class="mi">29</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">EncryptedXmlDocumentAttachment</span> <span class="na">EncryptedXmlAcceptanceCertificateSellerTitles</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">SupplementaryAgreementAttachment</span> <span class="na">SupplementaryAgreements</span> <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">LockPacket</span> <span class="o">=</span> <span class="mi">32</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">repeated</span> <span class="n">XmlDocumentAttachment</span> <span class="na">UniversalTransferDocumentSellerTitles</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура данных <em>MessageToPost</em> представляет сообщение, подлежащее отправке через Диадок при помощи метода <a class="reference internal" href="../http/PostMessage.html"><span class="doc">PostMessage</span></a>:</p>
+<ul class="simple">
+<li><em>FromBoxId</em> - идентификатор ящика отправителя сообщения.</li>
+<li><em>ToBoxId</em> - идентификатор ящика получателя сообщения. Должен отличаться от идентификатора ящика отправителя. Для внутреннего документа (IsInternal = true) этот идентификатор должен оставаться пустым (отсутствовать или содержать пустую строку).</li>
+<li><em>IsInternal</em> - флаг, показывающий, что сообщение является внутренним, то есть сообщением между подразделениями организации.</li>
+<li><em>ToDepartmentId</em> - идентификатор подразделения в организации получателя, в которое будут отправлены все документы из сообщения (может отсутствовать, в этом случае документы будут отправлены в головное подразделение)</li>
+<li><em>FromDepartmentId</em> - идентификатор подразделения отправителя сообщения.</li>
+<li><a class="reference internal" href="XmlDocumentAttachment.html"><span class="doc">Invoices</span></a> - список СФ/ИСФ/КСФ/ИКСФ (то есть документов, обмен которыми производится в соответствии с порядком Минфина) в отправляемом сообщении.</li>
+<li><a class="reference internal" href="NonformalizedAttachment.html"><span class="doc">NonformalizedDocuments</span></a> - список неформализованных документов в отправляемом сообщении.</li>
+<li><a class="reference internal" href="TrustConnectionRequestAttachment.html"><span class="doc">TrustConnectionRequest</span></a> - запрос на инициацию канала обмена документами через Диадок в отправляемом сообщении. Данная возможность устарела, для отправки приглашения с вложенным документов воспользуйтесь методом <a class="reference internal" href="../http/AcquireCounteragent.html"><span class="doc">AcquireCounteragent</span></a></li>
+<li><a class="reference internal" href="BasicDocumentAttachment.html"><span class="doc">ProformaInvoices</span></a> - список счетов на оплату в отправляемом сообщении.</li>
+<li><a class="reference internal" href="BasicDocumentAttachment.html"><span class="doc">Torg12Documents</span></a> - список товарных накладных ТОРГ-12 в отправляемом сообщении.</li>
+<li><a class="reference internal" href="AcceptanceCertificateAttachment.html"><span class="doc">AcceptanceCertificates</span></a> - список актов о выполнении работ (оказании услуг) в отправляемом сообщении.</li>
+<li><a class="reference internal" href="XmlDocumentAttachment.html"><span class="doc">XmlTorg12SellerTitles</span></a> - список титулов продавца для товарных накладных ТОРГ-12 в XML-формате в отправляемом сообщении.</li>
+<li><a class="reference internal" href="XmlDocumentAttachment.html"><span class="doc">XmlAcceptanceCertificateSellerTitles</span></a> - список титулов исполнителя для актов о выполнении работ (оказании услуг) в XML-формате в отправляемом сообщении.</li>
+<li><a class="reference internal" href="StructuredDataAttachment.html"><span class="doc">StructuredDataAttachments</span></a> - список файлов со структурированными данными в отправляемом сообщении,описывающими те или иные документы, представленные в виде печатных форм.</li>
+<li><a class="reference internal" href="PriceListAttachment.html"><span class="doc">PriceLists</span></a> - список ценовых листов в отправляемом сообщении.</li>
+<li><a class="reference internal" href="NonformalizedAttachment.html"><span class="doc">PriceListAgreements</span></a> - список протоколов согласования цены в отправляемом сообщении.</li>
+<li><a class="reference internal" href="NonformalizedAttachment.html"><span class="doc">CertificateRegistries</span></a> - список реестров сертификатов в отправляемом сообщении.</li>
+<li><a class="reference internal" href="ReconciliationActAttachment.html"><span class="doc">ReconciliationActs</span></a> - список актов сверки в отправляемом сообщении.</li>
+<li><a class="reference internal" href="ContractAttachment.html"><span class="doc">Contracts</span></a> - список договоров в отправляемом сообщении.</li>
+<li><a class="reference internal" href="Torg13Attachment.html"><span class="doc">Torg13Documents</span></a> - список накладных ТОРГ-13 в отправляемом сообщении.</li>
+<li><a class="reference internal" href="ServiceDetailsAttachment.html"><span class="doc">ServiceDetailsDocuments</span></a> - список детализаций в отправляемом сообщении.</li>
+<li><a class="reference internal" href="EncryptedInvoiceAttachment.html"><span class="doc">EncryptedInvoices</span></a> - список зашифрованных счетов-фактур в отправляемом сообщении.</li>
+<li><a class="reference internal" href="EncryptedXmlDocumentAttachment.html"><span class="doc">EncryptedXmlTorg12SellerTitles</span></a> - список зашифрованных формализованных накладных ТОРГ-12 в отправляемом сообщении.</li>
+<li><a class="reference internal" href="EncryptedXmlDocumentAttachment.html"><span class="doc">EncryptedXmlAcceptanceCertificateSellerTitles</span></a> - список зашифрованных формализованных актов о выполнении работ (оказании услуг) в отправляемом сообщении.</li>
+<li><a class="reference internal" href="SupplementaryAgreementAttachment.html"><span class="doc">SupplementaryAgreements</span></a> - список дополнительных соглашанеий к договорам в отправляемом сообщении.</li>
+<li><a class="reference internal" href="XmlDocumentAttachment.html"><span class="doc">UniversalTransferDocumentSellerTitles</span></a> - список титулов продавца универсального передаточного документа (УПД) в XML формате.</li>
+<li><em>ProxyBoxId</em> - идентификатор ящика, промежуточного получателя. Если указан ящик промежуточного получателя, то документа доставится конечному получателя только после того, как промежуточный получатель поставит подпись под документом. Если промежуточный получатель отклонит документ, то в ящик конечного получателя он не будет доставлен.</li>
+<li><em>ProxyDepartmentId</em> - идентификатор подразделения, в ящике промежуточного получателя.</li>
+<li><em>IsDraft</em> - флаг, показывающий, что данное сообщение является черновиком (возможно, содержит неподписанные документы), и не подлежит отправке. Для добавления подписей к черновику и его отправки следует использовать метод <a class="reference internal" href="../http/SendDraft.html"><span class="doc">SendDraft</span></a>.</li>
+<li><em>LockDraft</em> - флаг, показывающий, что данный черновик является защищенным от изменений.</li>
+<li><em>StrictDraftValidation</em> - флаг, включающий проверку правильности черновика (по умолчанию проверка включена).</li>
+<li><em>DelaySend</em> - флаг, означает, что документ из сообщения будет сохранен без отправки.</li>
+<li><em>LockPacket</em> - флаг, означает, что документы сообщения будут отправлены закрытым пакетом. В таком пакете любая операция применяется ко всем документам сразу.</li>
+</ul>
+<p>Сообщения с флагом <em>DelaySend</em>, должны удовлетворять следующим</p>
+<ul class="simple">
+<li>Подпись под документом и запрос на подпись по доверенности должны отсутствовать.</li>
+</ul>
+<p>Это не черновик, поэтому ни содержимое документа, ни реквизиты получателя нельзя будет поменять в дальнейшем.</p>
+<p>Сохраненные таким образом документы можно будет найти, используя метод <a class="reference internal" href="../http/GetDocuments.html"><span class="doc">GetDocuments</span></a>. Также можно их согласовывать, используя <a class="reference internal" href="../http/PostMessagePatch.html"><span class="doc">PostMessagePatch</span></a> или через веб-интерфейс.</p>
+<p>После того как обработка на стороне отправителя больше не требуется, то документ можно подписать и отправить. Пока это можно сделать только через веб-интерфейс.</p>
+<p>По умолчанию, все документы переданные одним сообщением будут связаны в пакет.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SignedContent.html" class="btn btn-neutral float-right" title="SignedContent" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="MessagePatchToPost.html" class="btn btn-neutral" title="MessagePatchToPost" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

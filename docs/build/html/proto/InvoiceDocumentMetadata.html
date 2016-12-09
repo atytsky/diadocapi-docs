@@ -1,0 +1,411 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>InvoiceDocumentMetadata &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа со счетами-фактурами" href="../API_Invoices.html"/>
+        <link rel="next" title="InvoiceInfo" href="InvoiceInfo.html"/>
+        <link rel="prev" title="InvoiceCorrectionRequestInfo" href="InvoiceCorrectionRequestInfo.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../API_Invoices.html#http">HTTP-интерфейс</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../API_Invoices.html#id2">Структуры данных</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="InvoiceCorrectionInfo.html">InvoiceCorrectionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InvoiceCorrectionRequestInfo.html">InvoiceCorrectionRequestInfo</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">InvoiceDocumentMetadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InvoiceInfo.html">InvoiceInfo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Invoices.html">Работа со счетами-фактурами</a> &raquo;</li>
+      
+    <li>InvoiceDocumentMetadata</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/proto/InvoiceDocumentMetadata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="invoicedocumentmetadata">
+<h1>InvoiceDocumentMetadata<a class="headerlink" href="#invoicedocumentmetadata" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">InvoiceMetadata</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="n">InvoiceStatus</span> <span class="na">InvoiceStatus</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownInvoiceStatus</span><span class="p">];</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Total</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">int32</span> <span class="na">Currency</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">sfixed64</span> <span class="na">ConfirmationDateTimeTicks</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">int32</span> <span class="na">InvoiceAmendmentFlags</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">InvoiceRevisionMetadata</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="n">InvoiceStatus</span> <span class="na">InvoiceRevisionStatus</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownInvoiceStatus</span><span class="p">];</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">OriginalInvoiceNumber</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">OriginalInvoiceDate</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Total</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">int32</span> <span class="na">Currency</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">sfixed64</span> <span class="na">ConfirmationDateTimeTicks</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">int32</span> <span class="na">InvoiceAmendmentFlags</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">InvoiceCorrectionMetadata</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="n">InvoiceStatus</span> <span class="na">InvoiceCorrectionStatus</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownInvoiceStatus</span><span class="p">];</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">OriginalInvoiceNumber</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">OriginalInvoiceDate</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">OriginalInvoiceRevisionNumber</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">OriginalInvoiceRevisionDate</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">TotalInc</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">TotalDec</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">VatInc</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">VatDec</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">int32</span> <span class="na">Currency</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">sfixed64</span> <span class="na">ConfirmationDateTimeTicks</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">int32</span> <span class="na">InvoiceAmendmentFlags</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">InvoiceCorrectionRevisionMetadata</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="n">InvoiceStatus</span> <span class="na">InvoiceCorrectionRevisionStatus</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">UnknownInvoiceStatus</span><span class="p">];</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">OriginalInvoiceNumber</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">OriginalInvoiceDate</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">OriginalInvoiceRevisionNumber</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">OriginalInvoiceRevisionDate</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">OriginalInvoiceCorrectionNumber</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">OriginalInvoiceCorrectionDate</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">TotalInc</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">TotalDec</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">VatInc</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">VatDec</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">int32</span> <span class="na">Currency</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">sfixed64</span> <span class="na">ConfirmationDateTimeTicks</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">int32</span> <span class="na">InvoiceAmendmentFlags</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">InvoiceStatus</span> <span class="p">{</span>
+    <span class="na">UnknownInvoiceStatus</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="na">OutboundWaitingForInvoiceReceipt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="na">OutboundNotFinished</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="na">OutboundFinished</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="na">OutboundWaitingForSenderSignature</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="na">OutboundInvalidSenderSignature</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="na">InboundNotFinished</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="na">InboundFinished</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">[</span><span class="n">Flags</span><span class="p">]</span> <span class="kd">enum</span> <span class="n">InvoiceAmendmentFlags</span>
+<span class="p">{</span>
+    <span class="na">None</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">AmendmentRequested</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">Revised</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="na">Corrected</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура данных <em>InvoiceMetadata</em> содержит дополнительные атрибуты документа (в структуре <a class="reference internal" href="Document.html"><span class="doc">Document</span></a>) специфичные для счетов-фактур:</p>
+<ul class="simple">
+<li><em>InvoiceStatus</em> определяет состояние, в котором находится документооборот по данному СФ; принимает одно из значений перечисления <em>InvoiceStatus</em>.</li>
+<li><em>Total</em> - сумма счета-фактуры (берется из самого файла СФ).</li>
+<li><em>Vat</em> - сумма НДС счета-фактуры (берется из самого файла СФ).</li>
+<li><em>Currency</em> - код валюты счета-фактуры (берется из самого файла СФ).</li>
+<li><em>ConfirmationDateTimeTicks</em> - метка времени подтверждения оператора ДО об отправке исходящего СФ или о доставке входящего СФ. Представляет собой целое число тиков (100-наносекундных интервалов), прошедших с момента времени 00:00:00 01.01.0001. Данная метка представляет момент времени в московском часовом поясе (GMT+4).</li>
+<li><em>InvoiceAmendmentFlags</em> отражает статус данного СФ: было ли затребовано уточнение, передавалось ли ИСФ, передавался ли КСФ;
+представляет собой битовую маску, составленную из одного или нескольких значений перечисления InvoiceAmendmentFlags.</li>
+</ul>
+<p>Структура данных <em>InvoiceRevisionMetadata</em> содержит дополнительные атрибуты документа (в структуре <a class="reference internal" href="Document.html"><span class="doc">Document</span></a>) специфичные для исправлений счетов-фактур:</p>
+<ul class="simple">
+<li><em>InvoiceRevisionStatus</em> определяет состояние, в котором находится документооборот по данному ИСФ; принимает одно из значений перечисления <em>InvoiceStatus</em>.</li>
+<li><em>OriginalInvoiceNumber</em> - номер исходного счета-фактуры (берется из самого файла ИСФ).</li>
+<li><em>OriginalInvoiceDate</em> - дата исходного счета-фактуры в формате ДД.ММ.ГГГГ (берется из самого файла ИСФ).</li>
+<li><em>Total</em> - сумма исправления счета-фактуры (берется из самого файла ИСФ).</li>
+<li><em>Vat</em> - сумма НДС исправления счета-фактуры (берется из самого файла ИСФ).</li>
+<li><em>Currency</em> - код валюты исправления счета-фактуры (берется из самого файла ИСФ).</li>
+<li><em>ConfirmationDateTimeTicks</em> - метка времени подтверждения оператора ДО об отправке исходящего ИСФ или о доставке входящего ИСФ.
+Представляет собой целое число тиков (100-наносекундных интервалов), прошедших с момента времени 00:00:00 01.01.0001. Данная метка представляет момент времени в московском часовом поясе (GMT+4).</li>
+<li><em>InvoiceAmendmentFlags</em> отражает статус данного ИСФ: было ли затребовано уточнение, передавалось ли ИСФ, передавался ли КСФ;
+представляет собой битовую маску, составленную из одного или нескольких значений перечисления <em>InvoiceAmendmentFlags</em>.</li>
+</ul>
+<p>Структура данных <em>InvoiceCorrectionMetadata</em> содержит дополнительные атрибуты документа (в структуре <a class="reference internal" href="Document.html"><span class="doc">Document</span></a>) специфичные для корректировочных счетов-фактур:</p>
+<ul class="simple">
+<li><em>InvoiceStatus</em> определяет состояние, в котором находится документооборот по данному КСФ; принимает одно из значений перечисления <em>InvoiceStatus</em>.</li>
+<li><em>OriginalInvoiceNumber</em> - номер исходного счета-фактуры (берется из самого файла КСФ).</li>
+<li><em>OriginalInvoiceDate</em> - дата исходного счета-фактуры в формате ДД.ММ.ГГГГ (берется из самого файла КСФ).</li>
+<li><em>OriginalInvoiceRevisionNumber</em> - номер исходного исправления счета-фактуры (берется из самого файла КСФ, может отсутствовать).</li>
+<li><em>OriginalInvoiceRevisionDate</em> - дата исходного исправления счета-фактуры в формате ДД.ММ.ГГГГ (берется из самого файла КСФ, может отсутствовать).</li>
+<li><em>TotalInc</em> - сумма к доплате корректировочного счета-фактуры (берется из самого файла КСФ).</li>
+<li><em>TotalDec</em> - сумма к уменьшению корректировочного счета-фактуры (берется из самого файла КСФ).</li>
+<li><em>VatInc</em> - сумма НДС к доплате корректировочного счета-фактуры (берется из самого файла КСФ).</li>
+<li><em>VatDec</em> - сумма НДС к уменьшению корректировочного счета-фактуры (берется из самого файла КСФ).</li>
+<li><em>Currency</em> - код валюты корректировочного счета-фактуры (берется из самого файла КСФ).</li>
+<li><em>ConfirmationDateTimeTicks</em> - метка времени подтверждения оператора ДО об отправке исходящего КСФ или о доставке входящего КСФ.
+Представляет собой целое число тиков (100-наносекундных интервалов), прошедших с момента времени 00:00:00 01.01.0001. Данная метка
+представляет момент времени в московском часовом поясе (GMT+4).</li>
+<li><em>InvoiceAmendmentFlags</em> отражает статус данного КСФ: было ли затребовано уточнение, передавалось ли ИКСФ; представляет собой битовую маску, составленную из одного или нескольких значений перечисления <em>InvoiceAmendmentFlags</em>.</li>
+</ul>
+<p>Структура данных <em>InvoiceCorrectionRevisionMetadata</em> содержит дополнительные атрибуты документа (в структуре <a class="reference internal" href="Document.html"><span class="doc">Document</span></a>) специфичные для исправлений корректировочных счетов-фактур:</p>
+<ul class="simple">
+<li><em>InvoiceStatus</em> определяет состояние, в котором находится документооборот по данному ИКСФ; принимает одно из значений перечисления <em>InvoiceStatus</em>.</li>
+<li><em>OriginalInvoiceNumber</em> - номер исходного счета-фактуры (берется из самого файла ИКСФ).</li>
+<li><em>OriginalInvoiceDate</em> - дата исходного счета-фактуры в формате ДД.ММ.ГГГГ (берется из самого файла ИКСФ).</li>
+<li><em>OriginalInvoiceRevisionNumber</em> - номер исходного исправления счета-фактуры (берется из самого файла ИКСФ, может отсутствовать).</li>
+<li><em>OriginalInvoiceRevisionDate</em> - дата исходного исправления счета-фактуры в формате ДД.ММ.ГГГГ (берется из самого файла ИКСФ,
+может отсутствовать).</li>
+<li><em>OriginalInvoiceCorrectionNumber</em> - номер исходного корректировочного счета-фактуры (берется из самого файла ИКСФ).</li>
+<li><em>OriginalInvoiceCorrectionDate</em> - дата исходного корректировочного счета-фактуры в формате ДД.ММ.ГГГГ (берется из самого файла ИКСФ).</li>
+<li><em>TotalInc</em> - сумма к доплате исправления корректировочного счета-фактуры (берется из самого файла ИКСФ).</li>
+<li><em>TotalDec</em> - сумма к уменьшению исправления корректировочного счета-фактуры (берется из самого файла ИКСФ).</li>
+<li><em>VatInc</em> - сумма НДС к доплате исправления корректировочного счета-фактуры (берется из самого файла ИКСФ).</li>
+<li><em>VatDec</em> - сумма НДС к уменьшению исправления корректировочного счета-фактуры (берется из самого файла ИКСФ).</li>
+<li><em>Currency</em> - код валюты исправления корректировочного счета-фактуры (берется из самого файла ИКСФ).</li>
+<li><em>ConfirmationDateTimeTicks</em> - метка времени подтверждения оператора ДО об отправке исходящего ИКСФ или о доставке входящего ИКСФ.
+Представляет собой целое число тиков (100-наносекундных интервалов), прошедших с момента времени 00:00:00 01.01.0001. Данная метка представляет момент времени в московском часовом поясе (GMT+4).</li>
+<li><em>InvoiceAmendmentFlags</em> отражает статус данного ИКСФ: было ли затребовано уточнение, передавалось ли ИКСФ; представляет собой битовую маску, составленную из одного или нескольких значений перечисления <em>InvoiceAmendmentFlags</em>.</li>
+</ul>
+<p>Перечисление <em>InvoiceStatus</em> задает возможные варианты состояний, в которых может находиться СФ/ИСФ/КСФ/ИКСФ:</p>
+<ul class="simple">
+<li><em>UnknownInvoiceStatus</em> (неизвестный статус; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать статус документа, переданный сервером),</li>
+<li><em>OutboundWaitingForInvoiceReceipt</em> (СФ/ИСФ/КСФ/ИКСФ исходящий, ожидается извещение о получении СФ/ИСФ/КСФ/ИКСФ от покупателя),</li>
+<li><em>OutboundNotFinished</em> (СФ/ИСФ/КСФ/ИКСФ исходящий, извещение о получении СФ/ИСФ/КСФ/ИКСФ от покупателя уже есть, но документооборот еще не завершен),</li>
+<li><em>OutboundFinished</em> (СФ/ИСФ/КСФ/ИКСФ исходящий, документооборот завершен),</li>
+<li><em>OutboundWaitingForSenderSignature</em> (СФ/ИСФ/КСФ/ИКСФ исходящий, документ не отправлен, поскольку не подписан отправителем),</li>
+<li><em>OutboundInvalidSenderSignature</em> (СФ/ИСФ/КСФ/ИКСФ исходящий, документ не отправлен, поскольку подпись отправителя не является корректной),</li>
+<li><em>InboundNotFinished</em> (СФ/ИСФ/КСФ/ИКСФ входящий, документооборот не завершен),</li>
+<li><em>InboundFinished</em> (СФ/ИСФ/КСФ/ИКСФ входящий, документооборот завершен).</li>
+</ul>
+<p>Статус рассчитывается без учета уведомлений об уточнении и извещений об их получении.</p>
+<p>Перечисление <em>InvoiceAmendmentFlags</em> задает возможные варианты статусов СФ/ИСФ/КСФ/ИКСФ с точки зрения наличия в Диадоке уведомления об уточнении или переданного исправления / корректировки:</p>
+<ul class="simple">
+<li><em>None</em> (уточнение не требуется, ИСФ/КСФ/ИКСФ не передавались),</li>
+<li><em>AmendmentRequested</em> (имеется уведомление об уточнении СФ/ИСФ/КСФ/ИКСФ),</li>
+<li><em>Revised</em> (СФ/ИСФ/КСФ/ИКСФ был исправлен, то есть было передано соответствующее ИСФ/ИКСФ),</li>
+<li><em>Corrected</em> (СФ/ИСФ был откорректирован, то есть был передан соответствующий КСФ).</li>
+</ul>
+<p>Статус <em>Corrected</em> может быть присвоен только документам типа СФ/ИСФ.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="InvoiceInfo.html" class="btn btn-neutral float-right" title="InvoiceInfo" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="InvoiceCorrectionRequestInfo.html" class="btn btn-neutral" title="InvoiceCorrectionRequestInfo" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

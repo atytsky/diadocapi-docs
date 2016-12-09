@@ -1,0 +1,277 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ShelfUpload &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с документами" href="../API_Documents.html"/>
+        <link rel="next" title="SendDraft" href="SendDraft.html"/>
+        <link rel="prev" title="ShelfDownload" href="ShelfDownload.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Documents.html">Работа с документами</a> &raquo;</li>
+      
+    <li>ShelfUpload</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/http/ShelfUpload.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shelfupload">
+<h1>ShelfUpload<a class="headerlink" href="#shelfupload" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Имя ресурса: <strong>/ShelfUpload</strong></p>
+<p>HTTP метод: <strong>POST</strong></p>
+<p>Параметры строки запроса:</p>
+<ul class="simple">
+<li><em>nameOnShelf</em>: имя файла на «полке документов»</li>
+<li><em>partIndex</em>: номер загружаемого фрагмента файла (фрагменты индексируются, начиная с 0);</li>
+<li><em>isLastPart</em>: признак того, что загружается последний фрагмент файла: выставляется в 1 для последнего фрагмента, может отсутствовать или быть выставленным в 0 для всех остальных фрагментов;</li>
+</ul>
+<p>В запросе должен присутствовать HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code> с необходимыми данными для <a class="reference internal" href="../Authorization.html"><span class="doc">авторизации</span></a>.</p>
+<p>Метод <em>ShelfUpload</em> позволяет выполнить загрузку фрагмента документа на сервер «полки документов». Предполагается, что бинарные данные документа будут разделены на блоки некоторого размера, затем каждый такой блок будет загружен на «полку документов» с помощью отдельного вызова <em>ShelfUpload</em>.</p>
+<p>Вызов <em>ShelfUpload</em> с параметром <em>isLastPart</em>, выставленным в 1, сигнализирует сервису «полки документов», что файл (по мнению клиента) загружен полностью. В ответ сервис сообщает, действительно ли все фрагменты файла были переданы успешно, или требуется повторная передача некоторых фрагментов. Если файл загружен полностью, то он становится доступен для чтения с «полки документов», и на него можно ссылаться в структуре <a class="reference internal" href="../proto/SignedContent.html"><span class="doc">SignedContent</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Все пространство логических имен файлов на «полке документов» поделено на локальное для пользователя и публичное.</p>
+</div>
+<p>По умолчанию, если вызвать метод <em>ShelfUpload</em> и указать параметр <em>nameOnShelf=xyz</em>, то физическое имя файла будет <em>public/xyz</em>, т.е. публичное. К таким файлам можно получить доступ через <a class="reference internal" href="ShelfDownload.html"><span class="doc">ShelfDownload</span></a>, указав <em>nameOnShelf=xyz</em>.</p>
+<p>Если вызвать <em>ShelfUpload</em> и указать параметр <em>nameOnShelf=__userId__/xyz</em>, где <em>__userId__</em> - это строковый литерал, то физическое имя файла будет <em>user_private_files/{userId}/xyz</em>. <em>{userId}</em> возьмется из текущего авторизационного токена. К таким файлам можно получить доступ через <a class="reference internal" href="ShelfDownload.html"><span class="doc">ShelfDownload</span></a>, указав <em>nameOnShelf=user_private_files/{userId}/xyz</em>.</p>
+<p>Методы <a class="reference internal" href="PostMessage.html"><span class="doc">PostMessage</span></a> и <a class="reference internal" href="PostMessagePatch.html"><span class="doc">PostMessagePatch</span></a> трактуют переданное имя файла как локальное для пользователя, поэтому дописывают вначале префикс <em>user_private_files/{userId}</em></p>
+<p>Если же в процессе загрузки были ошибки, и отдельные фрагменты файла отсутствуют, то вызов <em>ShelfUpload</em> с параметром <em>isLastPart</em>, выставленным в 1, вернет в теле ответа в качестве результата список номеров отсутствующих фрагментов файла (их надо передать повторно) в формате JSON.</p>
+<p>Для вызова этого метода текущий пользователь должен быть авторизован в Диадоке, в противном случае возвращается код ошибки 403 (Forbidden).</p>
+<p>Возможные HTTP-коды возврата:</p>
+<ul class="simple">
+<li>200 (OK) - операция успешно завершена;</li>
+<li>400 (Bad Request) - данные в запросе имеют неверный формат или отсутствуют обязательные параметры;</li>
+<li>403 (Forbidden) - авторизационный токен отсутствует, истек или имеет неверный формат;</li>
+<li>500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SendDraft.html" class="btn btn-neutral float-right" title="SendDraft" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ShelfDownload.html" class="btn btn-neutral" title="ShelfDownload" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

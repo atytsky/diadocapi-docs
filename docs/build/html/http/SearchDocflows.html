@@ -1,0 +1,309 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SearchDocflows &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Docflow API" href="../Docflow API.html"/>
+        <link rel="next" title="GetDocflowEvents" href="GetDocflowEvents.html"/>
+        <link rel="prev" title="GetDocflowsByPacketId" href="GetDocflowsByPacketId.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Docflow API.html">Docflow API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Docflow API.html#http">HTTP-интерфейс</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="GetDocflows.html">GetDocflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GetDocflowsByPacketId.html">GetDocflowsByPacketId</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SearchDocflows</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#http">HTTP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sdk">SDK</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="GetDocflowEvents.html">GetDocflowEvents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Docflow API.html#id1">Структуры данных</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../Docflow API.html">Docflow API</a> &raquo;</li>
+      
+    <li>SearchDocflows</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/http/SearchDocflows.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="searchdocflows">
+<h1>SearchDocflows<a class="headerlink" href="#searchdocflows" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Метод позволяет искать документы по произвольной строке запроса. Строка разбивается на токены по пробелам и разделительным символам, и в выдачу попадают те документы, у которых хотя бы один из полученных токенов содержится в номере, дате, имени файла или других данных.</p>
+<p>Строка запроса может иметь специальный вид &#8220;ключ: значение&#8221;, в этом случае ее разбор на сервере происходит в соответствии с форматом YAML. В выдачу попадают документы, которые содержат указанную пару &#8220;ключ-значение&#8221; среди пользовательских данных, привязанных к документу.</p>
+<p>Результаты можно выгружать постранично. Для выгрузки очередной страницы в метод передается индекс документа, с которого требуется начать выгрузку. Максимальный размер страницы можно указать при запросе, однако это число не должно превышать 100 (значение по умолчанию). Метод не гарантирует, что все страницы, кроме последней, будут содержать одинаковое максимальное количество документов. Интеграционное решение должно быть рассчитано на то, что в рамках очередной страницы не будет выгружено ни одного документа.</p>
+<p>Метод возвращает только те документы, к которым у пользователя есть доступ.</p>
+<div class="section" id="http">
+<h2>HTTP<a class="headerlink" href="#http" title="Ссылка на этот заголовок">¶</a></h2>
+<p><strong>POST /V2/SearchDocflows</strong></p>
+<p><strong>Параметры запроса:</strong></p>
+<ul class="simple">
+<li><em>boxId</em> - идентификатор ящика</li>
+</ul>
+<p><strong>Тело запроса:</strong> протобуфер <a class="reference internal" href="../proto/SearchDocflowsRequest.html"><span class="doc">SearchDocflowsRequest</span></a>.</p>
+<p><strong>Тело ответа:</strong> протобуфер <a class="reference internal" href="../proto/SearchDocflowsResponse.html"><span class="doc">SearchDocflowsResponse</span></a>.</p>
+<p><strong>Возможные HTTP-коды возврата:</strong></p>
+<ul class="simple">
+<li><em>200 (OK)</em> - операция успешно завершена.</li>
+<li><em>400 (Bad Request)</em> - данные в запросе имеют неверный формат или отсутствуют обязательные параметры.</li>
+<li><em>401 (Unauthorized)</em> - в запросе отсутствует HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code>, или в этом заголовке содержатся некорректные
+авторизационные данные.</li>
+<li><em>403 (Forbidden)</em> - доступ к ящику с предоставленным авторизационным токеном запрещен.</li>
+<li><em>405 (Method not allowed)</em> - используется неподходящий HTTP-метод.</li>
+<li><em>500 (Internal server error)</em> - при обработке запроса возникла непредвиденная ошибка.</li>
+</ul>
+</div>
+<div class="section" id="sdk">
+<h2>SDK<a class="headerlink" href="#sdk" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">SearchDocflowsResponse</span> <span class="nf">SearchDocflows</span><span class="p">(</span><span class="kt">string</span> <span class="n">authToken</span><span class="p">,</span> <span class="kt">string</span> <span class="n">boxId</span><span class="p">,</span> <span class="n">SearchDocflowsRequest</span> <span class="n">request</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="c">
+<h3>Пример использования (C#)<a class="headerlink" href="#c" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Постраничная выгрузка документов, имеющих отношение к строке &#8220;Пример&#8221;:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SearchDocflowsRequest</span> <span class="p">{</span> <span class="n">QueryString</span> <span class="p">=</span> <span class="s">&quot;Пример&quot;</span> <span class="p">};</span>
+<span class="k">while</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">api</span><span class="p">.</span><span class="n">SearchDocflows</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">boxId</span><span class="p">,</span> <span class="n">request</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">Out</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Fetched {0} documents&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">Documents</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">response</span><span class="p">.</span><span class="n">HaveMoreDocuments</span><span class="p">)</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="n">request</span><span class="p">.</span><span class="n">FirstIndex</span> <span class="p">+=</span> <span class="n">response</span><span class="p">.</span><span class="n">Documents</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GetDocflowEvents.html" class="btn btn-neutral float-right" title="GetDocflowEvents" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GetDocflowsByPacketId.html" class="btn btn-neutral" title="GetDocflowsByPacketId" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

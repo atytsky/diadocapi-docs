@@ -1,0 +1,320 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AcceptanceCertificateInfo &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с документами" href="../API_Documents.html"/>
+        <link rel="next" title="BasicDocumentAttachment" href="BasicDocumentAttachment.html"/>
+        <link rel="prev" title="AcceptanceCertificateAttachment" href="AcceptanceCertificateAttachment.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Documents.html">Работа с документами</a> &raquo;</li>
+      
+    <li>AcceptanceCertificateInfo</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/proto/AcceptanceCertificateInfo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="acceptancecertificateinfo">
+<h1>AcceptanceCertificateInfo<a class="headerlink" href="#acceptancecertificateinfo" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="c1">// титул исполнителя</span>
+<span class="kd">message</span> <span class="nc">AcceptanceCertificateSellerTitleInfo</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="n">DiadocOrganizationInfo</span> <span class="na">Seller</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                 <span class="c1">// исполнитель (продавец услуг)</span>
+    <span class="k">required</span> <span class="n">DocflowParticipant</span> <span class="na">Buyer</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>                      <span class="c1">// заказчик (покупатель услуг)</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">DocumentDate</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>                           <span class="c1">// дата составления акта о выполнении</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">DocumentNumber</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                         <span class="c1">// номер акта</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">DocumentTitle</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>                          <span class="c1">// заголовок документа</span>
+    <span class="k">repeated</span> <span class="n">WorkDescription</span> <span class="na">Works</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>                         <span class="c1">// описание выполненных работ</span>
+    <span class="k">required</span> <span class="n">AcceptanceCertificateSignatureInfo</span> <span class="na">Signature</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>  <span class="c1">// сведения о подписи акта</span>
+    <span class="k">required</span> <span class="n">Signer</span> <span class="na">Signer</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>                                 <span class="c1">// подписант</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">AdditionalInfo</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>                         <span class="c1">// дополнительная информация</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">WorkDescription</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">StartingDate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// начало периода выполнения работ</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">CompletionDate</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>        <span class="c1">// окончание периода выполнения работ</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">TotalWithVatExcluded</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">// сумма без учета НДС - итого</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                   <span class="c1">// сумма НДС - итого</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Total</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>                 <span class="c1">// сумма с учетом НДС - итого</span>
+    <span class="k">repeated</span> <span class="n">WorkItem</span> <span class="na">Items</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>               <span class="c1">// сведения о произведенной работе</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">WorkItem</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                     <span class="c1">// наименование</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Description</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>              <span class="c1">// описание работы</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">UnitCode</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>                 <span class="c1">// код единицы измерения</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">UnitName</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                 <span class="c1">// наименование единицы измерения</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Price</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>                    <span class="c1">// цена</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Quantity</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>                 <span class="c1">// количество</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SubtotalWithVatExcluded</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>  <span class="c1">// сумма без учета НДС</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>                      <span class="c1">// сумма НДС</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Subtotal</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>                 <span class="c1">// сумма с учетом НДС</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">AdditionalInfo</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>          <span class="c1">// информационное поле сведений о работе (услуге)</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AcceptanceCertificateSignatureInfo</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">SignatureDate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// дата подписи акта исполнителем / заказчиком</span>
+    <span class="k">optional</span> <span class="n">Official</span> <span class="na">Official</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>     <span class="c1">// лицо, подписывающее со стороны исполнителя / заказчика</span>
+    <span class="k">optional</span> <span class="n">Attorney</span> <span class="na">Attorney</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>     <span class="c1">// сведения о доверенности подписывающего со стороны исполнителя / заказчика</span>
+<span class="p">}</span>
+
+<span class="c1">// титул заказчика</span>
+<span class="kd">message</span> <span class="nc">AcceptanceCertificateBuyerTitleInfo</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Complaints</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                             <span class="c1">// претензии</span>
+    <span class="k">required</span> <span class="n">AcceptanceCertificateSignatureInfo</span> <span class="na">Signature</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// сведения о подписи акта</span>
+    <span class="k">required</span> <span class="n">Signer</span> <span class="na">Signer</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>                                 <span class="c1">// подписант</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">AdditionalInfo</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                         <span class="c1">// дополнительная информация</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура данных <em>AcceptanceCertificateSellerTitleInfo</em> представляет исходные данные для формирования титула исполнителя для акта о выполнении работ/оказании услуг в XML-формате при помощи метода <a class="reference internal" href="../http/GenerateAcceptanceCertificateXmlForSeller.html"><span class="doc">GenerateAcceptanceCertificateXmlForSeller</span></a>.</p>
+<p>При заполнении структуры <em>AcceptanceCertificateSellerTitleInfo</em> нужно иметь в виду:</p>
+<ul class="simple">
+<li>Реквизиты исполнителя (<em>AcceptanceCertificateSellerTitleInfo.Seller</em>) заполняются в виде структуры данных <a class="reference internal" href="OrganizationInfo.html"><span class="doc">DiadocOrganizationInfo</span></a>;</li>
+<li>Реквизиты заказчика (<em>AcceptanceCertificateSellerTitleInfo.Buyer</em>) заполняются в виде структура данных <a class="reference internal" href="OrganizationInfo.html"><span class="doc">DocflowParticipant</span></a>;</li>
+<li>Реквизиты подписанта акта <em>AcceptanceCertificateSellerTitleInfo.Signer</em> заполняются в виде структуры данных <a class="reference internal" href="Signer.html"><span class="doc">Signer</span></a>;</li>
+<li>Правила заполнения структуры <em>AcceptanceCertificateSellerTitleInfo</em> повторяют требования формата ФНС, зафиксированные в следующей <a class="reference download internal" href="../_downloads/DP_IAKTPRM_1_987_00_05_01_02.xsd" download=""><code class="xref download docutils literal"><span class="pre">XML-схеме</span></code></a>.</li>
+</ul>
+<p>Структура данных <em>AcceptanceCertificateBuyerTitleInfo</em> представляет исходные данные для формирования титула заказчика для акта о выполнении работ/оказании услуг в XML-формате при помощи метода <a class="reference internal" href="../http/GenerateAcceptanceCertificateXmlForBuyer.html"><span class="doc">GenerateAcceptanceCertificateXmlForBuyer</span></a>.</p>
+<p>При заполнении структуры <em>AcceptanceCertificateBuyerTitleInfo</em> нужно иметь в виду:</p>
+<ul class="simple">
+<li>Реквизиты подписанта акта <em>AcceptanceCertificateBuyerTitleInfo.Signer</em> заполняются в виде структуры данных <a class="reference internal" href="Signer.html"><span class="doc">Signer</span></a>.</li>
+<li>Правила заполнения структуры <em>AcceptanceCertificateBuyerTitleInfo</em> повторяют требования формата ФНС, зафиксированные в следующей <a class="reference download internal" href="../_downloads/DP_ZAKTPRM_1_990_00_05_01_02.xsd" download=""><code class="xref download docutils literal"><span class="pre">XML-схеме</span></code></a>.</li>
+</ul>
+<p>Структура данных <em>AcceptanceCertificateSignatureInfo</em> представляет реквизиты подписи одной из сторон в акте:</p>
+<ul class="simple">
+<li><em>SignatureDate</em> - дата подписи в формате ДД.ММ.ГГГГ;</li>
+<li><em>Official</em> - информация о должностном лице, поставившем подпись; заполняются в виде структуры данных <a class="reference internal" href="Official.html"><span class="doc">Official</span></a></li>
+<li><em>Attorney</em> - сведения о доверенности подписывающего со стороны исполнителя / заказчика; заполняются в виде структуры данных <a class="reference internal" href="Official.html"><span class="doc">Attorney</span></a>.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="BasicDocumentAttachment.html" class="btn btn-neutral float-right" title="BasicDocumentAttachment" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="AcceptanceCertificateAttachment.html" class="btn btn-neutral" title="AcceptanceCertificateAttachment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

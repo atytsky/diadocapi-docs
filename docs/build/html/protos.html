@@ -1,0 +1,369 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Справочник стурктур данных &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="genindex.html"/>
+        <link rel="search" title="Поиск" href="search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Справочник стурктур данных</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/protos.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Справочник стурктур данных<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="toctree-wrapper compound" id="protos">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="proto/AcceptanceCertificateAttachment.html">AcceptanceCertificateAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/AcceptanceCertificateInfo.html">AcceptanceCertificateInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Address.html">Address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/AsyncMethodResult.html">AsyncMethodResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Attachment.html">Attachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/BasicDocumentAttachment.html">BasicDocumentAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/BasicDocumentInfo.html">BasicDocumentInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/BilateralDocflow.html">BilateralDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/BilateralDocumentMetadata.html">BilateralDocumentMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/BoxEvent.html">BoxEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/BoxEventList.html">BoxEventList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/BuyerTitleDocflow.html">BuyerTitleDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/CertificateChainElement.html">CertificateChainElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/CertificateVerificationResult.html">CertificateVerificationResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/CloudSignConfirmResultDTO.html">CloudSignConfirmResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/CloudSignRequest.html">CloudSignRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/CloudSignResultDTO.html">CloudSignResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Content.html">Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Content_v2.html">Content_v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ContractAttachment.html">ContractAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ContractDocumentInfo.html">ContractDocumentInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Counteragent.html">Counteragent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/CustomDataItem.html">CustomDataItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/CustomDataPatch.html">CustomDataPatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Department.html">Department</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Docflow.html">Docflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocflowEvent.html">DocflowEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocflowStatus.html">DocflowStatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocflowStatusModel.html">DocflowStatusModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocflowStatusSeverity.html">DocflowStatusSeverity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Document.html">Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentDateAndNumber.html">DocumentDateAndNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentDirection.html">DocumentDirection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentId.html">DocumentId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentInfo.html">DocumentInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentList.html">DocumentList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentProtocol.html">DocumentProtocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentSenderSignature.html">DocumentSenderSignature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentSignature.html">DocumentSignature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentType.html">DocumentType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentWithDocflow.html">DocumentWithDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentZipGenerationResult.html">DocumentZipGenerationResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DocumentsMoveOperation.html">DocumentsMoveOperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/DraftToSend.html">DraftToSend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/EncryptedDocumentMetadata.html">EncryptedDocumentMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/EncryptedInvoiceAttachment.html">EncryptedInvoiceAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/EncryptedXmlDocumentAttachment.html">EncryptedXmlDocumentAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Entity.html">Entity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Entity message.html">Entity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ExternalServiceAuthInfo.html">ExternalServiceAuthInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/FetchedDocument.html">FetchedDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ForwardDocumentEvent.html">ForwardDocumentEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ForwardedDocument.html">ForwardedDocument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/GetDocflowBatchRequest.html">GetDocflowBatchRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/GetDocflowBatchResponse.html">GetDocflowBatchResponse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/GetDocflowEventsRequest.html">GetDocflowEventsRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/GetDocflowEventsResponse.html">GetDocflowEventsResponse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/GetDocflowRequest.html">GetDocflowRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/GetDocflowsByPacketIdRequest.html">GetDocflowsByPacketIdRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/GetDocflowsByPacketIdResponse.html">GetDocflowsByPacketIdResponse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/GetOrganizationsByInnListRequest.html">GetOrganizationsByInnListRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InboundInvoiceDocflow.html">InboundInvoiceDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InboundInvoiceReceiptDocflow.html">InboundInvoiceReceiptDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InvoiceConfirmationDocflow.html">InvoiceConfirmationDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InvoiceCorrectionDocumentInfo.html">InvoiceCorrectionDocumentInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InvoiceCorrectionInfo.html">InvoiceCorrectionInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InvoiceCorrectionRequestDocflow.html">InvoiceCorrectionRequestDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InvoiceCorrectionRequestInfo.html">InvoiceCorrectionRequestInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InvoiceDocumentInfo.html">InvoiceDocumentInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InvoiceDocumentMetadata.html">InvoiceDocumentMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/InvoiceInfo.html">InvoiceInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Message.html">Message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/MessagePatch.html">MessagePatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/MessagePatchToPost.html">MessagePatchToPost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/MessageToPost.html">MessageToPost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/NonformalizedAttachment.html">NonformalizedAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/NonformalizedDocumentMetadata.html">NonformalizedDocumentMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Official.html">Official</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Organization.html">Organization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/OrganizationInfo.html">OrganizationInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/OrganizationUser.html">OrganizationUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/OrganizationUserPermissions.html">OrganizationUserPermissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/OutboundInvoiceDocflow.html">OutboundInvoiceDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/PrepareDocumentsToSignRequest.html">PrepareDocumentsToSignRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/PrepareDocumentsToSignResponse.html">PrepareDocumentsToSignResponse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/PriceListAttachment.html">PriceListAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/PriceListDocumentInfo.html">PriceListDocumentInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ReceiptDocflow.html">ReceiptDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/RecipientSignatureDocflow.html">RecipientSignatureDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/RecipientSignatureRejectionDocflow.html">RecipientSignatureRejectionDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Recognized.html">Recognized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ReconciliationActAttachment.html">ReconciliationActAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Resolution.html">Resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ResolutionChain.html">ResolutionChain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ResolutionRequest.html">ResolutionRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ResolutionRequestDenial.html">ResolutionRequestDenial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ResolutionStatus.html">ResolutionStatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/RevocationDocflow.html">RevocationDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/RevocationRequestInfo.html">RevocationRequestInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/RoamingNotification.html">RoamingNotification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SearchDocflowsRequest.html">SearchDocflowsRequest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SearchDocflowsResponse.html">SearchDocflowsResponse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SearchScope.html">SearchScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/ServiceDetailsAttachment.html">ServiceDetailsAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Signature.html">Signature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SignatureRejectionInfo.html">SignatureRejectionInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SignatureVerificationResult.html">SignatureVerificationResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SignedAttachment.html">SignedAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SignedContent.html">SignedContent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Signer.html">Signer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SortDirection.html">SortDirection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/StructuredDataAttachment.html">StructuredDataAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SupplementaryAgreementAttachment.html">SupplementaryAgreementAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/SupplementaryAgreementDocumentInfo.html">SupplementaryAgreementDocumentInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/TimeBasedFilter.html">TimeBasedFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Timestamp.html">Timestamp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Torg12Info.html">Torg12Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/Torg13Attachment.html">Torg13Attachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/TrustConnectionRequestAttachment.html">TrustConnectionRequestAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/UnilateralDocflow.html">UnilateralDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/UnilateralDocumentMetadata.html">UnilateralDocumentMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/User.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/XmlBilateralDocflow.html">XmlBilateralDocflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/XmlDocumentAttachment.html">XmlDocumentAttachment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/utd/ExtendedOrganizationInfo.html">ExtendedOrganizationInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/utd/ExtendedSigner.html">ExtendedSigner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/utd/ExtendedSignerToPost.html">ExtendedSignerToPost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/utd/UniversalTransferDocumentBuyerTitleInfo.html">UniversalTransferDocumentBuyerTitleInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proto/utd/UniversalTransferDocumentSellerTitleInfo.html">UniversalTransferDocumentSellerTitleInfo</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

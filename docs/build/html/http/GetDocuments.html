@@ -1,0 +1,353 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GetDocuments &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с документами" href="../API_Documents.html"/>
+        <link rel="next" title="GetForwardedDocumentEvents" href="GetForwardedDocumentEvents.html"/>
+        <link rel="prev" title="GetDocument" href="GetDocument.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Documents.html">Работа с документами</a> &raquo;</li>
+      
+    <li>GetDocuments</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/http/GetDocuments.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getdocuments">
+<h1>GetDocuments<a class="headerlink" href="#getdocuments" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Имя ресурса: <strong>/V3/GetDocuments</strong></p>
+<p>HTTP метод: <strong>GET</strong></p>
+<p>Параметры строки запроса:</p>
+<ul class="simple">
+<li><em>boxId</em>: идентификатор ящика, в котором осуществляется поиск документов;</li>
+<li><em>filterCategory</em>: статус, по которому требуется отфильтровать список документов;</li>
+<li><em>counteragentBoxId</em>: идентификатор ящика контрагента, по которому требуется дополнительная фильтрация (может отсутствовать, не имеет смысла при фильтрации внутренних документов);</li>
+<li><em>toDepartmentId</em>: идентификатор подразделения получателя, по которому требуется дополнительная фильтрация (может отсутствовать, имеет смысл только при фильтрации внутренних документов);</li>
+<li><em>timestampFromTicks</em>: <a class="reference internal" href="../proto/Timestamp.html"><span class="doc">метка времени</span></a>, задающая начальную точку периода, по которому требуется дополнительная фильтрация (может отсутствовать);</li>
+<li><em>timestampToTicks</em>: <a class="reference internal" href="../proto/Timestamp.html"><span class="doc">метка времени</span></a>, задающая конечную точку периода, по которому требуется дополнительная фильтрация (может отсутствовать);</li>
+<li><em>fromDocumentDate</em>: дата документа в формате ДД.ММ.ГГГГ, задающая начальную точку периода, по которому требуется дополнительная фильтрация (может отсутствовать);</li>
+<li><em>toDocumentDate</em>: дата документа в формате ДД.ММ.ГГГГ, задающая конечную точку периода, по которому требуется дополнительная фильтрация (может отсутствовать);</li>
+<li><em>departmentId</em>: идентификатор подразделения, из которого производится выборка документов (может отсутствовать, в этом случае выборка производится из головного подразделения);</li>
+<li><em>excludeSubdepartments</em>: если присутствует - исключить из выборки дочерние подразделения;</li>
+<li><em>afterIndexKey</em>: уникальный ключ документа, позволяющий итерироваться по всему списку документов, удовлетворяющих фильтру (может отсутствовать);</li>
+<li><em>sortDirection</em>: задает порядок сортировки документов в выдаче, принимает одно из значений &#8220;Ascending&#8221;, или &#8220;Descending&#8221; (может отсутствовать, значение по умолчанию - &#8220;Ascending&#8221;);</li>
+</ul>
+<p>В запросе должен присутствовать HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code> с необходимыми данными для <a class="reference internal" href="../Authorization.html"><span class="doc">авторизации</span></a>.</p>
+<p>В теле ответа содержится список документов из ящика boxId, подходящих под определенный фильтр. Список выдается в виде сериализованной структуры данных <a class="reference internal" href="../proto/DocumentList.html"><span class="doc">DocumentList</span></a>.</p>
+<p>Элементы в списке <em>DocumentList.Documents</em> идут в порядке возрастания меток времени (поля <em>Document.TimestampTicks</em>). В поле <em>DocumentList.TotalCount</em> указывается общее количество документов, удовлетворяющих запросу.</p>
+<p>В массиве <em>DocumentList.Documents</em> содержится не более 100 элементов; для получения остальных документов нужно вызывать метод <em>GetDocuments</em> с теми же параметрами, меняя значение <em>afterIndexKey</em>.</p>
+<p>При получении списков документов их содержимое в протобуфер не включается – поле <em>Document.Content.Data</em> у них будет равно NULL. В случае необходимости содержимое документа всегда можно получить при помощи метода <a class="reference internal" href="GetEntityContent.html"><span class="doc">GetEntityContent</span></a>.</p>
+<p>Обязательный параметр <em>filterCategory</em> задается строкой в формате &#8220;[DocumentType].[DocumentClass][DocumentStatus]&#8221;.</p>
+<p>Первая часть этой строки задает тип документа и может принимать либо одно из значений перечисления <a class="reference internal" href="../proto/DocumentType.html"><span class="doc">DocumentType</span></a>, либо одно из специальных значений:</p>
+<ul class="simple">
+<li><em>AnyInvoiceDocumentType</em> - соответствует набору из четырех типов документов СФ/ИСФ/КСФ/ИКСФ (Invoice, InvoiceRevision, InvoiceCorrection, InvoiceCorrectionRevision),</li>
+<li><em>AnyBilateralDocumentType</em> - соответствует любому типу двусторонних документов (Nonformalized, Torg12, AcceptanceCertificate, XmlTorg12, XmlAcceptanceCertificate, TrustConnectionRequest, PriceList, PriceListAgreement, CertificateRegistry, ReconciliationAct, Contract, Torg13),</li>
+<li><em>AnyUnilateralDocumentType</em> - соответствует любому типу односторонних документов (ProformaInvoice, ServiceDetails),</li>
+<li><em>Any</em> - соответствует любому типу документа.</li>
+</ul>
+<p>Строка <em>DocumentClass</em> задает класс документа и может принимать следующие значения:</p>
+<ul class="simple">
+<li><em>Inbound</em> (входящий документ),</li>
+<li><em>Outbound</em> (исходящий документ),</li>
+<li><em>Internal</em> (внутренний документ)</li>
+</ul>
+<p>Строка <em>DocumentStatus</em> задает статус документа и может принимать следующие значения:</p>
+<ul class="simple">
+<li>Пустое значение (любой документ указанного класса Class),</li>
+<li><em>NotRead</em> (документ не прочитан),</li>
+<li><em>NoRecipientSignatureRequest</em> (документ без запроса ответной подписи),</li>
+<li><em>WaitingForRecipientSignature</em> (документ в ожидании ответной подписи),</li>
+<li><em>WithRecipientSignature</em> (документ с ответной подписью),</li>
+<li><em>WithSenderSignature</em> (документ с подписью отправителя),</li>
+<li><em>RecipientSignatureRequestRejected</em> (документ с отказом от формирования ответной подписи),</li>
+<li><em>WaitingForSenderSignature</em> (документ, требующий подписания и отправки),</li>
+<li><em>InvalidSenderSignature</em> (документ с невалидной подписью отправителя, требующий повторного подписания и отправки),</li>
+<li><em>InvalidRecipientSignature</em> (документ с невалидной подписью получателя, требующий повторного подписания и отправки),</li>
+<li><em>Approved</em> (согласованный документ),</li>
+<li><em>Disapproved</em> (документ с отказом согласования),</li>
+<li><em>WaitingForResolution</em> (документ, находящийся на согласовании или подписи),</li>
+<li><em>SignatureRequestRejected</em> (документ с отказом в запросе подписи сотруднику),</li>
+<li><em>Finished</em> (документ с завершенным документооборотом),</li>
+<li><em>HaveToCreateReceipt</em> (требуется подписать извещение о получении),</li>
+<li><em>NotFinished</em> (документ с незавершенным документооборотом),</li>
+<li><em>InvoiceAmendmentRequested</em> (имеет смысл только для счетов-фактур; документ, по которому было запрошено уточнение),</li>
+<li><em>RevocationIsRequestedByMe</em> (документ, по которому было запрошено аннулирование),</li>
+<li><em>RequestsMyRevocation</em> (документ, по которому контрагент запросил аннулирование),</li>
+<li><em>RevocationAccepted</em> (аннулированный документ),</li>
+<li><em>RevocationRejected</em> (документ, запрос на аннулирование которого был отклонен),</li>
+<li><em>RevocationApproved</em> (документ, запрос на аннулирование которого был согласован),</li>
+<li><em>RevocationDisapproved</em> (документ с отказом согласования запроса на аннулирование),</li>
+<li><em>WaitingForRevocationApprovement</em> (документ, находящийся на согласовании запроса аннулирования),</li>
+<li><em>NotRevoked</em> (неаннулированный документ)</li>
+<li><em>WaitingForProxySignature</em> (документ в ожидании подписи промежуточного получателя),</li>
+<li><em>WithProxySignature</em> (документ с подписью промежуточного получателя),</li>
+<li><em>InvalidProxySignature</em> (документ с невалидной подписью промежуточного получателя, требующий повторного подписания и отправки),</li>
+<li><em>ProxySignatureRejected</em> (документ с отказом от формирования подписи промежуточным получателем),</li>
+<li><em>WaitingForInvoiceReceipt</em> (документ в ожидании получения извещения о получении счета-фактуры),</li>
+<li><em>WaitingForReceipt</em> (документ в ожидании получения извещения о получении),</li>
+<li><em>RequestsMySignature</em> (документ, по которому контрагент запросил подпись),</li>
+<li><em>RoamingNotificationError</em> (документ, с ошибкой доставки в роуминге)</li>
+</ul>
+<p>Примеры строки <em>filterCategory</em>:</p>
+<ul class="simple">
+<li><em>AnyUnilateralDocumentType.InboundNotRevoked</em> (все входящие односторонние неаннулированные документы),</li>
+<li><em>XmlTorg12.OutboundWithRecipientSignature</em> (все исходящие формализованные ТОРГ-12, подписанные контрагентом),</li>
+<li><em>InvoiceCorrection.OutboundInvoiceAmendmentRequested</em> (все исходящие КСФ, по которым контрагент запросил уточнение).</li>
+</ul>
+<p>Необязательный параметр <em>counteragentBoxId</em> позволяет ограничить выдачу только теми документами, у которых идентификатор ящика контрагента
+совпадает с <em>counteragentBoxId</em>.</p>
+<p>Необязательные параметры timestampFromTicks и timestampToTicks позволяют задать интервал времени, в котором осуществляется поиск.</p>
+<p>То есть, если один или оба этих параметра заданы, то метка времени документа (поле <a class="reference internal" href="../proto/Document.html"><span class="doc">Document.TimestampTicks</span></a>), попадающего в выдачу, будет лежать в интервале [timestampFromTicks, timestampToTicks], включая границы.</p>
+<p>Если какой-то из этих параметров отсутствует в запросе, то его значение неявно принимается равным -/+ бесконечности соответственно.</p>
+<p>Необязательные параметры <em>fromDocumentDate</em> и <em>toDocumentDate</em> также позволяют задать интервал времени, в котором осуществляется поиск.</p>
+<p>Однако при этом фильтрация списка документов производится по дате формирования документа в учетной системе (реквизиту самого документа), а не по метке времени, связанной с загрузкой документа в ящик Диадока.</p>
+<p>Если один или оба параметра <em>fromDocumentDate</em> и <em>toDocumentDate</em> заданы, то дата документа (поле <a class="reference internal" href="../proto/Document.html"><span class="doc">Document.DocumentDate</span></a>), попадающего в выдачу, будет лежать в интервале [<em>fromDocumentDate</em>, <em>toDocumentDate</em>], включая границы.</p>
+<p>Если какой-то параметр отсутствует в запросе, то его значение неявно принимается равным +/- бесконечности. В выдачу метода <em>GetDocuments</em> попадают только те документы, у которых заполнен реквизит &#8220;Дата документа&#8221;.</p>
+<p>Параметры <em>fromDocumentDate</em> и <em>toDocumentDate</em> задаются в формате ДД.ММ.ГГГГ, то есть представляют собой только даты, а не полноценные метки времени.</p>
+<p>Смешивать параметры <em>timestampFromTicks</em>, <em>timestampToTicks</em> и <em>fromDocumentDate</em>, <em>toDocumentDate</em> в одном запросе нельзя - фильтрация производится либо по дате документа, либо по метке времени его загрузки в ящик Диадока.</p>
+<p>Ключи <a class="reference internal" href="../proto/Document.html"><span class="doc">Document.IndexKey</span></a>, полученные при фильтрации по дате документа (при помощи параметров <em>fromDocumentDate</em> и <em>toDocumentDate</em>) и при фильтрации по метке времени (при помощи параметров <em>timestampFromTicks</em> и <em>timestampToTicks</em>), для одного и того же документа могут различаться.</p>
+<p>Необязательный параметр <em>afterIndexKey</em> позволяет итерироваться по списку документов, удовлетворяющих фильтру.</p>
+<p>Если в запросе присутствует параметр <em>afterIndexKey</em>, то список документов в выдаче начинается с документа, следующего за документом, имеющим ключ <em>afterIndexKey</em> (поле <a class="reference internal" href="../proto/Document.html"><span class="doc">Document.IndexKey</span></a>).</p>
+<p>Cам документ с ключом <em>afterIndexKey</em> в выдачу при этом не попадает. Если данный параметр в запросе отсутствует, то выдается начало списка документов, удовлетворяющих фильтру.</p>
+<p>Возможные HTTP-коды возврата:</p>
+<ul class="simple">
+<li>200 (OK) - операция успешно завершена;</li>
+<li>400 (Bad Request) - данные в запросе имеют неверный формат или отсутствуют обязательные параметры;</li>
+<li>401 (Unauthorized) - в запросе отсутствует HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code>, или в этом заголовке содержатся некорректные авторизационные данные;</li>
+<li>403 (Forbidden) - доступ к ящику с предоставленным авторизационным токеном запрещен;</li>
+<li>405 (Method not allowed) - используется неподходящий HTTP-метод;</li>
+<li>500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GetForwardedDocumentEvents.html" class="btn btn-neutral float-right" title="GetForwardedDocumentEvents" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GetDocument.html" class="btn btn-neutral" title="GetDocument" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

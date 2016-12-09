@@ -1,0 +1,310 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GetDepartment &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с организациями" href="../API_Organizations.html"/>
+        <link rel="next" title="GetMyOrganizations" href="GetMyOrganizations.html"/>
+        <link rel="prev" title="GetBox" href="GetBox.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Organizations.html">Работа с организациями</a> &raquo;</li>
+      
+    <li>GetDepartment</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/http/GetDepartment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getdepartment">
+<h1>GetDepartment<a class="headerlink" href="#getdepartment" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Имя ресурса: <strong>/GetDepartment</strong></p>
+<p>HTTP метод: <strong>GET</strong></p>
+<p>Параметры строки запроса:</p>
+<ul class="simple">
+<li><em>orgId</em>: идентификатор организации.</li>
+<li><em>departmentId</em>: идентификатор подразделения организации.</li>
+<li><em>outputFormat</em>: формат вывода данных, может отсутствовать. Возможные значения: xml, protobuf (по-умолчанию - protobuf).</li>
+</ul>
+<p>В запросе должен присутствовать HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code> с необходимыми данными для <a class="reference internal" href="../Authorization.html"><span class="doc">авторизации</span></a>.</p>
+<p>В теле ответа содержатся справочные данные для подразделения, сериализованные в запрошенном формате:</p>
+<ul>
+<li><p class="first">если в строке запроса не было параметра outputFormat, либо его значение было равно protobuf, данные возвращаются сериализованными в протобуфер <a class="reference internal" href="../proto/Department.html"><span class="doc">Department</span></a>;</p>
+</li>
+<li><p class="first">если значение параметра outputFormat в строке запроса было равно xml, данные возвращаются в формате xml, как в следующем примере:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="n">Department</span> <span class="n">id</span><span class="p">=</span><span class="s">&quot;departmentId&quot;</span> <span class="n">parent</span><span class="p">-</span><span class="n">id</span><span class="p">=</span><span class="s">&quot;parentDepartmentId&quot;</span> <span class="n">name</span><span class="p">=</span><span class="s">&quot;Название&quot;</span> <span class="n">abbreviation</span><span class="p">=</span><span class="s">&quot;Н&quot;</span> <span class="n">kpp</span><span class="p">=</span><span class="s">&quot;123456789&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="n">Address</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="n">RussianAddress</span>
+      <span class="n">zip</span><span class="p">-</span><span class="n">code</span><span class="p">=</span><span class="s">&quot;620000&quot;</span>
+      <span class="n">region</span><span class="p">=</span><span class="s">&quot;Свердловская область&quot;</span>
+      <span class="n">territory</span><span class="p">=</span><span class="s">&quot;&quot;</span>
+      <span class="n">city</span><span class="p">=</span><span class="s">&quot;Екатеринбург&quot;</span>
+      <span class="n">locality</span><span class="p">=</span><span class="s">&quot;&quot;</span>
+      <span class="n">street</span><span class="p">=</span><span class="s">&quot;&quot;</span>
+      <span class="n">building</span><span class="p">=</span><span class="s">&quot;&quot;</span>
+      <span class="n">block</span><span class="p">=</span><span class="s">&quot;&quot;</span>
+      <span class="n">apartment</span><span class="p">=</span><span class="s">&quot;&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="n">Address</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">Department</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="n">Department</span> <span class="n">id</span><span class="p">=</span><span class="s">&quot;departmentId&quot;</span> <span class="n">parent</span><span class="p">-</span><span class="n">id</span><span class="p">=</span><span class="s">&quot;parentDepartmentId&quot;</span> <span class="n">name</span><span class="p">=</span><span class="s">&quot;Название&quot;</span> <span class="n">abbreviation</span><span class="p">=</span><span class="s">&quot;Н&quot;</span> <span class="n">kpp</span><span class="p">=</span><span class="s">&quot;123456789&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="n">Address</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="n">ForeignAddress</span>
+      <span class="n">country</span><span class="p">=</span><span class="s">&quot;USA&quot;</span>
+      <span class="n">address</span><span class="p">=</span><span class="s">&quot;Washington DC&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="n">Address</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">Department</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Возможные HTTP-коды возврата:</p>
+<ul>
+<li><p class="first">200 (OK) - операция успешно завершена;</p>
+</li>
+<li><p class="first">400 (Bad Request) - если не заданы или имеют неверный формат параметры orgId и departmentId;</p>
+</li>
+<li><p class="first">401 (Unauthorized) - в запросе отсутствует HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code>, или в этом заголовке содержатся некорректные авторизационные данные;</p>
+</li>
+<li><p class="first">404 (Not Found):</p>
+<blockquote>
+<div><ul class="simple">
+<li>организация с указанным идентификатором не найдена в справочнике,</li>
+<li>подразделение с указанным идентификатором не найдено в организации;</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">405 (Method not allowed) - используется неподходящий HTTP-метод;</p>
+</li>
+<li><p class="first">500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.</p>
+</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GetMyOrganizations.html" class="btn btn-neutral float-right" title="GetMyOrganizations" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GetBox.html" class="btn btn-neutral" title="GetBox" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

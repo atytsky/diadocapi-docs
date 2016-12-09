@@ -1,0 +1,321 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GetCounteragents &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с контрагентами" href="../API_Counteragents.html"/>
+        <link rel="next" title="GetCounteragentCertificates" href="GetCounteragentCertificates.html"/>
+        <link rel="prev" title="GetCounteragent" href="GetCounteragent.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Counteragents.html">Работа с контрагентами</a> &raquo;</li>
+      
+    <li>GetCounteragents</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/http/GetCounteragents.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getcounteragents">
+<h1>GetCounteragents<a class="headerlink" href="#getcounteragents" title="Ссылка на этот заголовок">¶</a></h1>
+<p>На текущий момент доступно 2 версии данного метода:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#v3"><span class="std std-ref">v2</span></a></li>
+<li><a class="reference internal" href="#v4"><span class="std std-ref">v1</span></a></li>
+</ul>
+<div class="section" id="v2">
+<span id="v3"></span><h2>v2<a class="headerlink" href="#v2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Имя ресурса: <strong>/V2/GetCounteragents</strong></p>
+<p>HTTP метод: <strong>GET</strong></p>
+<p>Параметры строки запроса:</p>
+<ul class="simple">
+<li><em>myOrgId</em>: идентификатор организации, для которой осуществляется поиск контрагентов;</li>
+<li><em>counteragentStatus</em>: статус, по которому требуется отфильтровать список контрагентов (может отсутствовать);</li>
+<li><em>afterIndexKey</em>: уникальный ключ, позволяющий итерироваться по всему списку контрагентов, удовлетворяющих фильтру (может отсутствовать).</li>
+</ul>
+<p>В запросе должен присутствовать HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code> с необходимыми данными для <a class="reference internal" href="../Authorization.html"><span class="doc">авторизации</span></a>. Пользователь имеет право производить манипуляции со списком контрагентов организации myOrgId или запрашивать его, если у него есть доступ хотя бы в один из ящиков этой организации.</p>
+<p>Метод возвращает список контрагентов организации <em>myOrgId</em>, находящихся в статусе <em>counteragentStatus</em>. Возможные значения параметра <em>counteragentStatus</em>:</p>
+<ul class="simple">
+<li><em>IsMyCounteragent</em> (отношение партнерства установлено и действует),</li>
+<li><em>InvitesMe</em> (контрагент прислал запрос на установление отношения партнерства),</li>
+<li><em>IsInvitedByMe</em> (в адрес контрагента был отправлен запрос на установление отношения партнерства),</li>
+<li><em>Rejected</em> (отношение партнерства было разоварвано с той или иной стороны, либо запрос на установление отношения партнерства был отклонен той или иной стороной).</li>
+</ul>
+<p>Если параметр <em>counteragentStatus</em> не задан, выдается весь список контрагентов.</p>
+<p>Список выдается в виде сериализованной структуры данных <a class="reference internal" href="../proto/Counteragent.html"><span class="doc">CounteragentList</span></a>. В поле <em>CounteragentList.TotalCount</em> указывается общее количество контрагентов, удовлетворяющих запросу.</p>
+<p>В массиве <em>CounteragentList.Counteragents</em> содержится не более 100 элементов; для получения остальных документов нужно вызывать метод <em>GetCounteragents</em> с теми же параметрами, но с указанием значения параметра <em>afterIndexKey</em>.</p>
+<p>Необязательный параметр <em>afterIndexKey</em> позволяет итерироваться по списку контрагентов, удовлетворяющих фильтру. Если в запросе присутствует параметр <em>afterIndexKey</em>, то выдача начинается с контрагента, следующего в возвращаемом списке за контрагентом, имеющим ключ <em>afterIndexKey</em> (сам контрагент с ключом afterIndexKey в выдачу не попадает).</p>
+<p>Ключ контрагента можно получить из поля <em>IndexKey</em> структуры <a class="reference internal" href="../proto/Counteragent.html"><span class="doc">Counteragent</span></a>.</p>
+<p>Если параметр <em>afterIndexKey</em> в запросе отсутствует, то выдается начало списка контрагентов, удовлетворяющих фильтру.</p>
+<p>В структуре <a class="reference internal" href="../proto/Organization.html"><span class="doc">Organization</span></a>, вложенной в структуру <a class="reference internal" href="../proto/Counteragent.html"><span class="doc">CounteragentList</span></a>, поле <em>Departments</em> будет пустым.</p>
+<p>Возможные HTTP-коды возврата:</p>
+<ul class="simple">
+<li>200 (OK) - операция успешно завершена;</li>
+<li>400 (Bad Request) - данные в запросе имеют неверный формат или отсутствуют обязательные параметры;</li>
+<li>401 (Unauthorized) - в запросе отсутствует HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code>, или в этом заголовке содержатся некорректные авторизационные данные;</li>
+<li>403 (Forbidden) - доступ к списку контрагентов организации myOrgId с предоставленным авторизационным токеном запрещен;</li>
+<li>405 (Method not allowed) - используется неподходящий HTTP-метод;</li>
+<li>500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.</li>
+</ul>
+</div>
+<div class="section" id="v1">
+<span id="v4"></span><h2>v1<a class="headerlink" href="#v1" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Имя ресурса: <strong>/GetCounteragents</strong></p>
+<p>HTTP метод: <strong>GET</strong></p>
+<p>Параметры строки запроса:</p>
+<ul class="simple">
+<li><em>myOrgId</em>: идентификатор организации, для которой осуществляется поиск контрагентов;</li>
+<li><em>counteragentStatus</em>: статус, по которому требуется отфильтровать список контрагентов (может отсутствовать);</li>
+<li><em>afterIndexKey</em>: уникальный ключ, позволяющий итерироваться по всему списку контрагентов, удовлетворяющих фильтру (может отсутствовать).</li>
+</ul>
+<p>В запросе должен присутствовать HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code> с необходимыми данными для <a class="reference internal" href="../Authorization.html"><span class="doc">авторизации</span></a>. Пользователь имеет право производить манипуляции со списком контрагентов организации myOrgId или запрашивать его, если у него есть доступ хотя бы в один из ящиков этой организации.</p>
+<p>Метод возвращает список контрагентов организации myOrgId, находящихся в статусе counteragentStatus. Возможные значения параметра counteragentStatus:</p>
+<ul class="simple">
+<li>IsMyCounteragent (отношение партнерства установлено и действует),</li>
+<li>InvitesMe (контрагент прислал запрос на установление отношения партнерства),</li>
+<li>IsInvitedByMe (в адрес контрагента был отправлен запрос на установление отношения партнерства),</li>
+<li>Rejected (отношение партнерства было разоварвано с той или иной стороны, либо запрос на установление отношения партнерства был отклонен той или иной стороной).</li>
+</ul>
+<p>Если параметр counteragentStatus не задан, выдается весь список контрагентов.</p>
+<p>Список выдается в виде сериализованной структуры данных <a class="reference internal" href="../proto/Counteragent.html"><span class="doc">CounteragentList</span></a>. В поле CounteragentList.TotalCount указывается общее количество контрагентов, удовлетворяющих запросу. В массиве CounteragentList.Counteragents содержится не более 100 элементов; для получения остальных документов нужно вызывать метод GetCounteragents с теми же параметрами, но с указанием значения параметра afterIndexKey.</p>
+<p>Необязательный параметр afterIndexKey позволяет итерироваться по списку контрагентов, удовлетворяющих фильтру. Если в запросе присутствует параметр afterIndexKey, то выдача начинается с контрагента, следующего в возвращаемом списке за контрагентом, имеющим ключ afterIndexKey (сам контрагент с ключом afterIndexKey в выдачу не попадает). Ключ контрагента можно получить из поля IndexKey структуры <a class="reference internal" href="../proto/Counteragent.html"><span class="doc">Counteragent</span></a>. Если параметр afterIndexKey в запросе отсутствует, то выдается начало списка контрагентов, удовлетворяющих фильтру.</p>
+<p>Возможные HTTP-коды возврата:</p>
+<ul class="simple">
+<li>200 (OK) - операция успешно завершена;</li>
+<li>400 (Bad Request) - данные в запросе имеют неверный формат или отсутствуют обязательные параметры;</li>
+<li>401 (Unauthorized) - в запросе отсутствует HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code>, или в этом заголовке содержатся некорректные авторизационные данные;</li>
+<li>403 (Forbidden) - доступ к списку контрагентов организации myOrgId с предоставленным авторизационным токеном запрещен;</li>
+<li>405 (Method not allowed) - используется неподходящий HTTP-метод;</li>
+<li>500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GetCounteragentCertificates.html" class="btn btn-neutral float-right" title="GetCounteragentCertificates" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GetCounteragent.html" class="btn btn-neutral" title="GetCounteragent" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

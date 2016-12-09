@@ -1,0 +1,290 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GetMyOrganizations &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с организациями" href="../API_Organizations.html"/>
+        <link rel="next" title="GetMyPermissions" href="GetMyPermissions.html"/>
+        <link rel="prev" title="GetDepartment" href="GetDepartment.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Organizations.html">Работа с организациями</a> &raquo;</li>
+      
+    <li>GetMyOrganizations</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/http/GetMyOrganizations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getmyorganizations">
+<h1>GetMyOrganizations<a class="headerlink" href="#getmyorganizations" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Имя ресурса: <strong>/GetMyOrganizations</strong></p>
+<p>HTTP метод: <strong>GET</strong></p>
+<p>Параметры строки запроса:</p>
+<ul class="simple">
+<li><em>outputFormat</em>: формат вывода данных, может отсутствовать. Возможные значения: xml, protobuf (по-умолчанию - protobuf).</li>
+<li><em>autoRegister</em>: признак, указывающий на то, нужно ли регистрировать текущего пользователя в организацию из сертификата, если в организации нет действующего администратора и активных пользовтаелей (по умолчанию, true).</li>
+</ul>
+<p>В запросе должен присутствовать HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code> с необходимыми данными для <a class="reference internal" href="../Authorization.html"><span class="doc">авторизации</span></a>.</p>
+<p>В теле ответа содержится список всех ящиков, к которым имеет доступ пользователь-владелец авторизационного токена, сериализованный в заданном формате:</p>
+<ul>
+<li><p class="first">если в строке запроса не было параметра outputFormat, либо его значение было равно protobuf, то данные возвращаются сериализованными в протобуфер <a class="reference internal" href="../proto/Organization.html"><span class="doc">OrganizationList</span></a>;</p>
+</li>
+<li><p class="first">если значение параметра outputFormat в строке запроса было равно xml, то данные возвращаются в формате xml, как в следующем примере:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="n">Organizations</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="n">Organization</span> <span class="n">id</span><span class="p">=</span><span class="s">&quot;orgId1&quot;</span> <span class="n">inn</span><span class="p">=</span><span class="s">&quot;1234567890&quot;</span> <span class="n">kpp</span><span class="p">=</span><span class="s">&quot;123456789&quot;</span> <span class="n">fullName</span><span class="p">=</span><span class="s">&quot;ООО Яблоко&quot;</span> <span class="n">shortName</span><span class="p">=</span><span class="s">&quot;ООО Яблоко&quot;</span> <span class="n">joinedDiadocTreaty</span><span class="p">=</span><span class="s">&quot;true&quot;</span> <span class="n">isEmployee</span><span class="p">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="n">Boxes</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="n">Box</span> <span class="n">id</span><span class="p">=</span><span class="s">&quot;boxId1&quot;</span> <span class="n">title</span><span class="p">=</span><span class="s">&quot;Ящик для счетов фактур&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="n">Box</span> <span class="n">id</span><span class="p">=</span><span class="s">&quot;boxId2&quot;</span> <span class="n">title</span><span class="p">=</span><span class="s">&quot;Тестовый ящик&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="n">Boxes</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="n">Organization</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="n">Organization</span> <span class="n">id</span><span class="p">=</span><span class="s">&quot;orgId2&quot;</span> <span class="n">inn</span><span class="p">=</span><span class="s">&quot;123456789012&quot;</span> <span class="n">kpp</span><span class="p">=</span><span class="s">&quot;&quot;</span> <span class="n">fullName</span><span class="p">=</span><span class="s">&quot;ИП Сидоров Иван Петрович&quot;</span> <span class="n">shortName</span><span class="p">=</span><span class="s">&quot;&quot;</span> <span class="n">joinedDiadocTreaty</span><span class="p">=</span><span class="s">&quot;false&quot;</span> <span class="n">isEmployee</span><span class="p">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="n">Boxes</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="n">Box</span> <span class="n">id</span><span class="p">=</span><span class="s">&quot;boxId3&quot;</span> <span class="n">title</span><span class="p">=</span><span class="s">&quot;Основной ящик&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="n">Boxes</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="n">Organization</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">Organizations</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Если текущий пользователь имеет сертификат КЭП, при запросе данного метода произойдет регистрация новой организации из сертификата (если ранее такая организация отсутствовала). Информация о такой организации вернется в ответ на запрос вместе с организациями, в которые пользователь уже имеет доступ. По умолчанию, метод зарегистрирует текущего пользователя в организации и сделает его администратором (если в организации нет действующего администратора и активных пользовтаелей). Для того, чтобы избежать авторегистрации пользователей, необходимо передавать флаг <code class="docutils literal"><span class="pre">autoRegister</span> <span class="pre">=</span> <span class="pre">false</span></code>. Флаг вызывает только регистрацию организации, без регистрации в ней пользователя.</p>
+<p>Если организация в Диадоке уже существует, то метод с флагом <code class="docutils literal"><span class="pre">autoRegister</span> <span class="pre">=</span> <span class="pre">false</span></code> вернет организацию из сертификата, без повторной регистрации.</p>
+<p>Если у данного пользователя нет сертификата (логинный пользователь). В ответ на вызов метода будет получен список организаций, в которые у пользователя есть доступ.</p>
+<p>Возможные HTTP-коды возврата:</p>
+<ul class="simple">
+<li>200 (OK) - операция успешно завершена;</li>
+<li>401 (Unauthorized) - в запросе отсутствует HTTP-заголовок <code class="docutils literal"><span class="pre">Authorization</span></code>, или в этом заголовке содержатся некорректные авторизационные данные;</li>
+<li>405 (Method not allowed) - используется неподходящий HTTP-метод;</li>
+<li>500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GetMyPermissions.html" class="btn btn-neutral float-right" title="GetMyPermissions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GetDepartment.html" class="btn btn-neutral" title="GetDepartment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

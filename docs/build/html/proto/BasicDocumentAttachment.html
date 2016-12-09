@@ -1,0 +1,307 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BasicDocumentAttachment &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="../genindex.html"/>
+        <link rel="search" title="Поиск" href="../search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="../index.html"/>
+        <link rel="up" title="Работа с документами" href="../API_Documents.html"/>
+        <link rel="next" title="BilateralDocumentMetadata" href="BilateralDocumentMetadata.html"/>
+        <link rel="prev" title="AcceptanceCertificateInfo" href="AcceptanceCertificateInfo.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataModel.html">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../API_Documents.html">Работа с документами</a> &raquo;</li>
+      
+    <li>BasicDocumentAttachment</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/proto/BasicDocumentAttachment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basicdocumentattachment">
+<h1>BasicDocumentAttachment<a class="headerlink" href="#basicdocumentattachment" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-protobuf"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">BasicDocumentAttachment</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="n">SignedContent</span> <span class="na">SignedContent</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">FileName</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Comment</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">DocumentId</span> <span class="na">InitialDocumentIds</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">DocumentId</span> <span class="na">SubordinateDocumentIds</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">DocumentDate</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">DocumentNumber</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">Total</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">CustomDocumentId</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Vat</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">Grounds</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">bool</span> <span class="na">NeedReceipt</span> <span class="o">=</span> <span class="mi">12</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="kc">false</span><span class="p">];</span>
+    <span class="k">repeated</span> <span class="n">CustomDataItem</span> <span class="na">CustomData</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структура данных <em>BasicDocumentAttachment</em> представляет один первичный бухгалтерский документ (например, счет на оплату, товарную накладную ТОРГ-12, или акт о выполнении работ/оказании услуг) в отправляемом сообщении <a class="reference internal" href="MessageToPost.html"><span class="doc">MessageToPost</span></a>:</p>
+<ul>
+<li><p class="first"><em>SignedContent</em> - содержимое файла первичного документа вместе с ЭЦП под ней в виде структуры <a class="reference internal" href="SignedContent.html"><span class="doc">SignedContent</span></a>.</p>
+</li>
+<li><p class="first"><em>FileName</em> - имя файла отправляемого первичного документа.</p>
+</li>
+<li><p class="first"><em>Comment</em> - необязательный текстовый комментарий к первичному документу.</p>
+</li>
+<li><p class="first"><em>InitialDocumentIds</em> - список идентификаторов документов, к которым привязывается отправляемый первичный документ;</p>
+<blockquote>
+<div><p>Каждый такой идентификатор задается структурой <a class="reference internal" href="DocumentId.html"><span class="doc">DocumentId</span></a>;</p>
+<p>Для того чтобы установить связь с документом внутри отправляемого сообщения, нужно в поле <em>DocumentId.MessageId</em> указать пустую строку, а в поле <em>DocumentId.EntityId</em> поместить значение поля <em>CustomDocumentId</em> соответствующего документа.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><em>SubordinateDocumentIds</em> - список идентификаторов документов, которые должны ссылаться на отправляемый первичный документ;</p>
+<blockquote>
+<div><p>Каждый такой идентификатор задается структурой <a class="reference internal" href="DocumentId.html"><span class="doc">DocumentId</span></a>;</p>
+<p>Для того чтобы установить связь с документом внутри отправляемого сообщения, нужно в поле <em>DocumentId.MessageId</em> указать пустую строку, а в поле <em>DocumentId.EntityId</em> поместить значение поля <em>CustomDocumentId</em> соответствующего документа.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><em>CustomDocumentId</em> - необязательный идентификатор документа во внешней системе, уникальный в рамках структуры <a class="reference internal" href="MessageToPost.html"><span class="doc">MessageToPost</span></a>;</p>
+<blockquote>
+<div><p>используется для выстраивания связей между документами внутри отправляемого сообщения. В дальнейшем его можно получить через <em>Document.CustomDocumentId</em>.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><em>DocumentDate</em> - дата формирования первичного документа в формате ДД.ММ.ГГГГ.</p>
+</li>
+<li><p class="first"><em>DocumentNumber</em> - номер первичного документа.</p>
+</li>
+<li><p class="first"><em>Total</em> - сумма первичного документа.</p>
+</li>
+<li><p class="first"><em>Vat</em> - сумма НДС первичного документа. Если параметр не заполнен, то первичный документ в Диадоке создается с отметкой &#8220;без НДС&#8221;.</p>
+</li>
+<li><p class="first"><em>Grounds</em> - основания для первичного документа, задаются в виде неформализованной строки текста, например, &#8220;Договор №1234, Заказ №321&#8221;.</p>
+</li>
+<li><p class="first"><em>NeedReceipt</em> - необязательный признак того, что от получателя требуется сформировать извещение о получении данного документа.</p>
+</li>
+<li><p class="first"><em>CustomData</em> - список пар вида &#8220;ключ-значение&#8221;, содержащих произвольные данные по документу. Каждая пара задается структурой <a class="reference internal" href="CustomDataItem.html"><span class="doc">CustomDataItem</span></a>.</p>
+</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="BilateralDocumentMetadata.html" class="btn btn-neutral float-right" title="BilateralDocumentMetadata" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="AcceptanceCertificateInfo.html" class="btn btn-neutral" title="AcceptanceCertificateInfo" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

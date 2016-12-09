@@ -1,0 +1,296 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Модель данных &mdash; Документация Диадок 1.36.2</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon-16.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Алфавитный указатель"
+              href="genindex.html"/>
+        <link rel="search" title="Поиск" href="search.html"/>
+    <link rel="top" title="Документация Диадок 1.36.2" href="index.html"/>
+        <link rel="next" title="Порядок работы с API" href="ApiClientOperationPrinciple.html"/>
+        <link rel="prev" title=".NET/COM-библиотека" href="DiadocApiDll.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Диадок
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Общее описание возможностей</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Обзор возможностей API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntegrationOptions.html">Возможности для интеграции</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Модель данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiClientOperationPrinciple.html">Порядок работы с API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Counteragents.html">Управление списком активных контрагентов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UtdDocflow.html">Документооборот УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InvoiceDocflow.html">Документооборот электронных счетов-фактур</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NonformalizedDocflow.html">Неформализованный документооборот</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MiscellaneousApiFeatures.html">Дополнительные функции API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Примеры использования</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_authorization.html">Как авторизоваться в системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_send_invoice.html">Как отправить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_receive_invoice.html">Как получить счет-фактуру</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_torg12.html">Как отправить и получить товарную накладную ТОРГ-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/example_acceptance_certificate.html">Как отправить и получить акт о выполнении работ/оказании услуг</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Техническая документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DataStructures.html">Структуры данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authorization.html">Авторизация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_UniversalTransferDocument.html">Работа с УПД</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Invoices.html">Работа с СФ/ИСФ/КСФ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Documents.html">Работа с документами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Messages.html">Работа с сообщениями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Events.html">Работа с событиями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Organizations.html">Работа с организациями</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_Counteragents.html">Работа с контрагентами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Docflow API.html">Docflow API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CloudSignApi.html">Облачная подпись</a></li>
+</ul>
+<p class="caption"><span class="caption-text">История изменений</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ReleaseNotes.html">История изменений API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Диадок</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Модель данных</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/DataModel.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Модель данных<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Диадок предназначен для обеспечения юридически значимого документооборота между организациями. Соответственно, основными задачами Диадока являются:</p>
+<ul class="simple">
+<li>маршрутизация документов между организациями и/или подразделениями организаций;</li>
+<li>формирование и хранение цепочек документооборота (документ формируется, затем подписывается одной стороной, передается на подпись второй стороне, подписывается второй стороной, и т.п.);</li>
+</ul>
+<p>Единицей маршрутизации в Диадоке являются Ящики (<em>Box</em>).</p>
+<p>То есть когда один пользователь системы хочет начать документооборот со своим контрагентом, он формирует цепочку документооборота (сообщение из документа и подписи к нему) в своем ящике (ящик отправителя), а система выполняет доставку документа контрагенту путем формирования соответствующей цепочки документооборота в ящике контрагента (ящике получателя).</p>
+<p>Этот процесс в некотором смысле аналогичен доставке писем через электронную почту с той разницей, что реально документы никуда не пересылаются, а в ящиках отправителя и получателя лишь формируются записи, позволяющие добраться до соответствующих документов.</p>
+<p>Каждый ящик в Диадоке относится к некоторой организации (юридическое лицо или индивидуальный предприниматель), которая представляется в Диадоке в виде единственной сущности типа Организация (<a class="reference internal" href="proto/Organization.html"><span class="doc">Organization</span></a>).</p>
+<p>Ящики в системе закрепляются за организациями таким образом, что каждый ящик принадлежит одной и только одной организации. За счет этого, например, обмен бухгалтерскими документами и обмен договорами с одной компанией могут замыкаться на различные отделы и различных людей внутри этой компании, так что соответствующие бизнес-процессы будут автоматизироваться независимо.</p>
+<p>Пользователи Диадока могут аутентифицироваться в системе как по паре логин/пароль, так и при помощи X.509-сертификата.</p>
+<p>Разграничение доступа аутентифицированных пользователей Диадока производится на уровне ящиков. То есть к одному ящику могут получить доступ несколько пользователей, и наоборот, один пользователь может получить доступ сразу к нескольким ящикам.</p>
+<p>Доступ пользователя к ящику подразумевает возможность просматривать имеющиеся в нем документы и отправлять из него документы в ящики контрагентов.</p>
+<p>Цепочки документооборота представляются в Диадоке Сообщениями (<a class="reference internal" href="proto/Message.html"><span class="doc">Message</span></a>).</p>
+<p>Таким образом, ящик представляет собой логический контейнер для хранения всех сообщений, как отправленных из этого ящика, так и полученных в этот ящик.</p>
+<p>Содержимое ящика можно мыслить как список, в котором исходящие сообщения перечислены вперемежку с входящими.</p>
+<p>Соответственно, чтобы адресовать конкретное сообщение в Диадоке, нужны два уникальных идентификатора:</p>
+<ul class="simple">
+<li>идентификатор ящика;</li>
+<li>идентификатор сообщения внутри ящика.</li>
+</ul>
+<p>Сообщение служит логической единицей группировки документов, относящихся к одной бизнес-транзакции (к одной цепочке документооборота).</p>
+<p>Например, в одном сообщении может содержаться пакет документов, закрывающий сделку, – счет-фактуру и акт о выполнении работ (оказании услуг).</p>
+<p>При этом набор документов, представляющих одно сообщение, со временем может меняться.</p>
+<p>Например, порядок обмена счетами-фактурами подразумевает, что в ответ на полученный счет-фактуру покупатель должен отправить обратно продавцу специальный документ, подтверждающий факт получения счета-фактуры.</p>
+<p>В этом случае и счет-фактура, и этот служебный документ окажутся в одном Диадок-сообщении.</p>
+<p>Если продолжать аналогию с электронной почтой, то сообщение в Диадоке больше похоже не на отдельное e-mail сообщение, а на цепочку сообщений, возникающую в ходе переписки.</p>
+<p>Чтобы обеспечить такой механизм эволюции сообщений во времени, вводится понятие дополнения к сообщению (патч)(<a class="reference internal" href="proto/MessagePatch.html"><span class="doc">MessagePatch</span></a>).</p>
+<p>Дополнения к сообщению описывают изменения, произошедшие с сообщением и могут содержать добавившиеся документы с ЭЦП.</p>
+<p>Сообщение, таким образом, можно мыслить как упорядоченный набор связанных дополнений (патчей).</p>
+<p>Причем дополнение, с которого «начинается» сообщение, называется заглавным.</p>
+<p>Дополнение к сообщению с точки зрения Диадока является неделимым — оно доставляется либо все целиком (то есть доставляются ВСЕ документы и ЭЦП из этого дополнения), либо, при возникновении каких-либо ошибок, не доставляется целиком (то есть не доставляются ни документы, ни ЭЦП из такого дополнения).</p>
+<p>Отдельные документы, электронные подписи к ним, комментарии к документам и другие служебные данные представляются в Диадоке понятием Сущность (<a class="reference internal" href="proto/Entity message.html"><span class="doc">Entity</span></a>).</p>
+<p>Каждая сущность имеет идентификатор, тип и массив байтов, содержащий бинарное представление сущности (интерпретация этого представления зависит от типа сущности).</p>
+<p>Например, бинарным представлением сущности, представляющей счет-фактуру, будет являться массив байтов XML-файла в формате и кодировке, определенных ФНС. А бинарным представлением сущности, представляющей ЭЦП, являться массив байтов отсоединенной подписи в соответствии со стандартом CMS (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5652.html"><strong>RFC 5652</strong></a>) в DER-кодировке.</p>
+<p>Для однозначной идентификации сущностей нужно уже три идентификатора:
+-  идентификатор ящика,
+-
+-  идентификатор сообщения внутри ящика,
+-
+-  идентификатор сущности внутри сообщения.</p>
+<p>Между сущностями в Диадоке могут устанавливаться связи двух типов. Первый тип связей задается атрибутом <em>ParentEntityId</em> и служит для связывания сущностей внутри одного сообщения (при этом они могут находиться в разных дополнениях):</p>
+<p><img alt="image0" src="_images/diadoc-api-data-model-parent-entity.png" /></p>
+<p>На рисунке сообщение A содержит две сущности – U и V. Сущность V является «дочерней» по отношению к сущности U, поскольку у нее поле <em>ParentEntityId</em> содержит значение U.</p>
+<p>Таким способом связываются, например, документ и ЭЦП под ним (U – документ, V – подпись), или счет-фактура и подтверждение о его получении (U – счет-фактура, V – подтверждение).</p>
+<p>Другой тип связей задается при помощи атрибута <em>InitialDocumentId</em> и служит для установки ссылок между документами, находящимися в разных сообщениях:</p>
+<p><img alt="image1" src="_images/diadoc-api-data-model-initial-document.png" /></p>
+<p>Здесь сущность X в сообщении B связана с сущностью U в сообщении A при помощи поля <em>InitialDocumentId</em>. В качестве значения этого поля используется пара идентификаторов – сообщения и сущности (A:U).</p>
+<p>Этот механизм может использоваться, например, для связывания корректирующего счета-фактуры с исходным, или для связывания дополнительного соглашения с основным договором.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ApiClientOperationPrinciple.html" class="btn btn-neutral float-right" title="Порядок работы с API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DiadocApiDll.html" class="btn btn-neutral" title=".NET/COM-библиотека" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Диадок.
+      Обновлено: дек. 09, 2016.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.36.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
